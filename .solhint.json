@@ -1,0 +1,9 @@
+  
+{
+  "extends": "solhint:recommended",
+  "plugins": [],
+  "rules": {
+    "indent": ["error", 2],
+    "compiler-version": ["error","^0.7.1"]
+  }
+}
