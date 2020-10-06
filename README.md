@@ -1,7 +1,7 @@
-# hackathon
+# ETHOnline Hackathon 2020
 Machu-Picchu dApp for ETHGlobal Hackathon
 
-** To run the app on local **
+## To run the app on local
 
 1. Clone the repository
 2. Navigate to the hackathon/Client folder
