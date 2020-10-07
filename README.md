@@ -10,3 +10,6 @@ Machu-Picchu dApp for ETHGlobal Hackathon
 
 ## Overall context of _Machu Picchu_ hackathon showcase
 ![Overall context](https://github.com/Machu-Pichu/hackathon/blob/logos/common/images/20201002%20Machu%20Picchu%20Overall%20Vision.png)
+
+## Content of _Machu Picchu_ hackathon showcase
+![Actual showcase](https://github.com/Machu-Pichu/hackathon/blob/logos/common/images/20201006%20Hackathon%20showcase%20v1.0.png)
