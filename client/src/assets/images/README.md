@@ -1,1 +1,1 @@
-This folder contains common images used in the project
+This folder contains common images and logos
