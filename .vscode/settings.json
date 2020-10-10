@@ -2,7 +2,7 @@
     "workbench.colorTheme": "Dracula",
   
     "editor.rulers": [80, 120],
-    "editor.formatOnSave": false,
+    "editor.formatOnSave": true,
   
     "editor.fontSize": 11,
     "eslint.packageManager": "yarn",

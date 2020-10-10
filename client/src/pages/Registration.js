@@ -7,7 +7,7 @@ import { AppContext } from "../AppContext";
 import Page from "../components/Page";
 import Paper from "../components/Paper";
 
-const Home = () => {
+const Registration = () => {
   const {
     userAddress,
     web3provider,
@@ -71,4 +71,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Registration;

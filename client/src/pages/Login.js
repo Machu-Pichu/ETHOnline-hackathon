@@ -1,5 +1,8 @@
 import React, { useState, useEffect, useCallback, useContext } from 'react';
 import Web3 from 'web3';
+import RUP from "../contracts/RUP.json";
+import User from "../contracts/User.json";
+import MachuPicchu from "../contracts/MachuPicchu.json";
 import Portis from '@portis/web3';
 import metamask from '../assets/images/metamask.jpg';
 import portis from '../assets/images/portis.png';
@@ -37,7 +40,8 @@ const Login = () => {
       .then((accounts) => {
         if(accounts && accounts.length > 0) {
           // Select the first account
-          onUserConnected(accounts[0], web3Provider);
+          // onUserConnected(accounts[0], web3Provider);
+          setContracts(accounts);
         }
       })
       .catch((error) => {
@@ -54,8 +58,9 @@ const Login = () => {
       web3.eth.getAccounts((error, accounts) => {
         console.log(accounts);
         if(accounts && accounts.length > 0) {
-          // Select the first account
-          onUserConnected(accounts[0], web3);
+            // Select the first account
+          // onUserConnected(accounts[0], web3Provider);
+          setContracts(accounts);
         }
       })
       .catch((error) => {
@@ -64,6 +69,46 @@ const Login = () => {
       });
       setLoader(false);
   });
+
+  const setContracts = async(accounts) => {
+
+    // Get the contract instance.
+      // const networkId = await web3.eth.net.getId();
+      const networkId = 42;
+			console.log("networkid " + networkId);
+			const RUPdeployedNetwork = RUP.networks[networkId];
+			const RUPinstance = await new web3Provider.eth.Contract(
+				RUP.abi,
+				RUPdeployedNetwork.address,
+				{
+					from: accounts[0],
+					// gasLimit: 3000000,
+				}
+      );
+
+      console.log(RUPinstance,"rup instance");
+
+      const UserdeployedNetwork = User.networks[networkId];
+			const Userinstance = await new web3Provider.eth.Contract(
+				User.abi,
+				UserdeployedNetwork.address,
+				{
+					from: accounts[0],
+					// gasLimit: 3000000,
+				}
+      );
+
+      const MachuPicchudeployedNetwork = MachuPicchu.networks[networkId];
+			const MachuPicchuinstance = await new web3Provider.eth.Contract(
+				MachuPicchu.abi,
+				MachuPicchudeployedNetwork.address,
+				{
+					from: accounts[0],
+					// gasLimit: 3000000,
+				}
+      );
+      onUserConnected(accounts[0], web3Provider, RUPinstance, Userinstance, MachuPicchuinstance);
+  }
 
   return (
         <div style={{width:'100%', height:'100%'}}>

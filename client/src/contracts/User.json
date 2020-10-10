@@ -1,0 +1,4269 @@
+{
+  "contractName": "User",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_tokenContract",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "payable",
+      "type": "constructor",
+      "payable": true
+    },
+    {
+      "stateMutability": "payable",
+      "type": "receive",
+      "payable": true
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "enum User.UserType",
+          "name": "_usertype",
+          "type": "uint8"
+        }
+      ],
+      "name": "register",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_user",
+          "type": "address"
+        }
+      ],
+      "name": "getUserRole",
+      "outputs": [
+        {
+          "internalType": "enum User.UserType",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_user",
+          "type": "address"
+        },
+        {
+          "internalType": "enum User.UserType",
+          "name": "_usertype",
+          "type": "uint8"
+        }
+      ],
+      "name": "checkUserRole",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.7.0+commit.9e61f92b\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_tokenContract\",\"type\":\"address\"}],\"stateMutability\":\"payable\",\"type\":\"constructor\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_user\",\"type\":\"address\"},{\"internalType\":\"enum User.UserType\",\"name\":\"_usertype\",\"type\":\"uint8\"}],\"name\":\"checkUserRole\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_user\",\"type\":\"address\"}],\"name\":\"getUserRole\",\"outputs\":[{\"internalType\":\"enum User.UserType\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"enum User.UserType\",\"name\":\"_usertype\",\"type\":\"uint8\"}],\"name\":\"register\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/home/kuldeep/ETHEREUM/MachuPichu/hackathon/contracts/User.sol\":\"User\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/kuldeep/ETHEREUM/MachuPichu/hackathon/contracts/User.sol\":{\"keccak256\":\"0xb3eb592fdc374cbc68d28146e9817b7e1cb82985f8a8adc552845f43903ec613\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6a1fdb4e86bcc89e3616c742bb86da4005aeee457de4996396d040050a644eaf\",\"dweb:/ipfs/QmVyTdnfL31jtmJJsmZHHwK1ChGxiCA5LZW1vT8NVYc61t\"]},\"/home/kuldeep/ETHEREUM/MachuPichu/hackathon/contracts/token/ERC20.sol\":{\"keccak256\":\"0xbec7b335fbb4e55585ee1cf2739d9be1496e2f158182a95a0e821ffc72697292\",\"urls\":[\"bzz-raw://cd6e344be10400496081175eded82a4e8309a66d24e7a2b098aa69e7400b2c35\",\"dweb:/ipfs/QmQhLfNme8PxTghnc3p95Jbr3VWKTHTf2DUbRpkkQUhavQ\"]},\"/home/kuldeep/ETHEREUM/MachuPichu/hackathon/contracts/token/RUP.sol\":{\"keccak256\":\"0xcbd912e7d1a81f92d35ee0ec1c37e24b610f01a671adf7376278b17c4d36084f\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://c18f724e716e54ec788dc711028f1551d914bc52e93182c997b3c512cbe9abcf\",\"dweb:/ipfs/QmdLaNp1G22CmeV5xwE9ef63sE4ACPVekRqLepKRwYrJNZ\"]}},\"version\":1}",
+  "bytecode": "0x6080604052604051610a26380380610a2683398181016040528101906100259190610081565b80600260006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550506100f3565b60008151905061007b816100dc565b92915050565b60006020828403121561009357600080fd5b60006100a18482850161006c565b91505092915050565b60006100b5826100bc565b9050919050565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b6100e5816100aa565b81146100f057600080fd5b50565b610924806101026000396000f3fe6080604052600436106100385760003560e01c80632782085114610044578063425841661461008157806361d689fa146100be5761003f565b3661003f57005b600080fd5b34801561005057600080fd5b5061006b6004803603810190610066919061060b565b6100e7565b6040516100789190610799565b60405180910390f35b34801561008d57600080fd5b506100a860048036038101906100a39190610634565b610202565b6040516100b5919061077e565b60405180910390f35b3480156100ca57600080fd5b506100e560048036038101906100e09190610670565b610348565b005b6000600160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff16610175576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040161016c906107d4565b60405180910390fd5b61017d6105c3565b6000808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206040518060200160405290816000820160009054906101000a900460ff1660028111156101e457fe5b60028111156101ef57fe5b8152505090508060000151915050919050565b6000600160008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff16610290576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401610287906107d4565b60405180910390fd5b6102986105c3565b6000808573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206040518060200160405290816000820160009054906101000a900460ff1660028111156102ff57fe5b600281111561030a57fe5b81525050905082600281111561031c57fe5b8160000151600281111561032c57fe5b141561033c576001915050610342565b60009150505b92915050565b60001515600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff161515146103db576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016103d2906107b4565b60405180910390fd5b6103e36105c3565b60405180602001604052808360028111156103fa57fe5b815250905060018060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff021916908315150217905550806000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008201518160000160006101000a81548160ff021916908360028111156104b957fe5b0217905550905050600160028111156104ce57fe5b8260028111156104da57fe5b141561057157600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16634e6ec2473360646040518363ffffffff1660e01b815260040161053e929190610755565b600060405180830381600087803b15801561055857600080fd5b505af115801561056c573d6000803e3d6000fd5b505050505b3373ffffffffffffffffffffffffffffffffffffffff166108fc66b1a2bc2ec500009081150290604051600060405180830381858888f193505050501580156105be573d6000803e3d6000fd5b505050565b6040518060200160405280600060028111156105db57fe5b81525090565b6000813590506105f0816108c7565b92915050565b600081359050610605816108de565b92915050565b60006020828403121561061d57600080fd5b600061062b848285016105e1565b91505092915050565b6000806040838503121561064757600080fd5b6000610655858286016105e1565b9250506020610666858286016105f6565b9150509250929050565b60006020828403121561068257600080fd5b6000610690848285016105f6565b91505092915050565b6106a281610860565b82525050565b6106b181610817565b82525050565b6106c081610872565b82525050565b6106cf81610884565b82525050565b60006106e2601b836107f4565b91507f596f75206861766520616c7265616479207265676973746572656400000000006000830152602082019050919050565b60006107226013836107f4565b91507f55736572206e6f742072656769737465726564000000000000000000000000006000830152602082019050919050565b600060408201905061076a6000830185610699565b61077760208301846106c6565b9392505050565b600060208201905061079360008301846106a8565b92915050565b60006020820190506107ae60008301846106b7565b92915050565b600060208201905081810360008301526107cd816106d5565b9050919050565b600060208201905081810360008301526107ed81610715565b9050919050565b600082825260208201905092915050565b600061081082610836565b9050919050565b60008115159050919050565b6000819050610831826108ba565b919050565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b6000819050919050565b600061086b82610896565b9050919050565b600061087d82610823565b9050919050565b600061088f82610856565b9050919050565b60006108a1826108a8565b9050919050565b60006108b382610836565b9050919050565b600381106108c457fe5b50565b6108d081610805565b81146108db57600080fd5b50565b600381106108eb57600080fd5b5056fea2646970667358221220cdd8827ab3860f7b73c879e236a09214add428fae0fcff336a52cc7aee8bd8f464736f6c63430007000033",
+  "deployedBytecode": "0x6080604052600436106100385760003560e01c80632782085114610044578063425841661461008157806361d689fa146100be5761003f565b3661003f57005b600080fd5b34801561005057600080fd5b5061006b6004803603810190610066919061060b565b6100e7565b6040516100789190610799565b60405180910390f35b34801561008d57600080fd5b506100a860048036038101906100a39190610634565b610202565b6040516100b5919061077e565b60405180910390f35b3480156100ca57600080fd5b506100e560048036038101906100e09190610670565b610348565b005b6000600160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff16610175576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040161016c906107d4565b60405180910390fd5b61017d6105c3565b6000808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206040518060200160405290816000820160009054906101000a900460ff1660028111156101e457fe5b60028111156101ef57fe5b8152505090508060000151915050919050565b6000600160008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff16610290576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401610287906107d4565b60405180910390fd5b6102986105c3565b6000808573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206040518060200160405290816000820160009054906101000a900460ff1660028111156102ff57fe5b600281111561030a57fe5b81525050905082600281111561031c57fe5b8160000151600281111561032c57fe5b141561033c576001915050610342565b60009150505b92915050565b60001515600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff161515146103db576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016103d2906107b4565b60405180910390fd5b6103e36105c3565b60405180602001604052808360028111156103fa57fe5b815250905060018060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff021916908315150217905550806000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008201518160000160006101000a81548160ff021916908360028111156104b957fe5b0217905550905050600160028111156104ce57fe5b8260028111156104da57fe5b141561057157600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16634e6ec2473360646040518363ffffffff1660e01b815260040161053e929190610755565b600060405180830381600087803b15801561055857600080fd5b505af115801561056c573d6000803e3d6000fd5b505050505b3373ffffffffffffffffffffffffffffffffffffffff166108fc66b1a2bc2ec500009081150290604051600060405180830381858888f193505050501580156105be573d6000803e3d6000fd5b505050565b6040518060200160405280600060028111156105db57fe5b81525090565b6000813590506105f0816108c7565b92915050565b600081359050610605816108de565b92915050565b60006020828403121561061d57600080fd5b600061062b848285016105e1565b91505092915050565b6000806040838503121561064757600080fd5b6000610655858286016105e1565b9250506020610666858286016105f6565b9150509250929050565b60006020828403121561068257600080fd5b6000610690848285016105f6565b91505092915050565b6106a281610860565b82525050565b6106b181610817565b82525050565b6106c081610872565b82525050565b6106cf81610884565b82525050565b60006106e2601b836107f4565b91507f596f75206861766520616c7265616479207265676973746572656400000000006000830152602082019050919050565b60006107226013836107f4565b91507f55736572206e6f742072656769737465726564000000000000000000000000006000830152602082019050919050565b600060408201905061076a6000830185610699565b61077760208301846106c6565b9392505050565b600060208201905061079360008301846106a8565b92915050565b60006020820190506107ae60008301846106b7565b92915050565b600060208201905081810360008301526107cd816106d5565b9050919050565b600060208201905081810360008301526107ed81610715565b9050919050565b600082825260208201905092915050565b600061081082610836565b9050919050565b60008115159050919050565b6000819050610831826108ba565b919050565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b6000819050919050565b600061086b82610896565b9050919050565b600061087d82610823565b9050919050565b600061088f82610856565b9050919050565b60006108a1826108a8565b9050919050565b60006108b382610836565b9050919050565b600381106108c457fe5b50565b6108d081610805565b81146108db57600080fd5b50565b600381106108eb57600080fd5b5056fea2646970667358221220cdd8827ab3860f7b73c879e236a09214add428fae0fcff336a52cc7aee8bd8f464736f6c63430007000033",
+  "immutableReferences": {},
+  "sourceMap": "137:1609:3:-:0;;;358:103;;;;;;;;;;;;;;;;;;;;;:::i;:::-;439:14;419:13;;:35;;;;;;;;;;;;;;;;;;358:103;137:1609;;5:134:-1;;89:6;83:13;74:22;;101:33;128:5;101:33;:::i;:::-;68:71;;;;:::o;146:263::-;;261:2;249:9;240:7;236:23;232:32;229:2;;;277:1;274;267:12;229:2;312:1;329:64;385:7;376:6;365:9;361:22;329:64;:::i;:::-;319:74;;291:108;223:186;;;;:::o;416:91::-;;478:24;496:5;478:24;:::i;:::-;467:35;;461:46;;;:::o;514:121::-;;587:42;580:5;576:54;565:65;;559:76;;;:::o;642:117::-;711:24;729:5;711:24;:::i;:::-;704:5;701:35;691:2;;750:1;747;740:12;691:2;685:74;:::o;137:1609:3:-;;;;;;;",
+  "deployedSourceMap": "137:1609:3:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1121:200;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;1327:317;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;467:648;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;1121:200;1178:8;1206:12;:19;1219:5;1206:19;;;;;;;;;;;;;;;;;;;;;;;;;1198:51;;;;;;;;;;;;:::i;:::-;;;;;;;;;1259:13;;:::i;:::-;1275:5;:12;1281:5;1275:12;;;;;;;;;;;;;;;1259:28;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1304:1;:10;;;1297:17;;;1121:200;;;:::o;1327:317::-;1430:4;1458:12;:19;1471:5;1458:19;;;;;;;;;;;;;;;;;;;;;;;;;1450:51;;;;;;;;;;;;:::i;:::-;;;;;;;;;1511:13;;:::i;:::-;1527:5;:12;1533:5;1527:12;;;;;;;;;;;;;;;1511:28;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1569:9;1553:25;;;;;;;;1554:1;:10;;;1553:25;;;;;;;;;1549:67;;;1601:4;1594:11;;;;;1549:67;1632:5;1625:12;;;1327:317;;;;;:::o;467:648::-;621:5;593:33;;:12;:24;606:10;593:24;;;;;;;;;;;;;;;;;;;;;;;;;:33;;;572:107;;;;;;;;;;;;:::i;:::-;;;;;;;;;690:13;;:::i;:::-;706:27;;;;;;;;722:9;706:27;;;;;;;;;;;690:43;;771:4;744:12;:24;757:10;744:24;;;;;;;;;;;;;;;;:31;;;;;;;;;;;;;;;;;;805:1;785:5;:17;791:10;785:17;;;;;;;;;;;;;;;:21;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;933:16;920:29;;;;;;;;:9;:29;;;;;;;;;916:98;;;965:13;;;;;;;;;;;:19;;;985:10;998:3;965:38;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;916:98;1077:10;:19;;:31;1097:10;1077:31;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;467:648;;:::o;-1:-1:-1:-;;;;;;;;;;;;;;;;;;;;;;:::o;5:130::-;;85:6;72:20;63:29;;97:33;124:5;97:33;:::i;:::-;57:78;;;;:::o;142:156::-;;235:6;222:20;213:29;;247:46;287:5;247:46;:::i;:::-;207:91;;;;:::o;305:241::-;;409:2;397:9;388:7;384:23;380:32;377:2;;;425:1;422;415:12;377:2;460:1;477:53;522:7;513:6;502:9;498:22;477:53;:::i;:::-;467:63;;439:97;371:175;;;;:::o;553:392::-;;;687:2;675:9;666:7;662:23;658:32;655:2;;;703:1;700;693:12;655:2;738:1;755:53;800:7;791:6;780:9;776:22;755:53;:::i;:::-;745:63;;717:97;845:2;863:66;921:7;912:6;901:9;897:22;863:66;:::i;:::-;853:76;;824:111;649:296;;;;;:::o;952:267::-;;1069:2;1057:9;1048:7;1044:23;1040:32;1037:2;;;1085:1;1082;1075:12;1037:2;1120:1;1137:66;1195:7;1186:6;1175:9;1171:22;1137:66;:::i;:::-;1127:76;;1099:110;1031:188;;;;:::o;1226:142::-;1317:45;1356:5;1317:45;:::i;:::-;1312:3;1305:58;1299:69;;:::o;1375:104::-;1452:21;1467:5;1452:21;:::i;:::-;1447:3;1440:34;1434:45;;:::o;1486:148::-;1580:48;1622:5;1580:48;:::i;:::-;1575:3;1568:61;1562:72;;:::o;1641:146::-;1734:47;1775:5;1734:47;:::i;:::-;1729:3;1722:60;1716:71;;:::o;1795:327::-;;1955:67;2019:2;2014:3;1955:67;:::i;:::-;1948:74;;2055:29;2051:1;2046:3;2042:11;2035:50;2113:2;2108:3;2104:12;2097:19;;1941:181;;;:::o;2131:319::-;;2291:67;2355:2;2350:3;2291:67;:::i;:::-;2284:74;;2391:21;2387:1;2382:3;2378:11;2371:42;2441:2;2436:3;2432:12;2425:19;;2277:173;;;:::o;2458:369::-;;2631:2;2620:9;2616:18;2608:26;;2645:79;2721:1;2710:9;2706:17;2697:6;2645:79;:::i;:::-;2735:82;2813:2;2802:9;2798:18;2789:6;2735:82;:::i;:::-;2602:225;;;;;:::o;2834:210::-;;2955:2;2944:9;2940:18;2932:26;;2969:65;3031:1;3020:9;3016:17;3007:6;2969:65;:::i;:::-;2926:118;;;;:::o;3051:244::-;;3189:2;3178:9;3174:18;3166:26;;3203:82;3282:1;3271:9;3267:17;3258:6;3203:82;:::i;:::-;3160:135;;;;:::o;3302:416::-;;3502:2;3491:9;3487:18;3479:26;;3552:9;3546:4;3542:20;3538:1;3527:9;3523:17;3516:47;3577:131;3703:4;3577:131;:::i;:::-;3569:139;;3473:245;;;:::o;3725:416::-;;3925:2;3914:9;3910:18;3902:26;;3975:9;3969:4;3965:20;3961:1;3950:9;3946:17;3939:47;4000:131;4126:4;4000:131;:::i;:::-;3992:139;;3896:245;;;:::o;4149:163::-;;4264:6;4259:3;4252:19;4301:4;4296:3;4292:14;4277:29;;4245:67;;;;:::o;4320:91::-;;4382:24;4400:5;4382:24;:::i;:::-;4371:35;;4365:46;;;:::o;4418:85::-;;4491:5;4484:13;4477:21;4466:32;;4460:43;;;:::o;4510:132::-;;4585:5;4574:16;;4591:46;4631:5;4591:46;:::i;:::-;4568:74;;;:::o;4649:121::-;;4722:42;4715:5;4711:54;4700:65;;4694:76;;;:::o;4777:72::-;;4839:5;4828:16;;4822:27;;;:::o;4856:129::-;;4943:37;4974:5;4943:37;:::i;:::-;4930:50;;4924:61;;;:::o;4992:132::-;;5082:37;5113:5;5082:37;:::i;:::-;5069:50;;5063:61;;;:::o;5131:118::-;;5220:24;5238:5;5220:24;:::i;:::-;5207:37;;5201:48;;;:::o;5256:121::-;;5335:37;5366:5;5335:37;:::i;:::-;5322:50;;5316:61;;;:::o;5384:108::-;;5463:24;5481:5;5463:24;:::i;:::-;5450:37;;5444:48;;;:::o;5499:104::-;5581:1;5574:5;5571:12;5561:2;;5587:9;5561:2;5555:48;:::o;5610:117::-;5679:24;5697:5;5679:24;:::i;:::-;5672:5;5669:35;5659:2;;5718:1;5715;5708:12;5659:2;5653:74;:::o;5734:107::-;5816:1;5809:5;5806:12;5796:2;;5832:1;5829;5822:12;5796:2;5790:51;:::o",
+  "source": "// SPDX-License-Identifier: MIT\n\npragma solidity >0.6.0 <=0.7.1;\npragma experimental ABIEncoderV2;\nimport {RUP} from \"./token/RUP.sol\";\n\ncontract User {\n    enum UserType {member, watcher, enabler}\n\n    struct user {\n        UserType usertype;\n    }\n\n    mapping(address => user) Users;\n    mapping(address => bool) registerList;\n    RUP tokenContract;\n\n    constructor(address _tokenContract) public payable {\n        tokenContract = RUP(_tokenContract);\n    }\n\n    function register(UserType _usertype) public {\n        // require address not registered already\n        require(\n            registerList[msg.sender] == false,\n            \"You have already registered\"\n        );\n\n        user memory u = user({usertype: _usertype});\n\n        registerList[msg.sender] = true;\n        Users[msg.sender] = u;\n\n        // initially mint 100 tokens for a watcher to staker - later he will either burrow or swap\n        if (_usertype == UserType.watcher) {\n            tokenContract._mint(msg.sender, (100));\n        }\n\n        // give some ether to user for demo purposes\n        msg.sender.transfer(0.05 ether);\n    }\n\n    function getUserRole(address _user) public view returns (UserType) {\n        require(registerList[_user], \"User not registered\");\n        user memory u = Users[_user];\n        return u.usertype;\n    }\n\n    function checkUserRole(address _user, UserType _usertype)\n        public\n        view\n        returns (bool)\n    {\n        require(registerList[_user], \"User not registered\");\n        user memory u = Users[_user];\n        if ((u.usertype) == _usertype) {\n            return true;\n        }\n        return false;\n    }\n\n    receive() external payable {\n        uint i = 0;\n            // React to receiving ether\n    }\n}",
+  "sourcePath": "/home/kuldeep/ETHEREUM/MachuPichu/hackathon/contracts/User.sol",
+  "ast": {
+    "absolutePath": "/home/kuldeep/ETHEREUM/MachuPichu/hackathon/contracts/User.sol",
+    "exportedSymbols": {
+      "User": [
+        1257
+      ]
+    },
+    "id": 1258,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1099,
+        "literals": [
+          "solidity",
+          ">",
+          "0.6",
+          ".0",
+          "<=",
+          "0.7",
+          ".1"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:31:3"
+      },
+      {
+        "id": 1100,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "65:33:3"
+      },
+      {
+        "absolutePath": "/home/kuldeep/ETHEREUM/MachuPichu/hackathon/contracts/token/RUP.sol",
+        "file": "./token/RUP.sol",
+        "id": 1102,
+        "nodeType": "ImportDirective",
+        "scope": 1258,
+        "sourceUnit": 2232,
+        "src": "99:36:3",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "argumentTypes": null,
+              "id": 1101,
+              "name": "RUP",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": null,
+              "src": "107:3:3",
+              "typeDescriptions": {
+                "typeIdentifier": null,
+                "typeString": null
+              }
+            },
+            "local": null
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 1257,
+        "linearizedBaseContracts": [
+          1257
+        ],
+        "name": "User",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "User.UserType",
+            "id": 1106,
+            "members": [
+              {
+                "id": 1103,
+                "name": "member",
+                "nodeType": "EnumValue",
+                "src": "172:6:3"
+              },
+              {
+                "id": 1104,
+                "name": "watcher",
+                "nodeType": "EnumValue",
+                "src": "180:7:3"
+              },
+              {
+                "id": 1105,
+                "name": "enabler",
+                "nodeType": "EnumValue",
+                "src": "189:7:3"
+              }
+            ],
+            "name": "UserType",
+            "nodeType": "EnumDefinition",
+            "src": "157:40:3"
+          },
+          {
+            "canonicalName": "User.user",
+            "id": 1109,
+            "members": [
+              {
+                "constant": false,
+                "id": 1108,
+                "mutability": "mutable",
+                "name": "usertype",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 1109,
+                "src": "225:17:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_UserType_$1106",
+                  "typeString": "enum User.UserType"
+                },
+                "typeName": {
+                  "contractScope": null,
+                  "id": 1107,
+                  "name": "UserType",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 1106,
+                  "src": "225:8:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_UserType_$1106",
+                    "typeString": "enum User.UserType"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "user",
+            "nodeType": "StructDefinition",
+            "scope": 1257,
+            "src": "203:46:3",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 1113,
+            "mutability": "mutable",
+            "name": "Users",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 1257,
+            "src": "255:30:3",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_user_$1109_storage_$",
+              "typeString": "mapping(address => struct User.user)"
+            },
+            "typeName": {
+              "id": 1112,
+              "keyType": {
+                "id": 1110,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "263:7:3",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "255:24:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_user_$1109_storage_$",
+                "typeString": "mapping(address => struct User.user)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 1111,
+                "name": "user",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 1109,
+                "src": "274:4:3",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_user_$1109_storage_ptr",
+                  "typeString": "struct User.user"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 1117,
+            "mutability": "mutable",
+            "name": "registerList",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 1257,
+            "src": "291:37:3",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+              "typeString": "mapping(address => bool)"
+            },
+            "typeName": {
+              "id": 1116,
+              "keyType": {
+                "id": 1114,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "299:7:3",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "291:24:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                "typeString": "mapping(address => bool)"
+              },
+              "valueType": {
+                "id": 1115,
+                "name": "bool",
+                "nodeType": "ElementaryTypeName",
+                "src": "310:4:3",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 1119,
+            "mutability": "mutable",
+            "name": "tokenContract",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 1257,
+            "src": "334:17:3",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_RUP_$2231",
+              "typeString": "contract RUP"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 1118,
+              "name": "RUP",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 2231,
+              "src": "334:3:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_RUP_$2231",
+                "typeString": "contract RUP"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 1130,
+              "nodeType": "Block",
+              "src": "409:52:3",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 1128,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 1124,
+                      "name": "tokenContract",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1119,
+                      "src": "419:13:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_RUP_$2231",
+                        "typeString": "contract RUP"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 1126,
+                          "name": "_tokenContract",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1121,
+                          "src": "439:14:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        ],
+                        "id": 1125,
+                        "name": "RUP",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2231,
+                        "src": "435:3:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_RUP_$2231_$",
+                          "typeString": "type(contract RUP)"
+                        }
+                      },
+                      "id": 1127,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "435:19:3",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_RUP_$2231",
+                        "typeString": "contract RUP"
+                      }
+                    },
+                    "src": "419:35:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_RUP_$2231",
+                      "typeString": "contract RUP"
+                    }
+                  },
+                  "id": 1129,
+                  "nodeType": "ExpressionStatement",
+                  "src": "419:35:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1131,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 1122,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1121,
+                  "mutability": "mutable",
+                  "name": "_tokenContract",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1131,
+                  "src": "370:22:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1120,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "370:7:3",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "369:24:3"
+            },
+            "returnParameters": {
+              "id": 1123,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "409:0:3"
+            },
+            "scope": 1257,
+            "src": "358:103:3",
+            "stateMutability": "payable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1189,
+              "nodeType": "Block",
+              "src": "512:603:3",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "id": 1142,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "baseExpression": {
+                            "argumentTypes": null,
+                            "id": 1137,
+                            "name": "registerList",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 1117,
+                            "src": "593:12:3",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                              "typeString": "mapping(address => bool)"
+                            }
+                          },
+                          "id": 1140,
+                          "indexExpression": {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 1138,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": -15,
+                              "src": "606:3:3",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 1139,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "606:10:3",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address_payable",
+                              "typeString": "address payable"
+                            }
+                          },
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "IndexAccess",
+                          "src": "593:24:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "hexValue": "66616c7365",
+                          "id": 1141,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "bool",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "621:5:3",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          },
+                          "value": "false"
+                        },
+                        "src": "593:33:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "596f75206861766520616c72656164792072656769737465726564",
+                        "id": 1143,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "640:29:3",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_1e9e542001ea21048e7b994e51704749ddeb8f38fd58408770ac2102a48c265f",
+                          "typeString": "literal_string \"You have already registered\""
+                        },
+                        "value": "You have already registered"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_1e9e542001ea21048e7b994e51704749ddeb8f38fd58408770ac2102a48c265f",
+                          "typeString": "literal_string \"You have already registered\""
+                        }
+                      ],
+                      "id": 1136,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        -18,
+                        -18
+                      ],
+                      "referencedDeclaration": -18,
+                      "src": "572:7:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 1144,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "572:107:3",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1145,
+                  "nodeType": "ExpressionStatement",
+                  "src": "572:107:3"
+                },
+                {
+                  "assignments": [
+                    1147
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 1147,
+                      "mutability": "mutable",
+                      "name": "u",
+                      "nodeType": "VariableDeclaration",
+                      "overrides": null,
+                      "scope": 1189,
+                      "src": "690:13:3",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_user_$1109_memory_ptr",
+                        "typeString": "struct User.user"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 1146,
+                        "name": "user",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 1109,
+                        "src": "690:4:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_user_$1109_storage_ptr",
+                          "typeString": "struct User.user"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 1151,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 1149,
+                        "name": "_usertype",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1133,
+                        "src": "722:9:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_enum$_UserType_$1106",
+                          "typeString": "enum User.UserType"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_enum$_UserType_$1106",
+                          "typeString": "enum User.UserType"
+                        }
+                      ],
+                      "id": 1148,
+                      "name": "user",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1109,
+                      "src": "706:4:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_struct$_user_$1109_storage_ptr_$",
+                        "typeString": "type(struct User.user storage pointer)"
+                      }
+                    },
+                    "id": 1150,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "structConstructorCall",
+                    "lValueRequested": false,
+                    "names": [
+                      "usertype"
+                    ],
+                    "nodeType": "FunctionCall",
+                    "src": "706:27:3",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_user_$1109_memory_ptr",
+                      "typeString": "struct User.user memory"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "690:43:3"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 1157,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 1152,
+                        "name": "registerList",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1117,
+                        "src": "744:12:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                          "typeString": "mapping(address => bool)"
+                        }
+                      },
+                      "id": 1155,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 1153,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": -15,
+                          "src": "757:3:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 1154,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "757:10:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "744:24:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "hexValue": "74727565",
+                      "id": 1156,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "bool",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "771:4:3",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      },
+                      "value": "true"
+                    },
+                    "src": "744:31:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 1158,
+                  "nodeType": "ExpressionStatement",
+                  "src": "744:31:3"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 1164,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 1159,
+                        "name": "Users",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1113,
+                        "src": "785:5:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_user_$1109_storage_$",
+                          "typeString": "mapping(address => struct User.user storage ref)"
+                        }
+                      },
+                      "id": 1162,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 1160,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": -15,
+                          "src": "791:3:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 1161,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "791:10:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "785:17:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_user_$1109_storage",
+                        "typeString": "struct User.user storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 1163,
+                      "name": "u",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1147,
+                      "src": "805:1:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_user_$1109_memory_ptr",
+                        "typeString": "struct User.user memory"
+                      }
+                    },
+                    "src": "785:21:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_user_$1109_storage",
+                      "typeString": "struct User.user storage ref"
+                    }
+                  },
+                  "id": 1165,
+                  "nodeType": "ExpressionStatement",
+                  "src": "785:21:3"
+                },
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_enum$_UserType_$1106",
+                      "typeString": "enum User.UserType"
+                    },
+                    "id": 1169,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "id": 1166,
+                      "name": "_usertype",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1133,
+                      "src": "920:9:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_UserType_$1106",
+                        "typeString": "enum User.UserType"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "==",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 1167,
+                        "name": "UserType",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1106,
+                        "src": "933:8:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_enum$_UserType_$1106_$",
+                          "typeString": "type(enum User.UserType)"
+                        }
+                      },
+                      "id": 1168,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "memberName": "watcher",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "933:16:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_UserType_$1106",
+                        "typeString": "enum User.UserType"
+                      }
+                    },
+                    "src": "920:29:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": null,
+                  "id": 1180,
+                  "nodeType": "IfStatement",
+                  "src": "916:98:3",
+                  "trueBody": {
+                    "id": 1179,
+                    "nodeType": "Block",
+                    "src": "951:63:3",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "expression": {
+                                "argumentTypes": null,
+                                "id": 1173,
+                                "name": "msg",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": -15,
+                                "src": "985:3:3",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_magic_message",
+                                  "typeString": "msg"
+                                }
+                              },
+                              "id": 1174,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberName": "sender",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": null,
+                              "src": "985:10:3",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address_payable",
+                                "typeString": "address payable"
+                              }
+                            },
+                            {
+                              "argumentTypes": null,
+                              "components": [
+                                {
+                                  "argumentTypes": null,
+                                  "hexValue": "313030",
+                                  "id": 1175,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "kind": "number",
+                                  "lValueRequested": false,
+                                  "nodeType": "Literal",
+                                  "src": "998:3:3",
+                                  "subdenomination": null,
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_rational_100_by_1",
+                                    "typeString": "int_const 100"
+                                  },
+                                  "value": "100"
+                                }
+                              ],
+                              "id": 1176,
+                              "isConstant": false,
+                              "isInlineArray": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "nodeType": "TupleExpression",
+                              "src": "997:5:3",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_rational_100_by_1",
+                                "typeString": "int_const 100"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_address_payable",
+                                "typeString": "address payable"
+                              },
+                              {
+                                "typeIdentifier": "t_rational_100_by_1",
+                                "typeString": "int_const 100"
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 1170,
+                              "name": "tokenContract",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 1119,
+                              "src": "965:13:3",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_contract$_RUP_$2231",
+                                "typeString": "contract RUP"
+                              }
+                            },
+                            "id": 1172,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "_mint",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 2079,
+                            "src": "965:19:3",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
+                              "typeString": "function (address,uint256) external"
+                            }
+                          },
+                          "id": 1177,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "965:38:3",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$__$",
+                            "typeString": "tuple()"
+                          }
+                        },
+                        "id": 1178,
+                        "nodeType": "ExpressionStatement",
+                        "src": "965:38:3"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "302e3035",
+                        "id": 1186,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1097:10:3",
+                        "subdenomination": "ether",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_50000000000000000_by_1",
+                          "typeString": "int_const 50000000000000000"
+                        },
+                        "value": "0.05"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_rational_50000000000000000_by_1",
+                          "typeString": "int_const 50000000000000000"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 1181,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": -15,
+                          "src": "1077:3:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 1184,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "1077:10:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      "id": 1185,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "transfer",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "1077:19:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_transfer_nonpayable$_t_uint256_$returns$__$",
+                        "typeString": "function (uint256)"
+                      }
+                    },
+                    "id": 1187,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1077:31:3",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1188,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1077:31:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "61d689fa",
+            "id": 1190,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "register",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 1134,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1133,
+                  "mutability": "mutable",
+                  "name": "_usertype",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1190,
+                  "src": "485:18:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_UserType_$1106",
+                    "typeString": "enum User.UserType"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 1132,
+                    "name": "UserType",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 1106,
+                    "src": "485:8:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_UserType_$1106",
+                      "typeString": "enum User.UserType"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "484:20:3"
+            },
+            "returnParameters": {
+              "id": 1135,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "512:0:3"
+            },
+            "scope": 1257,
+            "src": "467:648:3",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1213,
+              "nodeType": "Block",
+              "src": "1188:133:3",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 1198,
+                          "name": "registerList",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1117,
+                          "src": "1206:12:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                            "typeString": "mapping(address => bool)"
+                          }
+                        },
+                        "id": 1200,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "id": 1199,
+                          "name": "_user",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1192,
+                          "src": "1219:5:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "1206:19:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "55736572206e6f742072656769737465726564",
+                        "id": 1201,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1227:21:3",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_263f68979ab8493dfb876baf1251b5bb5d13d94765abbd21388b0d254d48747c",
+                          "typeString": "literal_string \"User not registered\""
+                        },
+                        "value": "User not registered"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_263f68979ab8493dfb876baf1251b5bb5d13d94765abbd21388b0d254d48747c",
+                          "typeString": "literal_string \"User not registered\""
+                        }
+                      ],
+                      "id": 1197,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        -18,
+                        -18
+                      ],
+                      "referencedDeclaration": -18,
+                      "src": "1198:7:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 1202,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1198:51:3",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1203,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1198:51:3"
+                },
+                {
+                  "assignments": [
+                    1205
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 1205,
+                      "mutability": "mutable",
+                      "name": "u",
+                      "nodeType": "VariableDeclaration",
+                      "overrides": null,
+                      "scope": 1213,
+                      "src": "1259:13:3",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_user_$1109_memory_ptr",
+                        "typeString": "struct User.user"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 1204,
+                        "name": "user",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 1109,
+                        "src": "1259:4:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_user_$1109_storage_ptr",
+                          "typeString": "struct User.user"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 1209,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 1206,
+                      "name": "Users",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1113,
+                      "src": "1275:5:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_address_$_t_struct$_user_$1109_storage_$",
+                        "typeString": "mapping(address => struct User.user storage ref)"
+                      }
+                    },
+                    "id": 1208,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 1207,
+                      "name": "_user",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1192,
+                      "src": "1281:5:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "1275:12:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_user_$1109_storage",
+                      "typeString": "struct User.user storage ref"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1259:28:3"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "expression": {
+                      "argumentTypes": null,
+                      "id": 1210,
+                      "name": "u",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1205,
+                      "src": "1304:1:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_user_$1109_memory_ptr",
+                        "typeString": "struct User.user memory"
+                      }
+                    },
+                    "id": 1211,
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "usertype",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": 1108,
+                    "src": "1304:10:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_UserType_$1106",
+                      "typeString": "enum User.UserType"
+                    }
+                  },
+                  "functionReturnParameters": 1196,
+                  "id": 1212,
+                  "nodeType": "Return",
+                  "src": "1297:17:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "27820851",
+            "id": 1214,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getUserRole",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 1193,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1192,
+                  "mutability": "mutable",
+                  "name": "_user",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1214,
+                  "src": "1142:13:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1191,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1142:7:3",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1141:15:3"
+            },
+            "returnParameters": {
+              "id": 1196,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1195,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1214,
+                  "src": "1178:8:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_UserType_$1106",
+                    "typeString": "enum User.UserType"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 1194,
+                    "name": "UserType",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 1106,
+                    "src": "1178:8:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_UserType_$1106",
+                      "typeString": "enum User.UserType"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1177:10:3"
+            },
+            "scope": 1257,
+            "src": "1121:200:3",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1247,
+              "nodeType": "Block",
+              "src": "1440:204:3",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 1224,
+                          "name": "registerList",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1117,
+                          "src": "1458:12:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                            "typeString": "mapping(address => bool)"
+                          }
+                        },
+                        "id": 1226,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "id": 1225,
+                          "name": "_user",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1216,
+                          "src": "1471:5:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "1458:19:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "55736572206e6f742072656769737465726564",
+                        "id": 1227,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1479:21:3",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_263f68979ab8493dfb876baf1251b5bb5d13d94765abbd21388b0d254d48747c",
+                          "typeString": "literal_string \"User not registered\""
+                        },
+                        "value": "User not registered"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_263f68979ab8493dfb876baf1251b5bb5d13d94765abbd21388b0d254d48747c",
+                          "typeString": "literal_string \"User not registered\""
+                        }
+                      ],
+                      "id": 1223,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        -18,
+                        -18
+                      ],
+                      "referencedDeclaration": -18,
+                      "src": "1450:7:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 1228,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1450:51:3",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1229,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1450:51:3"
+                },
+                {
+                  "assignments": [
+                    1231
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 1231,
+                      "mutability": "mutable",
+                      "name": "u",
+                      "nodeType": "VariableDeclaration",
+                      "overrides": null,
+                      "scope": 1247,
+                      "src": "1511:13:3",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_user_$1109_memory_ptr",
+                        "typeString": "struct User.user"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 1230,
+                        "name": "user",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 1109,
+                        "src": "1511:4:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_user_$1109_storage_ptr",
+                          "typeString": "struct User.user"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 1235,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 1232,
+                      "name": "Users",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1113,
+                      "src": "1527:5:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_address_$_t_struct$_user_$1109_storage_$",
+                        "typeString": "mapping(address => struct User.user storage ref)"
+                      }
+                    },
+                    "id": 1234,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 1233,
+                      "name": "_user",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1216,
+                      "src": "1533:5:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "1527:12:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_user_$1109_storage",
+                      "typeString": "struct User.user storage ref"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1511:28:3"
+                },
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_enum$_UserType_$1106",
+                      "typeString": "enum User.UserType"
+                    },
+                    "id": 1240,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "components": [
+                        {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 1236,
+                            "name": "u",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 1231,
+                            "src": "1554:1:3",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_user_$1109_memory_ptr",
+                              "typeString": "struct User.user memory"
+                            }
+                          },
+                          "id": 1237,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "usertype",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 1108,
+                          "src": "1554:10:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_enum$_UserType_$1106",
+                            "typeString": "enum User.UserType"
+                          }
+                        }
+                      ],
+                      "id": 1238,
+                      "isConstant": false,
+                      "isInlineArray": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "TupleExpression",
+                      "src": "1553:12:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_UserType_$1106",
+                        "typeString": "enum User.UserType"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "==",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "id": 1239,
+                      "name": "_usertype",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1218,
+                      "src": "1569:9:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_UserType_$1106",
+                        "typeString": "enum User.UserType"
+                      }
+                    },
+                    "src": "1553:25:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": null,
+                  "id": 1244,
+                  "nodeType": "IfStatement",
+                  "src": "1549:67:3",
+                  "trueBody": {
+                    "id": 1243,
+                    "nodeType": "Block",
+                    "src": "1580:36:3",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "hexValue": "74727565",
+                          "id": 1241,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "bool",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "1601:4:3",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          },
+                          "value": "true"
+                        },
+                        "functionReturnParameters": 1222,
+                        "id": 1242,
+                        "nodeType": "Return",
+                        "src": "1594:11:3"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "hexValue": "66616c7365",
+                    "id": 1245,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "bool",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "1632:5:3",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    },
+                    "value": "false"
+                  },
+                  "functionReturnParameters": 1222,
+                  "id": 1246,
+                  "nodeType": "Return",
+                  "src": "1625:12:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "42584166",
+            "id": 1248,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "checkUserRole",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 1219,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1216,
+                  "mutability": "mutable",
+                  "name": "_user",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1248,
+                  "src": "1350:13:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1215,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1350:7:3",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1218,
+                  "mutability": "mutable",
+                  "name": "_usertype",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1248,
+                  "src": "1365:18:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_UserType_$1106",
+                    "typeString": "enum User.UserType"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 1217,
+                    "name": "UserType",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 1106,
+                    "src": "1365:8:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_UserType_$1106",
+                      "typeString": "enum User.UserType"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1349:35:3"
+            },
+            "returnParameters": {
+              "id": 1222,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1221,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1248,
+                  "src": "1430:4:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 1220,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1430:4:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1429:6:3"
+            },
+            "scope": 1257,
+            "src": "1327:317:3",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1255,
+              "nodeType": "Block",
+              "src": "1677:67:3",
+              "statements": [
+                {
+                  "assignments": [
+                    1252
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 1252,
+                      "mutability": "mutable",
+                      "name": "i",
+                      "nodeType": "VariableDeclaration",
+                      "overrides": null,
+                      "scope": 1255,
+                      "src": "1687:6:3",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 1251,
+                        "name": "uint",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "1687:4:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 1254,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "hexValue": "30",
+                    "id": 1253,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "number",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "1696:1:3",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_rational_0_by_1",
+                      "typeString": "int_const 0"
+                    },
+                    "value": "0"
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1687:10:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1256,
+            "implemented": true,
+            "kind": "receive",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 1249,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1657:2:3"
+            },
+            "returnParameters": {
+              "id": 1250,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1677:0:3"
+            },
+            "scope": 1257,
+            "src": "1650:94:3",
+            "stateMutability": "payable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 1258,
+        "src": "137:1609:3"
+      }
+    ],
+    "src": "33:1713:3"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/kuldeep/ETHEREUM/MachuPichu/hackathon/contracts/User.sol",
+    "exportedSymbols": {
+      "User": [
+        1257
+      ]
+    },
+    "id": 1258,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1099,
+        "literals": [
+          "solidity",
+          ">",
+          "0.6",
+          ".0",
+          "<=",
+          "0.7",
+          ".1"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:31:3"
+      },
+      {
+        "id": 1100,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "65:33:3"
+      },
+      {
+        "absolutePath": "/home/kuldeep/ETHEREUM/MachuPichu/hackathon/contracts/token/RUP.sol",
+        "file": "./token/RUP.sol",
+        "id": 1102,
+        "nodeType": "ImportDirective",
+        "scope": 1258,
+        "sourceUnit": 2232,
+        "src": "99:36:3",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "argumentTypes": null,
+              "id": 1101,
+              "name": "RUP",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": null,
+              "src": "107:3:3",
+              "typeDescriptions": {
+                "typeIdentifier": null,
+                "typeString": null
+              }
+            },
+            "local": null
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 1257,
+        "linearizedBaseContracts": [
+          1257
+        ],
+        "name": "User",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "User.UserType",
+            "id": 1106,
+            "members": [
+              {
+                "id": 1103,
+                "name": "member",
+                "nodeType": "EnumValue",
+                "src": "172:6:3"
+              },
+              {
+                "id": 1104,
+                "name": "watcher",
+                "nodeType": "EnumValue",
+                "src": "180:7:3"
+              },
+              {
+                "id": 1105,
+                "name": "enabler",
+                "nodeType": "EnumValue",
+                "src": "189:7:3"
+              }
+            ],
+            "name": "UserType",
+            "nodeType": "EnumDefinition",
+            "src": "157:40:3"
+          },
+          {
+            "canonicalName": "User.user",
+            "id": 1109,
+            "members": [
+              {
+                "constant": false,
+                "id": 1108,
+                "mutability": "mutable",
+                "name": "usertype",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 1109,
+                "src": "225:17:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_UserType_$1106",
+                  "typeString": "enum User.UserType"
+                },
+                "typeName": {
+                  "contractScope": null,
+                  "id": 1107,
+                  "name": "UserType",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 1106,
+                  "src": "225:8:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_UserType_$1106",
+                    "typeString": "enum User.UserType"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "user",
+            "nodeType": "StructDefinition",
+            "scope": 1257,
+            "src": "203:46:3",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 1113,
+            "mutability": "mutable",
+            "name": "Users",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 1257,
+            "src": "255:30:3",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_user_$1109_storage_$",
+              "typeString": "mapping(address => struct User.user)"
+            },
+            "typeName": {
+              "id": 1112,
+              "keyType": {
+                "id": 1110,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "263:7:3",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "255:24:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_user_$1109_storage_$",
+                "typeString": "mapping(address => struct User.user)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 1111,
+                "name": "user",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 1109,
+                "src": "274:4:3",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_user_$1109_storage_ptr",
+                  "typeString": "struct User.user"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 1117,
+            "mutability": "mutable",
+            "name": "registerList",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 1257,
+            "src": "291:37:3",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+              "typeString": "mapping(address => bool)"
+            },
+            "typeName": {
+              "id": 1116,
+              "keyType": {
+                "id": 1114,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "299:7:3",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "291:24:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                "typeString": "mapping(address => bool)"
+              },
+              "valueType": {
+                "id": 1115,
+                "name": "bool",
+                "nodeType": "ElementaryTypeName",
+                "src": "310:4:3",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 1119,
+            "mutability": "mutable",
+            "name": "tokenContract",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 1257,
+            "src": "334:17:3",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_RUP_$2231",
+              "typeString": "contract RUP"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 1118,
+              "name": "RUP",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 2231,
+              "src": "334:3:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_RUP_$2231",
+                "typeString": "contract RUP"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 1130,
+              "nodeType": "Block",
+              "src": "409:52:3",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 1128,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 1124,
+                      "name": "tokenContract",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1119,
+                      "src": "419:13:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_RUP_$2231",
+                        "typeString": "contract RUP"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 1126,
+                          "name": "_tokenContract",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1121,
+                          "src": "439:14:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        ],
+                        "id": 1125,
+                        "name": "RUP",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2231,
+                        "src": "435:3:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_RUP_$2231_$",
+                          "typeString": "type(contract RUP)"
+                        }
+                      },
+                      "id": 1127,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "435:19:3",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_RUP_$2231",
+                        "typeString": "contract RUP"
+                      }
+                    },
+                    "src": "419:35:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_RUP_$2231",
+                      "typeString": "contract RUP"
+                    }
+                  },
+                  "id": 1129,
+                  "nodeType": "ExpressionStatement",
+                  "src": "419:35:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1131,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 1122,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1121,
+                  "mutability": "mutable",
+                  "name": "_tokenContract",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1131,
+                  "src": "370:22:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1120,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "370:7:3",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "369:24:3"
+            },
+            "returnParameters": {
+              "id": 1123,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "409:0:3"
+            },
+            "scope": 1257,
+            "src": "358:103:3",
+            "stateMutability": "payable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1189,
+              "nodeType": "Block",
+              "src": "512:603:3",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "id": 1142,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "baseExpression": {
+                            "argumentTypes": null,
+                            "id": 1137,
+                            "name": "registerList",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 1117,
+                            "src": "593:12:3",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                              "typeString": "mapping(address => bool)"
+                            }
+                          },
+                          "id": 1140,
+                          "indexExpression": {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 1138,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": -15,
+                              "src": "606:3:3",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 1139,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "606:10:3",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address_payable",
+                              "typeString": "address payable"
+                            }
+                          },
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "IndexAccess",
+                          "src": "593:24:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "hexValue": "66616c7365",
+                          "id": 1141,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "bool",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "621:5:3",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          },
+                          "value": "false"
+                        },
+                        "src": "593:33:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "596f75206861766520616c72656164792072656769737465726564",
+                        "id": 1143,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "640:29:3",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_1e9e542001ea21048e7b994e51704749ddeb8f38fd58408770ac2102a48c265f",
+                          "typeString": "literal_string \"You have already registered\""
+                        },
+                        "value": "You have already registered"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_1e9e542001ea21048e7b994e51704749ddeb8f38fd58408770ac2102a48c265f",
+                          "typeString": "literal_string \"You have already registered\""
+                        }
+                      ],
+                      "id": 1136,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        -18,
+                        -18
+                      ],
+                      "referencedDeclaration": -18,
+                      "src": "572:7:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 1144,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "572:107:3",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1145,
+                  "nodeType": "ExpressionStatement",
+                  "src": "572:107:3"
+                },
+                {
+                  "assignments": [
+                    1147
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 1147,
+                      "mutability": "mutable",
+                      "name": "u",
+                      "nodeType": "VariableDeclaration",
+                      "overrides": null,
+                      "scope": 1189,
+                      "src": "690:13:3",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_user_$1109_memory_ptr",
+                        "typeString": "struct User.user"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 1146,
+                        "name": "user",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 1109,
+                        "src": "690:4:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_user_$1109_storage_ptr",
+                          "typeString": "struct User.user"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 1151,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 1149,
+                        "name": "_usertype",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1133,
+                        "src": "722:9:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_enum$_UserType_$1106",
+                          "typeString": "enum User.UserType"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_enum$_UserType_$1106",
+                          "typeString": "enum User.UserType"
+                        }
+                      ],
+                      "id": 1148,
+                      "name": "user",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1109,
+                      "src": "706:4:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_struct$_user_$1109_storage_ptr_$",
+                        "typeString": "type(struct User.user storage pointer)"
+                      }
+                    },
+                    "id": 1150,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "structConstructorCall",
+                    "lValueRequested": false,
+                    "names": [
+                      "usertype"
+                    ],
+                    "nodeType": "FunctionCall",
+                    "src": "706:27:3",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_user_$1109_memory_ptr",
+                      "typeString": "struct User.user memory"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "690:43:3"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 1157,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 1152,
+                        "name": "registerList",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1117,
+                        "src": "744:12:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                          "typeString": "mapping(address => bool)"
+                        }
+                      },
+                      "id": 1155,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 1153,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": -15,
+                          "src": "757:3:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 1154,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "757:10:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "744:24:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "hexValue": "74727565",
+                      "id": 1156,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "bool",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "771:4:3",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      },
+                      "value": "true"
+                    },
+                    "src": "744:31:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 1158,
+                  "nodeType": "ExpressionStatement",
+                  "src": "744:31:3"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 1164,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 1159,
+                        "name": "Users",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1113,
+                        "src": "785:5:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_user_$1109_storage_$",
+                          "typeString": "mapping(address => struct User.user storage ref)"
+                        }
+                      },
+                      "id": 1162,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 1160,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": -15,
+                          "src": "791:3:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 1161,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "791:10:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "785:17:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_user_$1109_storage",
+                        "typeString": "struct User.user storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 1163,
+                      "name": "u",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1147,
+                      "src": "805:1:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_user_$1109_memory_ptr",
+                        "typeString": "struct User.user memory"
+                      }
+                    },
+                    "src": "785:21:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_user_$1109_storage",
+                      "typeString": "struct User.user storage ref"
+                    }
+                  },
+                  "id": 1165,
+                  "nodeType": "ExpressionStatement",
+                  "src": "785:21:3"
+                },
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_enum$_UserType_$1106",
+                      "typeString": "enum User.UserType"
+                    },
+                    "id": 1169,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "id": 1166,
+                      "name": "_usertype",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1133,
+                      "src": "920:9:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_UserType_$1106",
+                        "typeString": "enum User.UserType"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "==",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 1167,
+                        "name": "UserType",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1106,
+                        "src": "933:8:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_enum$_UserType_$1106_$",
+                          "typeString": "type(enum User.UserType)"
+                        }
+                      },
+                      "id": 1168,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "memberName": "watcher",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "933:16:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_UserType_$1106",
+                        "typeString": "enum User.UserType"
+                      }
+                    },
+                    "src": "920:29:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": null,
+                  "id": 1180,
+                  "nodeType": "IfStatement",
+                  "src": "916:98:3",
+                  "trueBody": {
+                    "id": 1179,
+                    "nodeType": "Block",
+                    "src": "951:63:3",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "expression": {
+                                "argumentTypes": null,
+                                "id": 1173,
+                                "name": "msg",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": -15,
+                                "src": "985:3:3",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_magic_message",
+                                  "typeString": "msg"
+                                }
+                              },
+                              "id": 1174,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberName": "sender",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": null,
+                              "src": "985:10:3",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address_payable",
+                                "typeString": "address payable"
+                              }
+                            },
+                            {
+                              "argumentTypes": null,
+                              "components": [
+                                {
+                                  "argumentTypes": null,
+                                  "hexValue": "313030",
+                                  "id": 1175,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "kind": "number",
+                                  "lValueRequested": false,
+                                  "nodeType": "Literal",
+                                  "src": "998:3:3",
+                                  "subdenomination": null,
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_rational_100_by_1",
+                                    "typeString": "int_const 100"
+                                  },
+                                  "value": "100"
+                                }
+                              ],
+                              "id": 1176,
+                              "isConstant": false,
+                              "isInlineArray": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "nodeType": "TupleExpression",
+                              "src": "997:5:3",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_rational_100_by_1",
+                                "typeString": "int_const 100"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_address_payable",
+                                "typeString": "address payable"
+                              },
+                              {
+                                "typeIdentifier": "t_rational_100_by_1",
+                                "typeString": "int_const 100"
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 1170,
+                              "name": "tokenContract",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 1119,
+                              "src": "965:13:3",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_contract$_RUP_$2231",
+                                "typeString": "contract RUP"
+                              }
+                            },
+                            "id": 1172,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "_mint",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 2079,
+                            "src": "965:19:3",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
+                              "typeString": "function (address,uint256) external"
+                            }
+                          },
+                          "id": 1177,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "965:38:3",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$__$",
+                            "typeString": "tuple()"
+                          }
+                        },
+                        "id": 1178,
+                        "nodeType": "ExpressionStatement",
+                        "src": "965:38:3"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "302e3035",
+                        "id": 1186,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1097:10:3",
+                        "subdenomination": "ether",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_50000000000000000_by_1",
+                          "typeString": "int_const 50000000000000000"
+                        },
+                        "value": "0.05"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_rational_50000000000000000_by_1",
+                          "typeString": "int_const 50000000000000000"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 1181,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": -15,
+                          "src": "1077:3:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 1184,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "1077:10:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      "id": 1185,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "transfer",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "1077:19:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_transfer_nonpayable$_t_uint256_$returns$__$",
+                        "typeString": "function (uint256)"
+                      }
+                    },
+                    "id": 1187,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1077:31:3",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1188,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1077:31:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "61d689fa",
+            "id": 1190,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "register",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 1134,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1133,
+                  "mutability": "mutable",
+                  "name": "_usertype",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1190,
+                  "src": "485:18:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_UserType_$1106",
+                    "typeString": "enum User.UserType"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 1132,
+                    "name": "UserType",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 1106,
+                    "src": "485:8:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_UserType_$1106",
+                      "typeString": "enum User.UserType"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "484:20:3"
+            },
+            "returnParameters": {
+              "id": 1135,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "512:0:3"
+            },
+            "scope": 1257,
+            "src": "467:648:3",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1213,
+              "nodeType": "Block",
+              "src": "1188:133:3",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 1198,
+                          "name": "registerList",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1117,
+                          "src": "1206:12:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                            "typeString": "mapping(address => bool)"
+                          }
+                        },
+                        "id": 1200,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "id": 1199,
+                          "name": "_user",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1192,
+                          "src": "1219:5:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "1206:19:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "55736572206e6f742072656769737465726564",
+                        "id": 1201,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1227:21:3",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_263f68979ab8493dfb876baf1251b5bb5d13d94765abbd21388b0d254d48747c",
+                          "typeString": "literal_string \"User not registered\""
+                        },
+                        "value": "User not registered"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_263f68979ab8493dfb876baf1251b5bb5d13d94765abbd21388b0d254d48747c",
+                          "typeString": "literal_string \"User not registered\""
+                        }
+                      ],
+                      "id": 1197,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        -18,
+                        -18
+                      ],
+                      "referencedDeclaration": -18,
+                      "src": "1198:7:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 1202,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1198:51:3",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1203,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1198:51:3"
+                },
+                {
+                  "assignments": [
+                    1205
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 1205,
+                      "mutability": "mutable",
+                      "name": "u",
+                      "nodeType": "VariableDeclaration",
+                      "overrides": null,
+                      "scope": 1213,
+                      "src": "1259:13:3",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_user_$1109_memory_ptr",
+                        "typeString": "struct User.user"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 1204,
+                        "name": "user",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 1109,
+                        "src": "1259:4:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_user_$1109_storage_ptr",
+                          "typeString": "struct User.user"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 1209,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 1206,
+                      "name": "Users",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1113,
+                      "src": "1275:5:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_address_$_t_struct$_user_$1109_storage_$",
+                        "typeString": "mapping(address => struct User.user storage ref)"
+                      }
+                    },
+                    "id": 1208,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 1207,
+                      "name": "_user",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1192,
+                      "src": "1281:5:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "1275:12:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_user_$1109_storage",
+                      "typeString": "struct User.user storage ref"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1259:28:3"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "expression": {
+                      "argumentTypes": null,
+                      "id": 1210,
+                      "name": "u",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1205,
+                      "src": "1304:1:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_user_$1109_memory_ptr",
+                        "typeString": "struct User.user memory"
+                      }
+                    },
+                    "id": 1211,
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "usertype",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": 1108,
+                    "src": "1304:10:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_UserType_$1106",
+                      "typeString": "enum User.UserType"
+                    }
+                  },
+                  "functionReturnParameters": 1196,
+                  "id": 1212,
+                  "nodeType": "Return",
+                  "src": "1297:17:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "27820851",
+            "id": 1214,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getUserRole",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 1193,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1192,
+                  "mutability": "mutable",
+                  "name": "_user",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1214,
+                  "src": "1142:13:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1191,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1142:7:3",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1141:15:3"
+            },
+            "returnParameters": {
+              "id": 1196,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1195,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1214,
+                  "src": "1178:8:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_UserType_$1106",
+                    "typeString": "enum User.UserType"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 1194,
+                    "name": "UserType",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 1106,
+                    "src": "1178:8:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_UserType_$1106",
+                      "typeString": "enum User.UserType"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1177:10:3"
+            },
+            "scope": 1257,
+            "src": "1121:200:3",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1247,
+              "nodeType": "Block",
+              "src": "1440:204:3",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 1224,
+                          "name": "registerList",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1117,
+                          "src": "1458:12:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                            "typeString": "mapping(address => bool)"
+                          }
+                        },
+                        "id": 1226,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "id": 1225,
+                          "name": "_user",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1216,
+                          "src": "1471:5:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "1458:19:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "55736572206e6f742072656769737465726564",
+                        "id": 1227,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1479:21:3",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_263f68979ab8493dfb876baf1251b5bb5d13d94765abbd21388b0d254d48747c",
+                          "typeString": "literal_string \"User not registered\""
+                        },
+                        "value": "User not registered"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_263f68979ab8493dfb876baf1251b5bb5d13d94765abbd21388b0d254d48747c",
+                          "typeString": "literal_string \"User not registered\""
+                        }
+                      ],
+                      "id": 1223,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        -18,
+                        -18
+                      ],
+                      "referencedDeclaration": -18,
+                      "src": "1450:7:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 1228,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1450:51:3",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1229,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1450:51:3"
+                },
+                {
+                  "assignments": [
+                    1231
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 1231,
+                      "mutability": "mutable",
+                      "name": "u",
+                      "nodeType": "VariableDeclaration",
+                      "overrides": null,
+                      "scope": 1247,
+                      "src": "1511:13:3",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_user_$1109_memory_ptr",
+                        "typeString": "struct User.user"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 1230,
+                        "name": "user",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 1109,
+                        "src": "1511:4:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_user_$1109_storage_ptr",
+                          "typeString": "struct User.user"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 1235,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 1232,
+                      "name": "Users",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1113,
+                      "src": "1527:5:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_address_$_t_struct$_user_$1109_storage_$",
+                        "typeString": "mapping(address => struct User.user storage ref)"
+                      }
+                    },
+                    "id": 1234,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 1233,
+                      "name": "_user",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1216,
+                      "src": "1533:5:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "1527:12:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_user_$1109_storage",
+                      "typeString": "struct User.user storage ref"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1511:28:3"
+                },
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_enum$_UserType_$1106",
+                      "typeString": "enum User.UserType"
+                    },
+                    "id": 1240,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "components": [
+                        {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 1236,
+                            "name": "u",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 1231,
+                            "src": "1554:1:3",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_user_$1109_memory_ptr",
+                              "typeString": "struct User.user memory"
+                            }
+                          },
+                          "id": 1237,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "usertype",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 1108,
+                          "src": "1554:10:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_enum$_UserType_$1106",
+                            "typeString": "enum User.UserType"
+                          }
+                        }
+                      ],
+                      "id": 1238,
+                      "isConstant": false,
+                      "isInlineArray": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "TupleExpression",
+                      "src": "1553:12:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_UserType_$1106",
+                        "typeString": "enum User.UserType"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "==",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "id": 1239,
+                      "name": "_usertype",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1218,
+                      "src": "1569:9:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_UserType_$1106",
+                        "typeString": "enum User.UserType"
+                      }
+                    },
+                    "src": "1553:25:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": null,
+                  "id": 1244,
+                  "nodeType": "IfStatement",
+                  "src": "1549:67:3",
+                  "trueBody": {
+                    "id": 1243,
+                    "nodeType": "Block",
+                    "src": "1580:36:3",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "hexValue": "74727565",
+                          "id": 1241,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "bool",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "1601:4:3",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          },
+                          "value": "true"
+                        },
+                        "functionReturnParameters": 1222,
+                        "id": 1242,
+                        "nodeType": "Return",
+                        "src": "1594:11:3"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "hexValue": "66616c7365",
+                    "id": 1245,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "bool",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "1632:5:3",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    },
+                    "value": "false"
+                  },
+                  "functionReturnParameters": 1222,
+                  "id": 1246,
+                  "nodeType": "Return",
+                  "src": "1625:12:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "42584166",
+            "id": 1248,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "checkUserRole",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 1219,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1216,
+                  "mutability": "mutable",
+                  "name": "_user",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1248,
+                  "src": "1350:13:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1215,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1350:7:3",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1218,
+                  "mutability": "mutable",
+                  "name": "_usertype",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1248,
+                  "src": "1365:18:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_UserType_$1106",
+                    "typeString": "enum User.UserType"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 1217,
+                    "name": "UserType",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 1106,
+                    "src": "1365:8:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_UserType_$1106",
+                      "typeString": "enum User.UserType"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1349:35:3"
+            },
+            "returnParameters": {
+              "id": 1222,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1221,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1248,
+                  "src": "1430:4:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 1220,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1430:4:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1429:6:3"
+            },
+            "scope": 1257,
+            "src": "1327:317:3",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1255,
+              "nodeType": "Block",
+              "src": "1677:67:3",
+              "statements": [
+                {
+                  "assignments": [
+                    1252
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 1252,
+                      "mutability": "mutable",
+                      "name": "i",
+                      "nodeType": "VariableDeclaration",
+                      "overrides": null,
+                      "scope": 1255,
+                      "src": "1687:6:3",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 1251,
+                        "name": "uint",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "1687:4:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 1254,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "hexValue": "30",
+                    "id": 1253,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "number",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "1696:1:3",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_rational_0_by_1",
+                      "typeString": "int_const 0"
+                    },
+                    "value": "0"
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1687:10:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1256,
+            "implemented": true,
+            "kind": "receive",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 1249,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1657:2:3"
+            },
+            "returnParameters": {
+              "id": 1250,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1677:0:3"
+            },
+            "scope": 1257,
+            "src": "1650:94:3",
+            "stateMutability": "payable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 1258,
+        "src": "137:1609:3"
+      }
+    ],
+    "src": "33:1713:3"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.7.0+commit.9e61f92b.Emscripten.clang"
+  },
+  "networks": {
+    "42": {
+      "events": {},
+      "links": {},
+      "address": "0x6A32D25Fc2F3e9C723554E403DbdFE60D8AB197d",
+      "transactionHash": "0xa8543ef50370a33bef59a9e164e5df17b9533e8246ddaa664a12d6b8eecec291"
+    },
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0xcFFafa8D159F665B9c4d4adDe93bc5Df0782713b",
+      "transactionHash": "0x1e8406aa0b32e5e67ff7d44471417b4ecda1f58b7b34a9a5d49a2e1819e89a2c"
+    }
+  },
+  "schemaVersion": "3.2.5",
+  "updatedAt": "2020-10-10T12:32:12.575Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
