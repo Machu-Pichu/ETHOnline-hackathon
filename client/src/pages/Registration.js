@@ -39,6 +39,7 @@ const Registration = () => {
     userContract,
     mainContract,
     userRole,
+    onUserRegistered,
   } = useContext(AppContext);  
 
   const history = useHistory();
@@ -81,8 +82,9 @@ const Registration = () => {
             });
         }
       })
-      .then(() => {
+      .then(async () => {
         // Go to home
+        await onUserRegistered();
         history.push('/');
       });
   }

@@ -96,6 +96,11 @@ const AppContextProvider = ({ children }) => {
           }
         });
     },
+
+    onUserRegistered: async () => {
+      const role = await getUserRole(userContract, userAddress);
+      setUserRole(role);
+    }
   };
 
   return (
