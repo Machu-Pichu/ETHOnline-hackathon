@@ -1,30 +1,61 @@
 import React, { useState, useEffect, useCallback, useContext } from 'react';
 import Web3 from 'web3';
-import RUP from "../contracts/RUP.json";
-import User from "../contracts/User.json";
-import MachuPicchu from "../contracts/MachuPicchu.json";
 import Portis from '@portis/web3';
-import metamask from '../assets/images/metamask.jpg';
-import portis from '../assets/images/portis.png';
-import machupicchu from '../assets/images/machupicchu.jpg';
+
+import {
+  makeStyles,
+  Box,
+} from '@material-ui/core';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
-import {
-  Alert,
-} from '@material-ui/lab';
-
-import {
-  Button,
-} from '@material-ui/core';
-
 import { AppContext } from '../AppContext';
-import Page from '../components/Page';
-import Paper from '../components/Paper';
+import metamask from '../assets/images/metamask.jpg';
+import portis from '../assets/images/portis.png';
+
+const useStyles = makeStyles((theme) => ({
+  header: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    fontSize: '30px',
+    marginTop: theme.spacing(2),
+    marginBottom: theme.spacing(2),
+  },
+  container: {
+    display: 'flex',
+    justifyContent: 'center',
+  },
+  walletIcon: {
+    width: '18rem',
+    height:'12rem',
+    padding: theme.spacing(1),
+  },
+  walletButton: (props) => ({
+    textAlign: 'center',
+    backgroundColor: props.backgroundColor,
+    margin: theme.spacing(1),
+    paddingBottom: theme.spacing(2),
+    cursor: 'pointer',
+    color: 'white',
+  })
+}));
+
+const WalletButton = ({ img, name, backgroundColor, onClick }) => {
+  const classes = useStyles({ backgroundColor });
+  return (
+    <Box onClick={onClick} className={classes.walletButton}>
+      <img className={classes.walletIcon} src={img} alt={`${name} icon`} />
+      <Box>{ name }</Box>
+    </Box>
+  )
+};
 
 const Login = () => {
+  const classes = useStyles();
+
   const { onUserConnected } = useContext(AppContext);
   const [ web3Provider, setWeb3Provider ] = useState(null);
-  const [loader, setLoader] = useState(false);
+  const [ loader, setLoader ] = useState(false);
   
   // On page init, test if `window.ethereum` exists and init web3 provider
   useEffect(() => {
@@ -40,8 +71,7 @@ const Login = () => {
       .then((accounts) => {
         if(accounts && accounts.length > 0) {
           // Select the first account
-          // onUserConnected(accounts[0], web3Provider);
-          setContracts(accounts);
+          onUserConnected(accounts[0], web3Provider);
         }
       })
       .catch((error) => {
@@ -49,7 +79,7 @@ const Login = () => {
         console.error(error);
       });
       setLoader(false);
-  });
+  }, [ onUserConnected, web3Provider ]);
 
   const handlePortisConnect = useCallback(() => {
       setLoader(true);
@@ -59,8 +89,7 @@ const Login = () => {
         console.log(accounts);
         if(accounts && accounts.length > 0) {
             // Select the first account
-          // onUserConnected(accounts[0], web3Provider);
-          setContracts(accounts);
+          onUserConnected(accounts[0], web3Provider);
         }
       })
       .catch((error) => {
@@ -68,84 +97,36 @@ const Login = () => {
         console.error(error);
       });
       setLoader(false);
-  });
-
-  const setContracts = async(accounts) => {
-
-    // Get the contract instance.
-      // const networkId = await web3.eth.net.getId();
-      const networkId = 42;
-			console.log("networkid " + networkId);
-			const RUPdeployedNetwork = RUP.networks[networkId];
-			const RUPinstance = await new web3Provider.eth.Contract(
-				RUP.abi,
-				RUPdeployedNetwork.address,
-				{
-					from: accounts[0],
-					// gasLimit: 3000000,
-				}
-      );
-
-      console.log(RUPinstance,"rup instance");
-
-      const UserdeployedNetwork = User.networks[networkId];
-			const Userinstance = await new web3Provider.eth.Contract(
-				User.abi,
-				UserdeployedNetwork.address,
-				{
-					from: accounts[0],
-					// gasLimit: 3000000,
-				}
-      );
-
-      const MachuPicchudeployedNetwork = MachuPicchu.networks[networkId];
-			const MachuPicchuinstance = await new web3Provider.eth.Contract(
-				MachuPicchu.abi,
-				MachuPicchudeployedNetwork.address,
-				{
-					from: accounts[0],
-					// gasLimit: 3000000,
-				}
-      );
-      onUserConnected(accounts[0], web3Provider, RUPinstance, Userinstance, MachuPicchuinstance);
-  }
+  }, [ onUserConnected, web3Provider ]);
 
   return (
-        <div style={{width:'100%', height:'100%'}}>
-          <div style={{ backgroundColor:'#2e66a7', display:'flex', alignItems:'center', justifyContent:'center', height:'10rem'}}>
-           <img src={machupicchu} style={{width:'5rem', height:'5rem'}} /> <span style={{color:'white', fontSize:'60px', marginLeft:'0.5rem'}}>Machu Picchu : Farmer's friend</span>
-          </div>
-          <div style={{display:'flex', alignItems:'center', justifyContent:'center', fontSize:'30px', marginTop:'1rem'}}>
-            Connect a wallet to start
-          </div>
-          {
-            loader ? 
-            <CircularProgress></CircularProgress> :
-            <div style={{display:'flex',justifyContent:'center', marginTop:'1rem', alignItems:'center'}}>
-            {
-              web3Provider ? (
-                <>
-                <div style={{width:'20rem', height:'18rem', background:'orange', cursor:'pointer'}} onClick={handleMetamaskConnect}>
-                    <img src={metamask} style={{width:'18rem', height:'12rem', padding:'1rem'}}></img>
-                    <span style={{padding:'1rem', fontSize:'20px', marginLeft:'35%'}}>Metamask</span>
-                 </div>
-                <div style={{width:'20rem', height:'18rem', background:'#2e66a7', marginLeft:'1rem', cursor:'pointer'}} onClick={handlePortisConnect}>
-                    <img src={portis} style={{width:'18rem', height:'12rem', padding:'1rem'}}></img>
-                    <span style={{padding:'1rem', fontSize:'20px', marginLeft:'37%'}}>Portis</span>
-                </div>
+    <Box>
+      <Box className={classes.header}>
+        Connect a wallet to start:
+      </Box>
+      <Box className={classes.container}>
+        { loader
+          ? <CircularProgress />
+          : (
+            <>
+              { web3Provider && (
+                <WalletButton
+                  name="MetaMask"
+                  img={metamask}
+                  backgroundColor="orange"
+                  onClick={handleMetamaskConnect} />
+              )}
+              <WalletButton
+                name="Portis"
+                img={portis}
+                backgroundColor="#2e66a7"
+                onClick={handlePortisConnect}
+              />
             </>
-              ) : (
-                <div style={{width:'20rem', height:'18rem', background:'#2e66a7', marginLeft:'1rem'}} onClick={handlePortisConnect}>
-                <img src={portis} style={{width:'18rem', height:'12rem', padding:'1rem'}}></img>
-                <span style={{padding:'1rem', fontSize:'20px', marginLeft:'37%'}}>Portis</span>
-                </div>
-              )
-            }
-
-          </div>
-          }
-        
-        </div>
+          )
+        }
+      </Box>
+    </Box>
   );
 };
 

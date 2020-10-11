@@ -1,6 +1,6 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core';
-import { AppContextProvider, AppContext } from './AppContext';
+import { AppContextProvider } from './AppContext';
 import Router from './Router';
 
 const GlobalCss = withStyles({

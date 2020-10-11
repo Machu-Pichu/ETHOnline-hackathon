@@ -3,15 +3,21 @@ import {
   BrowserRouter,
   Switch,
   Route,
+  Redirect,
 } from 'react-router-dom';
 
-import { AppContextProvider, AppContext } from './AppContext';
+import { AppContext } from './AppContext';
+import AppBar from './components/AppBar';
+
+import Registration from './pages/Registration';
 import Home from './pages/Home';
+import HomeMember from './pages/HomeMember';
 import Login from './pages/Login';
 
 /* Router for all unauthenticated users */
 const UnauthenticatedRouter = (
   <BrowserRouter>
+    <AppBar />
     <Switch>
       <Route path="/">
         <Login />
@@ -21,20 +27,30 @@ const UnauthenticatedRouter = (
 );
 
 /* Router for all authenticated users */
-const AuthenticatedRouter = (
-  <>
-    <BrowserRouter>
-      <Switch>
-        <Route path="/">
-          <Home />
-        </Route>
-      </Switch>
-    </BrowserRouter>
-  </>
-);
+const AuthenticatedRouter = (role) => {
+  return (
+    <>
+      <BrowserRouter>
+        <AppBar />
+        <Switch>
+          <Route exact path="/">
+            { role === 'member' ? <HomeMember /> : <Home /> }
+          </Route>
+          <Route path="/register">
+            <Registration />
+          </Route>
+        </Switch>
+        { role === null && (
+          <Redirect to="/register" />
+        )}
+      </BrowserRouter>
+    </>
+  )
+};
+
 const Router = () => {
-  const { authenticated } = useContext(AppContext);
+  const { authenticated, userRole } = useContext(AppContext);
   if (!authenticated) return UnauthenticatedRouter;
-  return AuthenticatedRouter;
+  return AuthenticatedRouter(userRole);
 };
 export default Router;
