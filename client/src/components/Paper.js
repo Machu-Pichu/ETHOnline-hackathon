@@ -9,6 +9,7 @@ import {
 const useStyles = makeStyles((theme) => ({
   paper: {
     padding: theme.spacing(2),
+    margin: theme.spacing(1),
   },
   pageTitle: {
     marginBottom: theme.spacing(1),

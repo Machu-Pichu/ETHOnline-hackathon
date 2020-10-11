@@ -17,6 +17,12 @@ import { AppContext } from "../AppContext";
 
 import Page from "../components/Page";
 import Paper from "../components/Paper";
+import RUPBalance from '../components/RUPBalance';
+
+const formatDate = (date) => {
+  if(date === null) return '';
+  return `${date.getUTCDate()}/${date.getUTCMonth() + 1}/${date.getUTCFullYear()} ${date.getUTCHours()}:${date.getUTCMinutes()} UTC`;
+}
 
 const ContributeDialog = ({ open, onClose, onContribute }) => {
   const [ amount, setAmount ] = useState(0);
@@ -73,10 +79,11 @@ const HomeMember = () => {
     groupId: '',
     merit: '',
     onboardingDate: null,
+    contribution: 0,
   });
-  const [ contribution, setContribution ] = useState(0);
   const [ potAmount, setPotAmount ] = useState(0);
   const [ dialogOpen, setDialogOpen ] = useState(false);
+  const [ pendingCompensations, setPendingCompensations ] = useState(0);
 
   const loadValues = useCallback(() => {
     mainContract.methods
@@ -84,15 +91,19 @@ const HomeMember = () => {
       .call()
       .then(({ name, village, onboardingDate, lat, lng, merit, contribution, groupId}) => {
         setMemberDetails({
-          name, village, lat, lng, merit, groupId,
+          name, village, lat, lng, merit, groupId, contribution,
           onboardingDate: new Date(parseInt(onboardingDate) * 1000)
         });
-        setContribution(parseInt(contribution));
       });
     mainContract.methods
       .pot()
       .call()
       .then(setPotAmount);
+    mainContract.methods
+      .getCurrentMonth()
+      .call()
+      .then((currentMonth) => mainContract.methods.compensationAmount(currentMonth, userAddress).call())
+      .then(setPendingCompensations);
   }, [ mainContract, userAddress ]);
 
   const contribute = (amount) => {
@@ -112,15 +123,19 @@ const HomeMember = () => {
 
   return (
     <Page>
+      <RUPBalance />
       <Paper title="Member">
         <Typography variant="subtitle1">
           Connected member: { memberDetails.name } ({ memberDetails.village })
         </Typography>
         <Typography variant="subtitle1">
-          Onboarding date: { (memberDetails.onboardingDate || '').toString() })
+          Onboarding date: { formatDate(memberDetails.onboardingDate) }
         </Typography>
         <Typography variant="subtitle1">
-          Member contribution / total contribution: { contribution } / { potAmount } RUP
+          Member contribution / total contribution: { memberDetails.contribution } / { potAmount } RUP
+        </Typography>
+        <Typography variant="subtitle1">
+          Member pending compensations for current month: { pendingCompensations } RUP
         </Typography>
         <Box mt={2}>
           <Button variant="contained" color="primary" onClick={() => setDialogOpen(true)}>

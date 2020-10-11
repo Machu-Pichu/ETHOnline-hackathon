@@ -12,6 +12,7 @@ import AppBar from './components/AppBar';
 import Registration from './pages/Registration';
 import Home from './pages/Home';
 import HomeMember from './pages/HomeMember';
+import HomeWatcher from './pages/HomeWatcher';
 import Login from './pages/Login';
 
 /* Router for all unauthenticated users */
@@ -34,7 +35,12 @@ const AuthenticatedRouter = (role) => {
         <AppBar />
         <Switch>
           <Route exact path="/">
-            { role === 'member' ? <HomeMember /> : <Home /> }
+            { role === 'member'
+              ? <HomeMember />
+              : role === 'watcher'
+                ? <HomeWatcher />
+                : <Home />
+            }
           </Route>
           <Route path="/register">
             <Registration />
