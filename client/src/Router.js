@@ -10,7 +10,7 @@ import { AppContext } from './AppContext';
 import AppBar from './components/AppBar';
 
 import Registration from './pages/Registration';
-import Home from './pages/Home';
+import HomeEnabler from './pages/HomeEnabler';
 import HomeMember from './pages/HomeMember';
 import HomeWatcher from './pages/HomeWatcher';
 import Login from './pages/Login';
@@ -35,28 +35,33 @@ const AuthenticatedRouter = (role) => {
         <AppBar />
         <Switch>
           <Route exact path="/">
-            { role === 'member'
-              ? <HomeMember />
-              : role === 'watcher'
-                ? <HomeWatcher />
-                : <Home />
-            }
-          </Route>
-          <Route path="/register">
-            <Registration />
+            { role === 'member' && <HomeMember />}
+            { role === 'watcher' && <HomeWatcher />}
+            { role === 'enabler' && <HomeEnabler />}
           </Route>
         </Switch>
-        { role === null && (
-          <Redirect to="/register" />
-        )}
       </BrowserRouter>
     </>
   )
 };
 
+const RegistrationRouter = (
+  <>
+    <BrowserRouter>
+      <AppBar />
+      <Switch>
+        <Route exact path="/">
+          <Registration />
+        </Route>
+      </Switch>
+    </BrowserRouter>
+  </>
+);
+
 const Router = () => {
   const { authenticated, userRole } = useContext(AppContext);
   if (!authenticated) return UnauthenticatedRouter;
+  if (!userRole) return RegistrationRouter;
   return AuthenticatedRouter(userRole);
 };
 export default Router;

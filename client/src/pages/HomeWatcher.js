@@ -10,7 +10,13 @@ import {
   DialogActions,
   Button,
   Box,
-  CircularProgress
+  CircularProgress,
+  Table,
+  TableContainer,
+  TableHead,
+  TableBody,
+  TableRow,
+  TableCell,
 } from "@material-ui/core";
 
 import { AppContext } from "../AppContext";
@@ -125,9 +131,10 @@ const HomeWatcher = () => {
     tokenContract,
   } = useContext(AppContext);
 
-  const [ currentStake, setCurrentStake ] = useState(0);
+  const [ currentStake, setCurrentStake ] = useState('0');
   const [ stakeDialogOpen, setStakeDialogOpen ] = useState(false);
   const [ assessDialogOpen, setAssessDialogOpen ] = useState(false);
+  const [ assessments, setAssessments ] = useState([]);
 
   const loadValues = useCallback(() => {
     mainContract.methods
@@ -135,9 +142,20 @@ const HomeWatcher = () => {
       .call()
       .then(
         (currentMonth) => {
-          mainContract.methods.getStakedAmountInAMonth(currentMonth).call({ from: userAddress }).then(setCurrentStake);
-          // TODO `watcherAssessments` is not public: cannot retrieve the current assessments for this watcher
-          // mainContract.methods.watcherAssessments(currentMonth, userAddress).call({ from: userAddress }).then(console.log);
+          mainContract.methods
+            .getStakedAmountInAMonth(currentMonth)
+            .call({ from: userAddress })
+            .then(setCurrentStake);
+          mainContract.methods
+            .getAssessmentsDoneByAWatcher(currentMonth)
+            .call({ from: userAddress })
+            .then((assessments) => {
+              Promise.all(
+                assessments.map(
+                  (assessmentId) => mainContract.methods.getAssessmentDetail(assessmentId).call()
+                )
+              ).then(setAssessments);
+            });
         }
       );
   }, [ mainContract, userAddress ]);
@@ -189,10 +207,34 @@ const HomeWatcher = () => {
           <Button variant="contained" color="primary" onClick={() => setStakeDialogOpen(true)}>
             Stake
           </Button>
-          <Button style={{ marginLeft: 10 }} variant="contained" color="primary" onClick={() => setAssessDialogOpen(true)} disabled={currentStake === 0}>
+          <Button style={{ marginLeft: 10 }} variant="contained" color="primary" onClick={() => setAssessDialogOpen(true)} disabled={currentStake === '0'}>
             Assess
           </Button>
         </Box>
+      </Paper>
+      <Paper title="Assessments">
+        <TableContainer>
+          <Table>
+            <TableHead>
+              <TableRow>
+                <TableCell>ID</TableCell>
+                <TableCell>Group ID</TableCell>
+                <TableCell>Value</TableCell>
+                <TableCell>Date</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              { assessments.map((assessment) => (
+                <TableRow key={assessment[0]}>
+                  <TableCell>{assessment[0]}</TableCell>
+                  <TableCell>{assessment[1]}</TableCell>
+                  <TableCell>{assessment[2]}</TableCell>
+                  <TableCell>{new Date(assessment[3] * 1000).toString()}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
       </Paper>
       <StakeDialog open={stakeDialogOpen} onClose={() => setStakeDialogOpen(false)} onStake={stake} />
       <AssessDialog open={assessDialogOpen} onClose={() => setAssessDialogOpen(false)} onAssess={assess} />
