@@ -60,7 +60,7 @@ contract User {
     }
 
     receive() external payable {
-        uint i = 0;
-            // React to receiving ether
+        uint256 i = 0;
+        // React to receiving ether
     }
 }
