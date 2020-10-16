@@ -1,9 +1,6 @@
 import React, { useContext, useState } from "react";
 
-import {
-  Link,
-  useHistory,
-} from 'react-router-dom';
+import { Link, useHistory } from "react-router-dom";
 
 import {
   Typography,
@@ -40,65 +37,79 @@ const Registration = () => {
     mainContract,
     userRole,
     onUserRegistered,
-  } = useContext(AppContext);  
+  } = useContext(AppContext);
 
   const history = useHistory();
 
-  const [ loading, setLoading ] = useState(false);
-  const [ role, setRole ] = useState('');
-  const [ memberName, setMemberName ] = useState('');
-  const [ memberVillage, setMemberVillage ] = useState('');
-  const [ memberLat, setMemberLat ] = useState('');
-  const [ memberLng, setMemberLng ] = useState('');
-  const [ memberMobile, setMemberMobile ] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [role, setRole] = useState("");
+  const [memberName, setMemberName] = useState("");
+  const [memberVillage, setMemberVillage] = useState("");
+  const [memberLat, setMemberLat] = useState("");
+  const [memberLng, setMemberLng] = useState("");
+  const [memberMobile, setMemberMobile] = useState("");
 
-  const formValid = role !== ''
-    && (
-      (role === 'member' &&  memberName !== '' && memberVillage !== '' && memberLat !== '' && memberLng !== '' && memberMobile !== '')
-      || (role === 'watcher')
-      || (role === 'enabler')
-    );
+  const formValid =
+    role !== "" &&
+    ((role === "member" &&
+      memberName !== "" &&
+      memberVillage !== "" &&
+      memberLat !== "" &&
+      memberLng !== "" &&
+      memberMobile !== "") ||
+      role === "watcher" ||
+      role === "enabler");
 
   const register = () => {
-    const userType = role === 'member' ? 0 : (role === 'watcher' ? 1 : 2);
+    const userType = role === "member" ? 0 : role === "watcher" ? 1 : 2;
     setLoading(true);
     userContract.methods
       .register(userType)
       .send({ from: userAddress })
       .then(({ transactionHash, status }) => {
-        console.log(`User registration status: ${status}, txHash: ${transactionHash}`);
-        if (role === 'watcher' || role === 'enabler') {
+        console.log(
+          `User registration status: ${status}, txHash: ${transactionHash}`
+        );
+        if (role === "watcher" || role === "enabler") {
           // Registration is done
           return;
         }
-        if (role === 'member') {
+        if (role === "member") {
           // Onboard member
           // TODO: form validation on integers
           return mainContract.methods
-            .onboardMember(memberName, memberVillage, parseInt(memberLat), parseInt(memberLng), parseInt(memberMobile))
+            .onboardMember(
+              memberName,
+              memberVillage,
+              parseInt(memberLat),
+              parseInt(memberLng),
+              memberMobile
+            )
             .send({ from: userAddress })
-            .then(({ transactionHash, status}) => {
-              console.log(`Member onboarding status: ${status}, txHash: ${transactionHash}`);
+            .then(({ transactionHash, status }) => {
+              console.log(
+                `Member onboarding status: ${status}, txHash: ${transactionHash}`
+              );
             });
         }
       })
       .then(async () => {
         // Go to home
         await onUserRegistered();
-        history.push('/');
+        history.push("/");
       });
-  }
+  };
 
   return (
     <Page>
       <Paper title="Registration">
-        { userRole !== null && (
+        {userRole !== null && (
           <Typography variant="subtitle1">
             You are already registered.
             <Link to="/">Go to home page</Link>
-          </Typography>  
+          </Typography>
         )}
-        { userRole === null && (
+        {userRole === null && (
           <>
             <Typography variant="subtitle1">
               You must register to access the services
@@ -115,7 +126,7 @@ const Registration = () => {
                   <MenuItem value="watcher">Watcher</MenuItem>
                 </Select>
               </FormControl>
-              { role === 'member' && (
+              {role === "member" && (
                 <Box>
                   <TextField
                     className={classes.formField}
@@ -156,7 +167,6 @@ const Registration = () => {
                     fullWidth
                     label="Mobile"
                     variant="outlined"
-                    type="number"
                     value={memberMobile}
                     onChange={(evt) => setMemberMobile(evt.target.value)}
                   />
@@ -164,7 +174,7 @@ const Registration = () => {
               )}
             </Box>
             <Box mt={2}>
-              { !loading && (
+              {!loading && (
                 <Button
                   variant="contained"
                   color="primary"
@@ -174,9 +184,7 @@ const Registration = () => {
                   Register
                 </Button>
               )}
-              { loading && (
-                <CircularProgress />
-              )}
+              {loading && <CircularProgress />}
             </Box>
           </>
         )}
