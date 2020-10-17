@@ -1,8 +1,11 @@
 import React, { useState } from "react";
-
+import Web3 from "web3";
 import RUP from "./contracts/RUP.json";
 import User from "./contracts/User.json";
 import MachuPicchu from "./contracts/MachuPicchu.json";
+// import MachuPicchu from "./contracts/MachuPicchu.json";
+
+import { RelayProvider, resolveConfigurationGSN } from "@opengsn/gsn";
 
 const loadContracts = (web3provider, networkId) => {
   const RUPDeployed = RUP.networks[networkId];
@@ -61,10 +64,23 @@ const AppContextProvider = ({ children }) => {
 
     onUserConnected: async (userAddress, provider) => {
       console.log(userAddress, "user address");
-      setWeb3Provider(provider);
+
+      const gsnConfig = await resolveConfigurationGSN(provider, {
+        paymasterAddress: "0x083082b7Eada37dbD8f263050570B31448E61c94",
+        // forwarderAddress: "0x0842Ad6B8cb64364761C7c170D0002CC56b1c498",
+        // verbose: true,
+      });
+      console.log("config=", gsnConfig);
+      const gsnProvider = new RelayProvider(provider, gsnConfig);
+
+      //     const signer = provider2.getSigner()
+
+      // return new Ctf(net.ctf, signer, gsnProvider)
+      setWeb3Provider(new Web3(gsnProvider));
 
       // Currently, kovan is hard-coded here
-      const [token, user, main] = await loadContracts(provider, 42);
+      const [token, user, main] = await loadContracts(new Web3(gsnProvider), 42);
+
       setTokenContract(token);
       setUserContract(user);
       setMainContract(main);
@@ -81,7 +97,7 @@ const AppContextProvider = ({ children }) => {
         
       });*/
 
-      provider.eth.getAccounts().then(async (accounts) => {
+      new Web3(gsnProvider).eth.getAccounts().then(async (accounts) => {
         console.log(accounts, "accounts");
         const selectedAccount =
           accounts !== null && accounts.length >= 1 ? accounts[0] : null;

@@ -57,7 +57,7 @@ const Login = () => {
   // On page init, test if `window.ethereum` exists and init web3 provider
   useEffect(() => {
     if (window.ethereum) {
-      setWeb3Provider(new Web3(window.ethereum));
+      setWeb3Provider(window.ethereum);
     }
   }, []);
 
@@ -87,7 +87,7 @@ const Login = () => {
         console.log(accounts);
         if (accounts && accounts.length > 0) {
           // Select the first account
-          onUserConnected(accounts[0], web3);
+          onUserConnected(accounts[0], portis.provider);
         }
       })
       .catch((error) => {

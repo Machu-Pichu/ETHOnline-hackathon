@@ -7,7 +7,12 @@ import {User} from "./User.sol";
 import {RUP} from "./token/RUP.sol";
 import {OTPGeneratorAndVerifier} from "./otp/OTPGeneratorAndVerifier.sol";
 
-contract MachuPicchu {
+import "@opengsn/gsn/contracts/BaseRelayRecipient.sol";
+import "@opengsn/gsn/contracts/interfaces/IKnowForwarderAddress.sol";
+
+contract MachuPicchu is BaseRelayRecipient, IKnowForwarderAddress {
+    string public override versionRecipient = "2.0.0";
+
     address payable public owner;
     uint256 public startTime;
 
@@ -37,6 +42,7 @@ contract MachuPicchu {
         tokenContract = RUP(_tokenContract);
         otpContract = OTPGeneratorAndVerifier(_otpContract);
         owner = msg.sender;
+        trustedForwarder = address(0x0842Ad6B8cb64364761C7c170D0002CC56b1c498);
     }
 
     /* Represent the information stored for each member */
@@ -113,23 +119,23 @@ contract MachuPicchu {
         uint256 _lat,
         uint256 _lng,
         string memory _mobileNo
-    ) public registeredMember(msg.sender) {
+    ) public registeredMember(_msgSender()) {
         // Verifies that the address has never been registered
         require(
-            members[msg.sender].onboardingDate == 0,
+            members[_msgSender()].onboardingDate == 0,
             "address already onboarded"
         );
         // Stores member data
-        members[msg.sender].name = _name;
-        members[msg.sender].village = _village;
-        members[msg.sender].lat = _lat;
-        members[msg.sender].lng = _lng;
-        members[msg.sender].onboardingDate = block.timestamp;
-        members[msg.sender].mobileNo = _mobileNo;
-        members[msg.sender].groupId = getGroupId(_lat, _lng);
-        membersAddresses.push(msg.sender);
+        members[_msgSender()].name = _name;
+        members[_msgSender()].village = _village;
+        members[_msgSender()].lat = _lat;
+        members[_msgSender()].lng = _lng;
+        members[_msgSender()].onboardingDate = block.timestamp;
+        members[_msgSender()].mobileNo = _mobileNo;
+        members[_msgSender()].groupId = getGroupId(_lat, _lng);
+        membersAddresses.push(_msgSender());
         // Emit event
-        emit NewMember(msg.sender);
+        emit NewMember(_msgSender());
     }
 
     /*
@@ -140,34 +146,34 @@ contract MachuPicchu {
   */
     function contribute(uint256 otp, uint256 amount)
         public
-        registeredMember(msg.sender)
+        registeredMember(_msgSender())
     {
         // OTP validation has to be done
         require(
-            otpContract.verifyOTP(otp, msg.sender),
+            otpContract.verifyOTP(otp, _msgSender()),
             "OTP is either expired or wrong"
         );
-        // transfer tokens to this contract after minting on behalf of msg.sender
+        // transfer tokens to this contract after minting on behalf of _msgSender()
         tokenContract._mint(address(this), (amount));
         // Increments member's balance and pot
         // TODO: should use SafeMath lib here
-        members[msg.sender].contribution += amount;
+        members[_msgSender()].contribution += amount;
         pot += amount;
 
-        emit NewContribution(msg.sender, amount);
+        emit NewContribution(_msgSender(), amount);
     }
 
     function preContributeVerification(uint256 amount)
         public
-        registeredMember(msg.sender)
+        registeredMember(_msgSender())
     {
         require(amount > 2, "Amount > 2 required");
         otpContract.generateOTP(
             block.timestamp,
             amount,
             "contributing",
-            msg.sender,
-            members[msg.sender].mobileNo
+            _msgSender(),
+            members[_msgSender()].mobileNo
         );
     }
 
@@ -195,7 +201,7 @@ contract MachuPicchu {
      **/
     function doAssessmentForAGroup(uint24 groupId, uint8 _all)
         public
-        registeredWatcher(msg.sender)
+        registeredWatcher(_msgSender())
     {
         // check for nextMonth
         uint8 nextMonth = getCurrentMonth();
@@ -204,7 +210,7 @@ contract MachuPicchu {
         }
         // require minimum amount staked
         require(
-            Stakes[msg.sender][currentMonth] > 20,
+            Stakes[_msgSender()][currentMonth] > 20,
             "You should stake first"
         );
         //
@@ -220,9 +226,9 @@ contract MachuPicchu {
         // add to groupAssessments list
         groupAssessments[currentMonth][groupId].push(assessmentId);
         // add to watcherAssessments list
-        watcherAssessments[currentMonth][msg.sender].push(assessmentId);
+        watcherAssessments[currentMonth][_msgSender()].push(assessmentId);
         // event
-        emit watcherAssessedGroup(msg.sender, groupId);
+        emit watcherAssessedGroup(_msgSender(), groupId);
         // increment assessmentId by 1
         assessmentId += 1;
     }
@@ -251,10 +257,10 @@ contract MachuPicchu {
     function getAssessmentsDoneByAWatcher(uint8 monthId)
         public
         view
-        registeredWatcher(msg.sender)
+        registeredWatcher(_msgSender())
         returns (uint256[] memory)
     {
-        return watcherAssessments[monthId][msg.sender];
+        return watcherAssessments[monthId][_msgSender()];
     }
 
     /**
@@ -275,16 +281,16 @@ contract MachuPicchu {
      * To stake/increment in stake for the currentMonth by a watcher
      *
      **/
-    function stake(uint256 amount) public registeredWatcher(msg.sender) {
+    function stake(uint256 amount) public registeredWatcher(_msgSender()) {
         require(amount > 20, "Your stake amount is not sufficient");
         // check for nextMonth
         uint8 nextMonth = getCurrentMonth();
         if (nextMonth > currentMonth) {
             currentMonth = nextMonth;
         }
-        tokenContract.transferFrom(msg.sender, address(this), amount);
-        Stakes[msg.sender][currentMonth] += amount;
-        emit watcherStakedForMonth(msg.sender, currentMonth, amount);
+        tokenContract.transferFrom(_msgSender(), address(this), amount);
+        Stakes[_msgSender()][currentMonth] += amount;
+        emit watcherStakedForMonth(_msgSender(), currentMonth, amount);
     }
 
     /**
@@ -295,10 +301,10 @@ contract MachuPicchu {
     function getTotalStakeAmounts()
         public
         view
-        registeredWatcher(msg.sender)
+        registeredWatcher(_msgSender())
         returns (uint256)
     {
-        mapping(uint8 => uint256) storage temp = Stakes[msg.sender];
+        mapping(uint8 => uint256) storage temp = Stakes[_msgSender()];
         uint256 totakStakedAmount = 0;
         for (uint8 i = 1; i <= 12; i++) {
             totakStakedAmount += temp[i];
@@ -315,10 +321,10 @@ contract MachuPicchu {
     function getStakedAmountInAMonth(uint8 monthId)
         public
         view
-        registeredWatcher(msg.sender)
+        registeredWatcher(_msgSender())
         returns (uint256)
     {
-        mapping(uint8 => uint256) storage temp = Stakes[msg.sender];
+        mapping(uint8 => uint256) storage temp = Stakes[_msgSender()];
         return temp[monthId];
     }
 
@@ -334,7 +340,7 @@ contract MachuPicchu {
     function monthlyLossCalculation() public {
         // aim to make it automatic on detect of month change
         // right now owner of the contract can only do it
-        require(msg.sender == owner, "You are not authorised");
+        require(_msgSender() == owner, "You are not authorised");
 
 
             mapping(uint24 => uint256[]) storage assessments
@@ -376,7 +382,7 @@ contract MachuPicchu {
     }
 
     //Calculate Compensation of partiucualr member & transfer to member account
-    function calcCompensation() public registeredEnabler(msg.sender) {
+    function calcCompensation() public registeredEnabler(_msgSender()) {
         //Below value will come from Watcher smart contract
         for (uint256 i = 0; i < membersAddresses.length; i++) {
             Member memory m = members[membersAddresses[i]];
@@ -402,31 +408,35 @@ contract MachuPicchu {
 
     function payoutCompensation(uint256 otp)
         public
-        registeredMember(msg.sender)
+        registeredMember(_msgSender())
     {
         // OTP validation has to be done
         require(
-            otpContract.verifyOTP(otp, msg.sender),
+            otpContract.verifyOTP(otp, _msgSender()),
             "OTP is either expired or wrong"
         );
         require(
-            compensationAmount[currentMonth][msg.sender] <= pot,
+            compensationAmount[currentMonth][_msgSender()] <= pot,
             "Not enough amount in pot"
         );
-        uint256 amount = compensationAmount[currentMonth][msg.sender];
-        compensationAmount[currentMonth][msg.sender] = 0;
+        uint256 amount = compensationAmount[currentMonth][_msgSender()];
+        compensationAmount[currentMonth][_msgSender()] = 0;
         pot -= amount;
         tokenContract._burn(address(this), amount);
-        emit CompensationTransfer(msg.sender, amount);
+        emit CompensationTransfer(_msgSender(), amount);
     }
 
-    function prePayoutVerification() public registeredMember(msg.sender) {
+    function prePayoutVerification() public registeredMember(_msgSender()) {
         otpContract.generateOTP(
             block.timestamp,
-            compensationAmount[currentMonth][msg.sender],
+            compensationAmount[currentMonth][_msgSender()],
             "compensation",
-            msg.sender,
-            members[msg.sender].mobileNo
+            _msgSender(),
+            members[_msgSender()].mobileNo
         );
+    }
+
+    function getTrustedForwarder() public override view returns (address) {
+        return trustedForwarder;
     }
 }
