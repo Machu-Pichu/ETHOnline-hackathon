@@ -3,6 +3,8 @@ import Web3 from "web3";
 import RUP from "./contracts/RUP.json";
 import User from "./contracts/User.json";
 import MachuPicchu from "./contracts/MachuPicchu.json";
+import MachuPicchuPaymentmaster from "./contracts/MachuPicchuPaymentmaster.json";
+
 // import MachuPicchu from "./contracts/MachuPicchu.json";
 
 import { RelayProvider, resolveConfigurationGSN } from "@opengsn/gsn";
@@ -64,11 +66,13 @@ const AppContextProvider = ({ children }) => {
 
     onUserConnected: async (userAddress, provider) => {
       console.log(userAddress, "user address");
-
+      const paymasterDeployed = MachuPicchuPaymentmaster.networks[42];
       const gsnConfig = await resolveConfigurationGSN(provider, {
-        paymasterAddress: "0x083082b7Eada37dbD8f263050570B31448E61c94",
-        // forwarderAddress: "0x0842Ad6B8cb64364761C7c170D0002CC56b1c498",
-        // verbose: true,
+        paymasterAddress: paymasterDeployed.address,
+        forwarderAddress: "0x0842Ad6B8cb64364761C7c170D0002CC56b1c498",
+        // relayHubAddress: "0xE9dcD2CccEcD77a92BA48933cb626e04214Edb92",
+        chainId: 42,
+        verbose: true,
       });
       console.log("config=", gsnConfig);
       const gsnProvider = new RelayProvider(provider, gsnConfig);
@@ -79,7 +83,10 @@ const AppContextProvider = ({ children }) => {
       setWeb3Provider(new Web3(gsnProvider));
 
       // Currently, kovan is hard-coded here
-      const [token, user, main] = await loadContracts(new Web3(gsnProvider), 42);
+      const [token, user, main] = await loadContracts(
+        new Web3(gsnProvider),
+        42
+      );
 
       setTokenContract(token);
       setUserContract(user);

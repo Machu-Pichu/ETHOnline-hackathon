@@ -23,11 +23,11 @@ import { AppContext } from "../AppContext";
 
 import Page from "../components/Page";
 import Paper from "../components/Paper";
-import RUPBalance from '../components/RUPBalance';
+import RUPBalance from "../components/RUPBalance";
 
 const StakeDialog = ({ open, onClose, onStake }) => {
-  const [ amount, setAmount ] = useState(0);
-  const [ loading, setLoading ] = useState(false);
+  const [amount, setAmount] = useState(0);
+  const [loading, setLoading] = useState(false);
   const confirm = () => {
     setLoading(true);
     return onStake(amount);
@@ -36,9 +36,7 @@ const StakeDialog = ({ open, onClose, onStake }) => {
     <Dialog open={open} onClose={onClose}>
       <DialogTitle>Stake</DialogTitle>
       <DialogContent>
-        <DialogContentText>
-          Amount of RUP to stake?
-        </DialogContentText>
+        <DialogContentText>Amount of RUP to stake?</DialogContentText>
         <TextField
           autoFocus
           margin="dense"
@@ -49,7 +47,7 @@ const StakeDialog = ({ open, onClose, onStake }) => {
         />
       </DialogContent>
       <DialogActions>
-        { !loading && (
+        {!loading && (
           <>
             <Button onClick={onClose} color="primary">
               Cancel
@@ -59,17 +57,17 @@ const StakeDialog = ({ open, onClose, onStake }) => {
             </Button>
           </>
         )}
-        { loading && <CircularProgress /> }
+        {loading && <CircularProgress />}
       </DialogActions>
     </Dialog>
   );
 };
 
 const AssessDialog = ({ open, onClose, onAssess }) => {
-  const [ valueGroup1, setValueGroup1 ] = useState('0');
-  const [ valueGroup2, setValueGroup2 ] = useState('0');
-  const [ valueGroup3, setValueGroup3 ] = useState('0');
-  const [ loading, setLoading ] = useState(false);
+  const [valueGroup1, setValueGroup1] = useState("0");
+  const [valueGroup2, setValueGroup2] = useState("0");
+  const [valueGroup3, setValueGroup3] = useState("0");
+  const [loading, setLoading] = useState(false);
   const confirm = () => {
     setLoading(true);
     return onAssess(valueGroup1, valueGroup2, valueGroup3);
@@ -108,7 +106,7 @@ const AssessDialog = ({ open, onClose, onAssess }) => {
         />
       </DialogContent>
       <DialogActions>
-        { !loading && (
+        {!loading && (
           <>
             <Button onClick={onClose} color="primary">
               Cancel
@@ -118,60 +116,58 @@ const AssessDialog = ({ open, onClose, onAssess }) => {
             </Button>
           </>
         )}
-        { loading && <CircularProgress /> }
+        {loading && <CircularProgress />}
       </DialogActions>
     </Dialog>
   );
 };
 
 const HomeWatcher = () => {
-  const {
-    userAddress,
-    mainContract,
-    tokenContract,
-  } = useContext(AppContext);
+  const { userAddress, mainContract, tokenContract } = useContext(AppContext);
 
-  const [ currentStake, setCurrentStake ] = useState('0');
-  const [ stakeDialogOpen, setStakeDialogOpen ] = useState(false);
-  const [ assessDialogOpen, setAssessDialogOpen ] = useState(false);
-  const [ assessments, setAssessments ] = useState([]);
+  const [currentStake, setCurrentStake] = useState("0");
+  const [stakeDialogOpen, setStakeDialogOpen] = useState(false);
+  const [assessDialogOpen, setAssessDialogOpen] = useState(false);
+  const [assessments, setAssessments] = useState([]);
 
   const loadValues = useCallback(() => {
     mainContract.methods
       .currentMonth()
       .call()
-      .then(
-        (currentMonth) => {
-          mainContract.methods
-            .getStakedAmountInAMonth(currentMonth)
-            .call({ from: userAddress })
-            .then(setCurrentStake);
-          mainContract.methods
-            .getAssessmentsDoneByAWatcher(currentMonth)
-            .call({ from: userAddress })
-            .then((assessments) => {
-              Promise.all(
-                assessments.map(
-                  (assessmentId) => mainContract.methods.getAssessmentDetail(assessmentId).call()
-                )
-              ).then(setAssessments);
-            });
-        }
-      );
-  }, [ mainContract, userAddress ]);
+      .then((currentMonth) => {
+        mainContract.methods
+          .getStakedAmountInAMonth(currentMonth)
+          .call({ from: userAddress })
+          .then(setCurrentStake);
+        mainContract.methods
+          .getAssessmentsDoneByAWatcher(currentMonth)
+          .call({ from: userAddress })
+          .then((assessments) => {
+            Promise.all(
+              assessments.map((assessmentId) =>
+                mainContract.methods.getAssessmentDetail(assessmentId).call()
+              )
+            ).then(setAssessments);
+          });
+      });
+  }, [mainContract, userAddress]);
 
   const stake = (amount) => {
     // TODO: use Token decimals!
     tokenContract.methods
       .approve(mainContract.options.address, amount)
-      .send(({ from: userAddress }))
+      .send({ from: userAddress, useGSN: false })
       .then(({ transactionHash, status }) => {
-        console.log(`Approve spender transaction status: ${status} hash: ${transactionHash}`);
+        console.log(
+          `Approve spender transaction status: ${status} hash: ${transactionHash}`
+        );
         mainContract.methods
           .stake(amount)
-          .send({ from: userAddress })
+          .send({ from: userAddress, useGSN: false })
           .then(({ transactionHash, status }) => {
-            console.log(`Stake transaction status: ${status} hash: ${transactionHash}`);
+            console.log(
+              `Stake transaction status: ${status} hash: ${transactionHash}`
+            );
             loadValues();
             setStakeDialogOpen(false);
           });
@@ -179,20 +175,32 @@ const HomeWatcher = () => {
   };
 
   const assess = async (group1, group2, group3) => {
-    const resGroup1 = await mainContract.methods.doAssessmentForAGroup(1, group1).send({ from: userAddress });
-    console.log(`Assessment transaction for group1 status: ${resGroup1.status} txhash: ${resGroup1.transactionHash}`);
-    const resGroup2 = await mainContract.methods.doAssessmentForAGroup(2, group2).send({ from: userAddress });
-    console.log(`Assessment transaction for group3 status: ${resGroup2.status} txhash: ${resGroup2.transactionHash}`);
-    const resGroup3 = await mainContract.methods.doAssessmentForAGroup(3, group3).send({ from: userAddress });
-    console.log(`Assessment transaction for group3 status: ${resGroup3.status} txhash: ${resGroup3.transactionHash}`);
+    const resGroup1 = await mainContract.methods
+      .doAssessmentForAGroup(1, group1)
+      .send({ from: userAddress, useGSN: false });
+    console.log(
+      `Assessment transaction for group1 status: ${resGroup1.status} txhash: ${resGroup1.transactionHash}`
+    );
+    const resGroup2 = await mainContract.methods
+      .doAssessmentForAGroup(2, group2)
+      .send({ from: userAddress, useGSN: false });
+    console.log(
+      `Assessment transaction for group3 status: ${resGroup2.status} txhash: ${resGroup2.transactionHash}`
+    );
+    const resGroup3 = await mainContract.methods
+      .doAssessmentForAGroup(3, group3)
+      .send({ from: userAddress, useGSN: false });
+    console.log(
+      `Assessment transaction for group3 status: ${resGroup3.status} txhash: ${resGroup3.transactionHash}`
+    );
     loadValues();
     setAssessDialogOpen(false);
   };
 
   useEffect(() => {
     loadValues();
-  }, [ loadValues ]);
-  
+  }, [loadValues]);
+
   return (
     <Page>
       <RUPBalance />
@@ -201,13 +209,23 @@ const HomeWatcher = () => {
           Connected user: {userAddress}
         </Typography>
         <Typography variant="subtitle1">
-          Stake for current month: { currentStake } RUP
+          Stake for current month: {currentStake} RUP
         </Typography>
         <Box mt={2}>
-          <Button variant="contained" color="primary" onClick={() => setStakeDialogOpen(true)}>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={() => setStakeDialogOpen(true)}
+          >
             Stake
           </Button>
-          <Button style={{ marginLeft: 10 }} variant="contained" color="primary" onClick={() => setAssessDialogOpen(true)} disabled={currentStake === '0'}>
+          <Button
+            style={{ marginLeft: 10 }}
+            variant="contained"
+            color="primary"
+            onClick={() => setAssessDialogOpen(true)}
+            disabled={currentStake === "0"}
+          >
             Assess
           </Button>
         </Box>
@@ -224,20 +242,30 @@ const HomeWatcher = () => {
               </TableRow>
             </TableHead>
             <TableBody>
-              { assessments.map((assessment) => (
+              {assessments.map((assessment) => (
                 <TableRow key={assessment[0]}>
                   <TableCell>{assessment[0]}</TableCell>
                   <TableCell>{assessment[1]}</TableCell>
                   <TableCell>{assessment[2]}</TableCell>
-                  <TableCell>{new Date(assessment[3] * 1000).toString()}</TableCell>
+                  <TableCell>
+                    {new Date(assessment[3] * 1000).toString()}
+                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>
           </Table>
         </TableContainer>
       </Paper>
-      <StakeDialog open={stakeDialogOpen} onClose={() => setStakeDialogOpen(false)} onStake={stake} />
-      <AssessDialog open={assessDialogOpen} onClose={() => setAssessDialogOpen(false)} onAssess={assess} />
+      <StakeDialog
+        open={stakeDialogOpen}
+        onClose={() => setStakeDialogOpen(false)}
+        onStake={stake}
+      />
+      <AssessDialog
+        open={assessDialogOpen}
+        onClose={() => setAssessDialogOpen(false)}
+        onAssess={assess}
+      />
     </Page>
   );
 };

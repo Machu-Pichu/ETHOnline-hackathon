@@ -80,7 +80,9 @@ const Login = () => {
 
   const handlePortisConnect = useCallback(() => {
     setLoader(true);
-    const portis = new Portis("0014ccd5-8940-49ab-85e8-178c470dca32", "kovan");
+    const portis = new Portis("0014ccd5-8940-49ab-85e8-178c470dca32", "kovan", {
+      gasRelay: true,
+    });
     const web3 = new Web3(portis.provider);
     web3.eth
       .getAccounts((error, accounts) => {

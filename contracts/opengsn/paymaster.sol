@@ -14,11 +14,6 @@ contract MachuPicchuPaymentmaster is BasePaymaster {
     // allow the owner to set ourTarget
     event TargetSet(address target);
 
-    // function setTarget(address target) external onlyOwner {
-    //     ourTarget = target;
-    //     emit TargetSet(target);
-    // }
-
     constructor(address _mainC, address payable _userC) public {
         mainContract = _mainC;
         userContract = User(_userC);
@@ -41,19 +36,19 @@ contract MachuPicchuPaymentmaster is BasePaymaster {
                 relayRequest.request.to == address(userContract),
             "Not allowed"
         );
-        if (relayRequest.request.to == address(userContract)) {
-            emit PreRelayed(now);
-            return (abi.encode(now), false);
+
+        if (relayRequest.request.to == mainContract) {
+            if (
+                userContract.checkUserRole(
+                    relayRequest.request.from,
+                    User.UserType(1)
+                )
+            ) {
+                revert("Watcher not allowed");
+            }
         }
 
-        if (
-            userContract.checkUserRole(
-                relayRequest.request.from,
-                User.UserType(2)
-            )
-        ) {
-            revert("Watcher not allowed");
-        }
+        return (abi.encode(now), false);
     }
 
     function postRelayedCall(
