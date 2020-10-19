@@ -95,12 +95,14 @@ const AppContextProvider = ({ children }) => {
       setUserContract(user);
       setMainContract(main);
 
-      // Handle metamask account changes
-      window.ethereum.on("accountsChanged", async ([selectedAccount]) => {
-        const role = await getUserRole(user, selectedAccount);
-        setUserAddress(selectedAccount);
-        setUserRole(role);
-      });
+      if (!portis) {
+        // Handle metamask account changes
+        window.ethereum.on("accountsChanged", async ([selectedAccount]) => {
+          const role = await getUserRole(user, selectedAccount);
+          setUserAddress(selectedAccount);
+          setUserRole(role);
+        });
+      }
 
       // TODO: handle metamask network changes
       /*window.ethereum.on('networkChanged', (evt) => {
