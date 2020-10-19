@@ -1,5 +1,7 @@
 import React, { useContext, useEffect, useState, useCallback } from "react";
 import Countdown from "react-countdown";
+import farmer from "../assets/images/farmer.png";
+
 import {
   Typography,
   Button,
@@ -18,6 +20,7 @@ import { AppContext } from "../AppContext";
 import Page from "../components/Page";
 import Paper from "../components/Paper";
 import RUPBalance from "../components/RUPBalance";
+import rupeetoken from "../assets/images/rupeetoken.jpg";
 
 const formatDate = (date) => {
   if (date === null) return "";
@@ -50,10 +53,18 @@ const ContributeDialog = ({ open, onClose, onContribute }) => {
       <DialogActions>
         {!loading && (
           <>
-            <Button onClick={onClose} color="primary">
+            <Button
+              onClick={onClose}
+              color="primary"
+              style={{ backgroundColor: "red", color: "white" }}
+            >
               Cancel
             </Button>
-            <Button onClick={confirm} color="primary">
+            <Button
+              onClick={confirm}
+              color="primary"
+              style={{ backgroundColor: "green", color: "white" }}
+            >
               Proceed & Send OTP
             </Button>
           </>
@@ -64,18 +75,22 @@ const ContributeDialog = ({ open, onClose, onContribute }) => {
   );
 };
 
-const VerifyOTPDialog = ({ open, onClose, verifyOTP, amount }) => {
+const VerifyOTPDialog = ({ open, onClose, verifyOTP, amount, mobileNo }) => {
   const [otp, setOtp] = useState(0);
   const [loading, setLoading] = useState(false);
+  const [otpStartTime, setOtpStartTime] = useState(Date.now());
   const confirm = () => {
     setLoading(true);
     return verifyOTP(otp, amount);
   };
   return (
     <Dialog open={open} onClose={onClose}>
-      <DialogTitle>
-        Verify OTP <Countdown date={Date.now() + 10000 * 18} />{" "}
+      <DialogTitle style={{ border: "1px dashed", margin: "5px" }}>
+        Verify OTP: <Countdown date={otpStartTime + 10000 * 18} />{" "}
       </DialogTitle>
+
+      <DialogTitle>Message sent to: {mobileNo}</DialogTitle>
+
       <DialogContent>
         <DialogContentText>Enter the OTP to verify & proceed</DialogContentText>
         <TextField
@@ -90,10 +105,18 @@ const VerifyOTPDialog = ({ open, onClose, verifyOTP, amount }) => {
       <DialogActions>
         {!loading && (
           <>
-            <Button onClick={onClose} color="primary">
+            <Button
+              onClick={onClose}
+              color="primary"
+              style={{ backgroundColor: "red", color: "white" }}
+            >
               Cancel
             </Button>
-            <Button onClick={confirm} color="primary">
+            <Button
+              onClick={confirm}
+              color="primary"
+              style={{ backgroundColor: "green", color: "white" }}
+            >
               Verify & Contribute
             </Button>
           </>
@@ -104,18 +127,21 @@ const VerifyOTPDialog = ({ open, onClose, verifyOTP, amount }) => {
   );
 };
 
-const PayoutOTPDialog = ({ open, onClose, verifyOTP }) => {
+const PayoutOTPDialog = ({ open, onClose, verifyOTP, mobileNo }) => {
   const [otp, setOtp] = useState(0);
   const [loading, setLoading] = useState(false);
+  const [otpStartTime, setOtpStartTime] = useState(Date.now());
   const confirm = () => {
     setLoading(true);
     return verifyOTP(otp);
   };
   return (
     <Dialog open={open} onClose={onClose}>
-      <DialogTitle>
-        Verify OTP <Countdown date={Date.now() + 10000 * 18} />{" "}
+      <DialogTitle style={{ border: "1px dashed", margin: "5px" }}>
+        Verify OTP: <Countdown date={otpStartTime + 10000 * 18} />{" "}
       </DialogTitle>
+
+      <DialogTitle>Message sent to: {mobileNo}</DialogTitle>
       <DialogContent>
         <DialogContentText>Enter the OTP to verify & proceed</DialogContentText>
         <TextField
@@ -130,10 +156,18 @@ const PayoutOTPDialog = ({ open, onClose, verifyOTP }) => {
       <DialogActions>
         {!loading && (
           <>
-            <Button onClick={onClose} color="primary">
+            <Button
+              onClick={onClose}
+              color="primary"
+              style={{ backgroundColor: "red", color: "white" }}
+            >
               Cancel
             </Button>
-            <Button onClick={confirm} color="primary">
+            <Button
+              onClick={confirm}
+              color="primary"
+              style={{ backgroundColor: "green", color: "white" }}
+            >
               Verify & Get Payout
             </Button>
           </>
@@ -145,7 +179,7 @@ const PayoutOTPDialog = ({ open, onClose, verifyOTP }) => {
 };
 
 const HomeMember = () => {
-  const { userAddress, mainContract } = useContext(AppContext);
+  const { userAddress, mainContract, isPortis } = useContext(AppContext);
 
   const [memberDetails, setMemberDetails] = useState({
     name: "",
@@ -178,6 +212,7 @@ const HomeMember = () => {
           lng,
           merit,
           contribution,
+          mobileNo,
           groupId,
         }) => {
           setMemberDetails({
@@ -188,6 +223,7 @@ const HomeMember = () => {
             merit,
             groupId,
             contribution,
+            mobileNo,
             onboardingDate: new Date(parseInt(onboardingDate) * 1000),
           });
         }
@@ -204,7 +240,7 @@ const HomeMember = () => {
       .then(setPendingCompensations);
   }, [mainContract, userAddress]);
 
-  const sendOTP = (amount) => {
+  const sendOTP = async (amount) => {
     setAmount(amount);
     mainContract.methods
       .preContributeVerification(amount)
@@ -224,7 +260,7 @@ const HomeMember = () => {
       .then(({ transactionHash, status }) => {
         console.log(`Verify OTP status ${status} txHash ${transactionHash}`);
         loadValues();
-        setPayoutOpen(false);
+        setOtpOpen(false);
       });
   };
 
@@ -260,43 +296,57 @@ const HomeMember = () => {
 
   return (
     <Page>
-      <RUPBalance />
-      <Paper title="Member">
-        <Typography variant="subtitle1">
-          Connected member: {memberDetails.name} ({memberDetails.village}) (
-          {memberDetails.groupId})
-        </Typography>
-        <Typography variant="subtitle1">
-          Onboarding date: {formatDate(memberDetails.onboardingDate)}
-        </Typography>
-        <Typography variant="subtitle1">
-          Member contribution / total contribution: {memberDetails.contribution}{" "}
-          / {potAmount} RUP
-        </Typography>
-        <Typography variant="subtitle1">
-          Member pending compensations for current month: {pendingCompensations}{" "}
-          RUP
-        </Typography>
-        <Box mt={2}>
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={() => setDialogOpen(true)}
-          >
-            Contribute
-          </Button>
-        </Box>
+      <div style={{}}>
+        <RUPBalance />
+        <Paper title="Member">
+          <img src={farmer} style={{ width: "4rem", height: "4rem" }}></img>
 
-        <Box mt={2}>
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={() => sendPayoutOTP()}
-          >
-            Payout
-          </Button>
-        </Box>
-      </Paper>
+          <Typography variant="subtitle1">
+            Connected member: {memberDetails.name} (
+            {"Village: " + memberDetails.village}) (
+            {"Group Id: " + memberDetails.groupId})
+          </Typography>
+          <Typography variant="subtitle1">
+            Onboarding date: {formatDate(memberDetails.onboardingDate)}
+          </Typography>
+          <Typography variant="subtitle1">
+            Member contribution / total contribution:{" "}
+            {memberDetails.contribution} / {potAmount} RUP
+          </Typography>
+          <Typography variant="subtitle1">
+            Member pending compensations for current month:{" "}
+            {pendingCompensations} RUP
+          </Typography>
+          <div style={{ display: "flex" }}>
+            <Box mt={2}>
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={() => setDialogOpen(true)}
+              >
+                Contribute
+              </Button>
+            </Box>
+
+            <Box mt={2} style={{ marginLeft: "10px" }}>
+              <Button
+                variant="contained"
+                color="primary"
+                style={{
+                  color: "white",
+                  backgroundColor:
+                    pendingCompensations === "0" ? "grey" : "green",
+                }}
+                onClick={() => sendPayoutOTP()}
+                disabled={pendingCompensations === "0"}
+              >
+                Compensation
+              </Button>
+            </Box>
+          </div>
+        </Paper>
+      </div>
+
       <ContributeDialog
         open={dialogOpen}
         onClose={() => setDialogOpen(false)}
@@ -308,12 +358,14 @@ const HomeMember = () => {
         onClose={() => setOtpOpen(false)}
         verifyOTP={verifyOTP}
         amount={amount}
+        mobileNo={memberDetails.mobileNo}
       />
 
       <PayoutOTPDialog
         open={payoutOpen}
         onClose={() => setPayoutOpen(false)}
         verifyOTP={verifyPayoutOTP}
+        mobileNo={memberDetails.mobileNo}
       />
     </Page>
   );

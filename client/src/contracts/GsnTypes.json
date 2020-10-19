@@ -13,15 +13,15 @@
     "absolutePath": "@opengsn/gsn/contracts/interfaces/GsnTypes.sol",
     "exportedSymbols": {
       "GsnTypes": [
-        6247
+        6443
       ]
     },
-    "id": 6248,
+    "id": 6444,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 6223,
+        "id": 6419,
         "literals": [
           "solidity",
           "^",
@@ -34,10 +34,10 @@
       {
         "absolutePath": "@opengsn/gsn/contracts/forwarder/IForwarder.sol",
         "file": "../forwarder/IForwarder.sol",
-        "id": 6224,
+        "id": 6420,
         "nodeType": "ImportDirective",
-        "scope": 6248,
-        "sourceUnit": 6222,
+        "scope": 6444,
+        "sourceUnit": 6418,
         "src": "56:37:26",
         "symbolAliases": [],
         "unitAlias": ""
@@ -49,25 +49,25 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 6247,
+        "id": 6443,
         "linearizedBaseContracts": [
-          6247
+          6443
         ],
         "name": "GsnTypes",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "canonicalName": "GsnTypes.RelayData",
-            "id": 6241,
+            "id": 6437,
             "members": [
               {
                 "constant": false,
-                "id": 6226,
+                "id": 6422,
                 "mutability": "mutable",
                 "name": "gasPrice",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 6241,
+                "scope": 6437,
                 "src": "147:16:26",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -76,7 +76,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 6225,
+                  "id": 6421,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "147:7:26",
@@ -90,12 +90,12 @@
               },
               {
                 "constant": false,
-                "id": 6228,
+                "id": 6424,
                 "mutability": "mutable",
                 "name": "pctRelayFee",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 6241,
+                "scope": 6437,
                 "src": "173:19:26",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -104,7 +104,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 6227,
+                  "id": 6423,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "173:7:26",
@@ -118,12 +118,12 @@
               },
               {
                 "constant": false,
-                "id": 6230,
+                "id": 6426,
                 "mutability": "mutable",
                 "name": "baseRelayFee",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 6241,
+                "scope": 6437,
                 "src": "202:20:26",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -132,7 +132,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 6229,
+                  "id": 6425,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "202:7:26",
@@ -146,12 +146,12 @@
               },
               {
                 "constant": false,
-                "id": 6232,
+                "id": 6428,
                 "mutability": "mutable",
                 "name": "relayWorker",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 6241,
+                "scope": 6437,
                 "src": "232:19:26",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -160,7 +160,7 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 6231,
+                  "id": 6427,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
                   "src": "232:7:26",
@@ -175,12 +175,12 @@
               },
               {
                 "constant": false,
-                "id": 6234,
+                "id": 6430,
                 "mutability": "mutable",
                 "name": "paymaster",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 6241,
+                "scope": 6437,
                 "src": "261:17:26",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -189,7 +189,7 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 6233,
+                  "id": 6429,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
                   "src": "261:7:26",
@@ -204,12 +204,12 @@
               },
               {
                 "constant": false,
-                "id": 6236,
+                "id": 6432,
                 "mutability": "mutable",
                 "name": "paymasterData",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 6241,
+                "scope": 6437,
                 "src": "288:19:26",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -218,7 +218,7 @@
                   "typeString": "bytes"
                 },
                 "typeName": {
-                  "id": 6235,
+                  "id": 6431,
                   "name": "bytes",
                   "nodeType": "ElementaryTypeName",
                   "src": "288:5:26",
@@ -232,12 +232,12 @@
               },
               {
                 "constant": false,
-                "id": 6238,
+                "id": 6434,
                 "mutability": "mutable",
                 "name": "clientId",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 6241,
+                "scope": 6437,
                 "src": "317:16:26",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -246,7 +246,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 6237,
+                  "id": 6433,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "317:7:26",
@@ -260,12 +260,12 @@
               },
               {
                 "constant": false,
-                "id": 6240,
+                "id": 6436,
                 "mutability": "mutable",
                 "name": "forwarder",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 6241,
+                "scope": 6437,
                 "src": "343:17:26",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -274,7 +274,7 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 6239,
+                  "id": 6435,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
                   "src": "343:7:26",
@@ -290,38 +290,38 @@
             ],
             "name": "RelayData",
             "nodeType": "StructDefinition",
-            "scope": 6247,
+            "scope": 6443,
             "src": "120:247:26",
             "visibility": "public"
           },
           {
             "canonicalName": "GsnTypes.RelayRequest",
-            "id": 6246,
+            "id": 6442,
             "members": [
               {
                 "constant": false,
-                "id": 6243,
+                "id": 6439,
                 "mutability": "mutable",
                 "name": "request",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 6246,
+                "scope": 6442,
                 "src": "494:33:26",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_ForwardRequest_$6165_storage_ptr",
+                  "typeIdentifier": "t_struct$_ForwardRequest_$6361_storage_ptr",
                   "typeString": "struct IForwarder.ForwardRequest"
                 },
                 "typeName": {
                   "contractScope": null,
-                  "id": 6242,
+                  "id": 6438,
                   "name": "IForwarder.ForwardRequest",
                   "nodeType": "UserDefinedTypeName",
-                  "referencedDeclaration": 6165,
+                  "referencedDeclaration": 6361,
                   "src": "494:25:26",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_ForwardRequest_$6165_storage_ptr",
+                    "typeIdentifier": "t_struct$_ForwardRequest_$6361_storage_ptr",
                     "typeString": "struct IForwarder.ForwardRequest"
                   }
                 },
@@ -330,28 +330,28 @@
               },
               {
                 "constant": false,
-                "id": 6245,
+                "id": 6441,
                 "mutability": "mutable",
                 "name": "relayData",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 6246,
+                "scope": 6442,
                 "src": "537:19:26",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_RelayData_$6241_storage_ptr",
+                  "typeIdentifier": "t_struct$_RelayData_$6437_storage_ptr",
                   "typeString": "struct GsnTypes.RelayData"
                 },
                 "typeName": {
                   "contractScope": null,
-                  "id": 6244,
+                  "id": 6440,
                   "name": "RelayData",
                   "nodeType": "UserDefinedTypeName",
-                  "referencedDeclaration": 6241,
+                  "referencedDeclaration": 6437,
                   "src": "537:9:26",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_RelayData_$6241_storage_ptr",
+                    "typeIdentifier": "t_struct$_RelayData_$6437_storage_ptr",
                     "typeString": "struct GsnTypes.RelayData"
                   }
                 },
@@ -361,12 +361,12 @@
             ],
             "name": "RelayRequest",
             "nodeType": "StructDefinition",
-            "scope": 6247,
+            "scope": 6443,
             "src": "464:99:26",
             "visibility": "public"
           }
         ],
-        "scope": 6248,
+        "scope": 6444,
         "src": "95:470:26"
       }
     ],
@@ -376,15 +376,15 @@
     "absolutePath": "@opengsn/gsn/contracts/interfaces/GsnTypes.sol",
     "exportedSymbols": {
       "GsnTypes": [
-        6247
+        6443
       ]
     },
-    "id": 6248,
+    "id": 6444,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 6223,
+        "id": 6419,
         "literals": [
           "solidity",
           "^",
@@ -397,10 +397,10 @@
       {
         "absolutePath": "@opengsn/gsn/contracts/forwarder/IForwarder.sol",
         "file": "../forwarder/IForwarder.sol",
-        "id": 6224,
+        "id": 6420,
         "nodeType": "ImportDirective",
-        "scope": 6248,
-        "sourceUnit": 6222,
+        "scope": 6444,
+        "sourceUnit": 6418,
         "src": "56:37:26",
         "symbolAliases": [],
         "unitAlias": ""
@@ -412,25 +412,25 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 6247,
+        "id": 6443,
         "linearizedBaseContracts": [
-          6247
+          6443
         ],
         "name": "GsnTypes",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "canonicalName": "GsnTypes.RelayData",
-            "id": 6241,
+            "id": 6437,
             "members": [
               {
                 "constant": false,
-                "id": 6226,
+                "id": 6422,
                 "mutability": "mutable",
                 "name": "gasPrice",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 6241,
+                "scope": 6437,
                 "src": "147:16:26",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -439,7 +439,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 6225,
+                  "id": 6421,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "147:7:26",
@@ -453,12 +453,12 @@
               },
               {
                 "constant": false,
-                "id": 6228,
+                "id": 6424,
                 "mutability": "mutable",
                 "name": "pctRelayFee",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 6241,
+                "scope": 6437,
                 "src": "173:19:26",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -467,7 +467,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 6227,
+                  "id": 6423,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "173:7:26",
@@ -481,12 +481,12 @@
               },
               {
                 "constant": false,
-                "id": 6230,
+                "id": 6426,
                 "mutability": "mutable",
                 "name": "baseRelayFee",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 6241,
+                "scope": 6437,
                 "src": "202:20:26",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -495,7 +495,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 6229,
+                  "id": 6425,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "202:7:26",
@@ -509,12 +509,12 @@
               },
               {
                 "constant": false,
-                "id": 6232,
+                "id": 6428,
                 "mutability": "mutable",
                 "name": "relayWorker",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 6241,
+                "scope": 6437,
                 "src": "232:19:26",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -523,7 +523,7 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 6231,
+                  "id": 6427,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
                   "src": "232:7:26",
@@ -538,12 +538,12 @@
               },
               {
                 "constant": false,
-                "id": 6234,
+                "id": 6430,
                 "mutability": "mutable",
                 "name": "paymaster",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 6241,
+                "scope": 6437,
                 "src": "261:17:26",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -552,7 +552,7 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 6233,
+                  "id": 6429,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
                   "src": "261:7:26",
@@ -567,12 +567,12 @@
               },
               {
                 "constant": false,
-                "id": 6236,
+                "id": 6432,
                 "mutability": "mutable",
                 "name": "paymasterData",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 6241,
+                "scope": 6437,
                 "src": "288:19:26",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -581,7 +581,7 @@
                   "typeString": "bytes"
                 },
                 "typeName": {
-                  "id": 6235,
+                  "id": 6431,
                   "name": "bytes",
                   "nodeType": "ElementaryTypeName",
                   "src": "288:5:26",
@@ -595,12 +595,12 @@
               },
               {
                 "constant": false,
-                "id": 6238,
+                "id": 6434,
                 "mutability": "mutable",
                 "name": "clientId",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 6241,
+                "scope": 6437,
                 "src": "317:16:26",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -609,7 +609,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 6237,
+                  "id": 6433,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "317:7:26",
@@ -623,12 +623,12 @@
               },
               {
                 "constant": false,
-                "id": 6240,
+                "id": 6436,
                 "mutability": "mutable",
                 "name": "forwarder",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 6241,
+                "scope": 6437,
                 "src": "343:17:26",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -637,7 +637,7 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 6239,
+                  "id": 6435,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
                   "src": "343:7:26",
@@ -653,38 +653,38 @@
             ],
             "name": "RelayData",
             "nodeType": "StructDefinition",
-            "scope": 6247,
+            "scope": 6443,
             "src": "120:247:26",
             "visibility": "public"
           },
           {
             "canonicalName": "GsnTypes.RelayRequest",
-            "id": 6246,
+            "id": 6442,
             "members": [
               {
                 "constant": false,
-                "id": 6243,
+                "id": 6439,
                 "mutability": "mutable",
                 "name": "request",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 6246,
+                "scope": 6442,
                 "src": "494:33:26",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_ForwardRequest_$6165_storage_ptr",
+                  "typeIdentifier": "t_struct$_ForwardRequest_$6361_storage_ptr",
                   "typeString": "struct IForwarder.ForwardRequest"
                 },
                 "typeName": {
                   "contractScope": null,
-                  "id": 6242,
+                  "id": 6438,
                   "name": "IForwarder.ForwardRequest",
                   "nodeType": "UserDefinedTypeName",
-                  "referencedDeclaration": 6165,
+                  "referencedDeclaration": 6361,
                   "src": "494:25:26",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_ForwardRequest_$6165_storage_ptr",
+                    "typeIdentifier": "t_struct$_ForwardRequest_$6361_storage_ptr",
                     "typeString": "struct IForwarder.ForwardRequest"
                   }
                 },
@@ -693,28 +693,28 @@
               },
               {
                 "constant": false,
-                "id": 6245,
+                "id": 6441,
                 "mutability": "mutable",
                 "name": "relayData",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 6246,
+                "scope": 6442,
                 "src": "537:19:26",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_RelayData_$6241_storage_ptr",
+                  "typeIdentifier": "t_struct$_RelayData_$6437_storage_ptr",
                   "typeString": "struct GsnTypes.RelayData"
                 },
                 "typeName": {
                   "contractScope": null,
-                  "id": 6244,
+                  "id": 6440,
                   "name": "RelayData",
                   "nodeType": "UserDefinedTypeName",
-                  "referencedDeclaration": 6241,
+                  "referencedDeclaration": 6437,
                   "src": "537:9:26",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_RelayData_$6241_storage_ptr",
+                    "typeIdentifier": "t_struct$_RelayData_$6437_storage_ptr",
                     "typeString": "struct GsnTypes.RelayData"
                   }
                 },
@@ -724,12 +724,12 @@
             ],
             "name": "RelayRequest",
             "nodeType": "StructDefinition",
-            "scope": 6247,
+            "scope": 6443,
             "src": "464:99:26",
             "visibility": "public"
           }
         ],
-        "scope": 6248,
+        "scope": 6444,
         "src": "95:470:26"
       }
     ],
@@ -741,7 +741,7 @@
   },
   "networks": {},
   "schemaVersion": "3.2.5",
-  "updatedAt": "2020-10-17T13:10:30.243Z",
+  "updatedAt": "2020-10-18T15:52:27.507Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

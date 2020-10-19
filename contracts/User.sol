@@ -17,6 +17,7 @@ contract User is BaseRelayRecipient, IKnowForwarderAddress {
 
     mapping(address => user) Users;
     mapping(address => bool) registerList;
+    address[] public watchersAddresses;
     RUP tokenContract;
 
     constructor(address _tokenContract) public {
@@ -39,6 +40,7 @@ contract User is BaseRelayRecipient, IKnowForwarderAddress {
         // initially mint 100 tokens for a watcher to staker - later he will either burrow or swap
         if (_usertype == UserType.watcher) {
             tokenContract._mint(_msgSender(), (100));
+            watchersAddresses.push(msg.sender);
         }
 
         // give some ether to user for demo purposes
@@ -71,5 +73,9 @@ contract User is BaseRelayRecipient, IKnowForwarderAddress {
 
     function getTrustedForwarder() public override view returns (address) {
         return trustedForwarder;
+    }
+
+    function getWatcherAddress(uint256 index) public returns (address) {
+        return watchersAddresses[index];
     }
 }

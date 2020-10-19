@@ -54,7 +54,7 @@ const AppContextProvider = ({ children }) => {
   const [tokenContract, setTokenContract] = useState(null);
   const [userContract, setUserContract] = useState(null);
   const [mainContract, setMainContract] = useState(null);
-
+  const [isPortis, setIsPortis] = useState(null);
   const context = {
     authenticated: userAddress !== null,
     userAddress,
@@ -63,8 +63,9 @@ const AppContextProvider = ({ children }) => {
     tokenContract,
     userContract,
     mainContract,
+    isPortis,
 
-    onUserConnected: async (userAddress, provider) => {
+    onUserConnected: async (userAddress, provider, portis) => {
       console.log(userAddress, "user address");
       const paymasterDeployed = MachuPicchuPaymentmaster.networks[42];
       const gsnConfig = await resolveConfigurationGSN(provider, {
@@ -73,6 +74,8 @@ const AppContextProvider = ({ children }) => {
         // relayHubAddress: "0xE9dcD2CccEcD77a92BA48933cb626e04214Edb92",
         chainId: 42,
         verbose: true,
+        methodSuffix: "_v3",
+        jsonStringifyRequest: true,
       });
       console.log("config=", gsnConfig);
       const gsnProvider = new RelayProvider(provider, gsnConfig);
@@ -115,6 +118,10 @@ const AppContextProvider = ({ children }) => {
           setUserRole(role);
         }
       });
+
+      if (portis) {
+        setIsPortis(portis);
+      }
     },
 
     onUserRegistered: async () => {

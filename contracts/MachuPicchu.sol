@@ -366,6 +366,64 @@ contract MachuPicchu is BaseRelayRecipient, IKnowForwarderAddress {
         group3Loss = group3LossTotal / assessments[3].length;
 
         // check watchers data and reward/punish them remaining
+
+        uint256 avgAllGroupLoss = group1Loss + group2Loss + group3Loss / 3;
+
+
+            mapping(address => uint256[]) storage wassessments
+         = watcherAssessments[currentMonth];
+
+        uint256 W1TotalAssessment;
+        uint256 W2TotalAssessment;
+        uint256 W1AvgAssessment;
+        uint256 W2AvgAssessment;
+        uint256 W1RefundValue;
+        uint256 W2RefundValue;
+        uint256 W1StakeAmount;
+        uint256 W2StakeAmount;
+        uint256 W1RefundAmount;
+        uint256 W2RefundAmount;
+
+        // address[] memory watchers = userContract.watchersAddresses;
+        address watcher1 = userContract.watchersAddresses(0);
+        address watcher2 = userContract.watchersAddresses(1);
+
+        for (uint256 i = 0; i < wassessments[watcher1].length; i++) {
+            W1TotalAssessment += Assessments[wassessments[watcher1][i]].all;
+        }
+
+        for (uint256 i = 0; i < wassessments[watcher2].length; i++) {
+            W2TotalAssessment += Assessments[wassessments[watcher2][i]].all;
+        }
+
+        //Take average assessment across all Groups
+        W1AvgAssessment = W1TotalAssessment / 3;
+        W2AvgAssessment = W2TotalAssessment / 3;
+
+        //Calculate Refund value for each Watcher
+        if (avgAllGroupLoss - W1AvgAssessment > 0) {
+            W1RefundValue = avgAllGroupLoss - W1AvgAssessment;
+        } else {
+            W1RefundValue = W1AvgAssessment - avgAllGroupLoss;
+        }
+
+        if (avgAllGroupLoss - W2AvgAssessment > 0) {
+            W2RefundValue = avgAllGroupLoss - W2AvgAssessment;
+        } else {
+            W2RefundValue = W2AvgAssessment - avgAllGroupLoss;
+        }
+
+        //Get initial Stake Amount for each Watcher
+        W1StakeAmount = Stakes[watcher1][currentMonth];
+        W2StakeAmount = Stakes[watcher2][currentMonth];
+
+        //Calculate Final Refund Amount for each Watcher
+        W1RefundAmount = W1StakeAmount + W1RefundValue;
+        W2RefundAmount = W2StakeAmount + W2RefundValue;
+
+        //Transfer the Refund amount to Each Watcher
+        tokenContract.transfer(watcher1, W1RefundAmount);
+        tokenContract.transfer(watcher2, W2RefundAmount);
     }
 
     //Calculate merit of member based on Avg monthly contribution

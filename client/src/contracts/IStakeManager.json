@@ -381,15 +381,15 @@
     "absolutePath": "@opengsn/gsn/contracts/interfaces/IStakeManager.sol",
     "exportedSymbols": {
       "IStakeManager": [
-        6745
+        6941
       ]
     },
-    "id": 6746,
+    "id": 6942,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 6601,
+        "id": 6797,
         "literals": [
           "solidity",
           "^",
@@ -400,7 +400,7 @@
         "src": "31:23:31"
       },
       {
-        "id": 6602,
+        "id": 6798,
         "literals": [
           "experimental",
           "ABIEncoderV2"
@@ -411,10 +411,10 @@
       {
         "absolutePath": "@openzeppelin/contracts/math/SafeMath.sol",
         "file": "@openzeppelin/contracts/math/SafeMath.sol",
-        "id": 6603,
+        "id": 6799,
         "nodeType": "ImportDirective",
-        "scope": 6746,
-        "sourceUnit": 7734,
+        "scope": 6942,
+        "sourceUnit": 7930,
         "src": "90:51:31",
         "symbolAliases": [],
         "unitAlias": ""
@@ -426,9 +426,9 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 6745,
+        "id": 6941,
         "linearizedBaseContracts": [
-          6745
+          6941
         ],
         "name": "IStakeManager",
         "nodeType": "ContractDefinition",
@@ -436,27 +436,27 @@
           {
             "anonymous": false,
             "documentation": {
-              "id": 6604,
+              "id": 6800,
               "nodeType": "StructuredDocumentation",
               "src": "174:69:31",
               "text": "Emitted when a stake or unstakeDelay are initialized or increased"
             },
-            "id": 6614,
+            "id": 6810,
             "name": "StakeAdded",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 6613,
+              "id": 6809,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6606,
+                  "id": 6802,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "relayManager",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6614,
+                  "scope": 6810,
                   "src": "274:28:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -465,7 +465,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6605,
+                    "id": 6801,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "274:7:31",
@@ -480,13 +480,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 6608,
+                  "id": 6804,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "owner",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6614,
+                  "scope": 6810,
                   "src": "312:21:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -495,7 +495,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6607,
+                    "id": 6803,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "312:7:31",
@@ -510,13 +510,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 6610,
+                  "id": 6806,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "stake",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6614,
+                  "scope": 6810,
                   "src": "343:13:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -525,7 +525,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 6609,
+                    "id": 6805,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "343:7:31",
@@ -539,13 +539,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 6612,
+                  "id": 6808,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "unstakeDelay",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6614,
+                  "scope": 6810,
                   "src": "366:20:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -554,7 +554,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 6611,
+                    "id": 6807,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "366:7:31",
@@ -574,27 +574,27 @@
           {
             "anonymous": false,
             "documentation": {
-              "id": 6615,
+              "id": 6811,
               "nodeType": "StructuredDocumentation",
               "src": "399:52:31",
               "text": "Emitted once a stake is scheduled for withdrawal"
             },
-            "id": 6623,
+            "id": 6819,
             "name": "StakeUnlocked",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 6622,
+              "id": 6818,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6617,
+                  "id": 6813,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "relayManager",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6623,
+                  "scope": 6819,
                   "src": "485:28:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -603,7 +603,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6616,
+                    "id": 6812,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "485:7:31",
@@ -618,13 +618,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 6619,
+                  "id": 6815,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "owner",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6623,
+                  "scope": 6819,
                   "src": "523:21:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -633,7 +633,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6618,
+                    "id": 6814,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "523:7:31",
@@ -648,13 +648,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 6621,
+                  "id": 6817,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "withdrawBlock",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6623,
+                  "scope": 6819,
                   "src": "554:21:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -663,7 +663,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 6620,
+                    "id": 6816,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "554:7:31",
@@ -683,27 +683,27 @@
           {
             "anonymous": false,
             "documentation": {
-              "id": 6624,
+              "id": 6820,
               "nodeType": "StructuredDocumentation",
               "src": "588:51:31",
               "text": "Emitted when owner withdraws relayManager funds"
             },
-            "id": 6632,
+            "id": 6828,
             "name": "StakeWithdrawn",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 6631,
+              "id": 6827,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6626,
+                  "id": 6822,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "relayManager",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6632,
+                  "scope": 6828,
                   "src": "674:28:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -712,7 +712,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6625,
+                    "id": 6821,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "674:7:31",
@@ -727,13 +727,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 6628,
+                  "id": 6824,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "owner",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6632,
+                  "scope": 6828,
                   "src": "712:21:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -742,7 +742,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6627,
+                    "id": 6823,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "712:7:31",
@@ -757,13 +757,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 6630,
+                  "id": 6826,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "amount",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6632,
+                  "scope": 6828,
                   "src": "743:14:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -772,7 +772,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 6629,
+                    "id": 6825,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "743:7:31",
@@ -792,27 +792,27 @@
           {
             "anonymous": false,
             "documentation": {
-              "id": 6633,
+              "id": 6829,
               "nodeType": "StructuredDocumentation",
               "src": "770:65:31",
               "text": "Emitted when an authorized Relay Hub penalizes a relayManager"
             },
-            "id": 6641,
+            "id": 6837,
             "name": "StakePenalized",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 6640,
+              "id": 6836,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6635,
+                  "id": 6831,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "relayManager",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6641,
+                  "scope": 6837,
                   "src": "870:28:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -821,7 +821,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6634,
+                    "id": 6830,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "870:7:31",
@@ -836,13 +836,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 6637,
+                  "id": 6833,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "beneficiary",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6641,
+                  "scope": 6837,
                   "src": "908:27:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -851,7 +851,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6636,
+                    "id": 6832,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "908:7:31",
@@ -866,13 +866,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 6639,
+                  "id": 6835,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "reward",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6641,
+                  "scope": 6837,
                   "src": "945:14:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -881,7 +881,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 6638,
+                    "id": 6834,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "945:7:31",
@@ -901,22 +901,22 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 6647,
+            "id": 6843,
             "name": "HubAuthorized",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 6646,
+              "id": 6842,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6643,
+                  "id": 6839,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "relayManager",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6647,
+                  "scope": 6843,
                   "src": "1001:28:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -925,7 +925,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6642,
+                    "id": 6838,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1001:7:31",
@@ -940,13 +940,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 6645,
+                  "id": 6841,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "relayHub",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6647,
+                  "scope": 6843,
                   "src": "1039:24:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -955,7 +955,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6644,
+                    "id": 6840,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1039:7:31",
@@ -976,22 +976,22 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 6655,
+            "id": 6851,
             "name": "HubUnauthorized",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 6654,
+              "id": 6850,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6649,
+                  "id": 6845,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "relayManager",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6655,
+                  "scope": 6851,
                   "src": "1107:28:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1000,7 +1000,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6648,
+                    "id": 6844,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1107:7:31",
@@ -1015,13 +1015,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 6651,
+                  "id": 6847,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "relayHub",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6655,
+                  "scope": 6851,
                   "src": "1145:24:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1030,7 +1030,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6650,
+                    "id": 6846,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1145:7:31",
@@ -1045,13 +1045,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 6653,
+                  "id": 6849,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "removalBlock",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6655,
+                  "scope": 6851,
                   "src": "1179:20:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1060,7 +1060,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 6652,
+                    "id": 6848,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "1179:7:31",
@@ -1079,16 +1079,16 @@
           },
           {
             "canonicalName": "IStakeManager.StakeInfo",
-            "id": 6664,
+            "id": 6860,
             "members": [
               {
                 "constant": false,
-                "id": 6657,
+                "id": 6853,
                 "mutability": "mutable",
                 "name": "stake",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 6664,
+                "scope": 6860,
                 "src": "1627:13:31",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -1097,7 +1097,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 6656,
+                  "id": 6852,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "1627:7:31",
@@ -1111,12 +1111,12 @@
               },
               {
                 "constant": false,
-                "id": 6659,
+                "id": 6855,
                 "mutability": "mutable",
                 "name": "unstakeDelay",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 6664,
+                "scope": 6860,
                 "src": "1650:20:31",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -1125,7 +1125,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 6658,
+                  "id": 6854,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "1650:7:31",
@@ -1139,12 +1139,12 @@
               },
               {
                 "constant": false,
-                "id": 6661,
+                "id": 6857,
                 "mutability": "mutable",
                 "name": "withdrawBlock",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 6664,
+                "scope": 6860,
                 "src": "1680:21:31",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -1153,7 +1153,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 6660,
+                  "id": 6856,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "1680:7:31",
@@ -1167,12 +1167,12 @@
               },
               {
                 "constant": false,
-                "id": 6663,
+                "id": 6859,
                 "mutability": "mutable",
                 "name": "owner",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 6664,
+                "scope": 6860,
                 "src": "1711:21:31",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -1181,7 +1181,7 @@
                   "typeString": "address payable"
                 },
                 "typeName": {
-                  "id": 6662,
+                  "id": 6858,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
                   "src": "1711:15:31",
@@ -1197,22 +1197,22 @@
             ],
             "name": "StakeInfo",
             "nodeType": "StructDefinition",
-            "scope": 6745,
+            "scope": 6941,
             "src": "1600:139:31",
             "visibility": "public"
           },
           {
             "canonicalName": "IStakeManager.RelayHubInfo",
-            "id": 6667,
+            "id": 6863,
             "members": [
               {
                 "constant": false,
-                "id": 6666,
+                "id": 6862,
                 "mutability": "mutable",
                 "name": "removalBlock",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 6667,
+                "scope": 6863,
                 "src": "1775:20:31",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -1221,7 +1221,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 6665,
+                  "id": 6861,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "1775:7:31",
@@ -1236,20 +1236,20 @@
             ],
             "name": "RelayHubInfo",
             "nodeType": "StructDefinition",
-            "scope": 6745,
+            "scope": 6941,
             "src": "1745:57:31",
             "visibility": "public"
           },
           {
             "body": null,
             "documentation": {
-              "id": 6668,
+              "id": 6864,
               "nodeType": "StructuredDocumentation",
               "src": "1808:475:31",
               "text": "Put a stake for a relayManager and set its unstake delay.\n If the entry does not exist, it is created, and the caller of this function becomes its owner.\n If the entry already exists, only the owner can call this function.\n @param relayManager - address that represents a stake entry and controls relay registrations on relay hubs\n @param unstakeDelay - number of blocks to elapse before the owner can retrieve the stake after calling 'unlock'"
             },
             "functionSelector": "5d2fb768",
-            "id": 6675,
+            "id": 6871,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -1257,17 +1257,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6673,
+              "id": 6869,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6670,
+                  "id": 6866,
                   "mutability": "mutable",
                   "name": "relayManager",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6675,
+                  "scope": 6871,
                   "src": "2313:20:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1276,7 +1276,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6669,
+                    "id": 6865,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "2313:7:31",
@@ -1291,12 +1291,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 6672,
+                  "id": 6868,
                   "mutability": "mutable",
                   "name": "unstakeDelay",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6675,
+                  "scope": 6871,
                   "src": "2335:20:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1305,7 +1305,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 6671,
+                    "id": 6867,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "2335:7:31",
@@ -1321,12 +1321,12 @@
               "src": "2312:44:31"
             },
             "returnParameters": {
-              "id": 6674,
+              "id": 6870,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "2373:0:31"
             },
-            "scope": 6745,
+            "scope": 6941,
             "src": "2288:86:31",
             "stateMutability": "payable",
             "virtual": false,
@@ -1336,7 +1336,7 @@
             "body": null,
             "documentation": null,
             "functionSelector": "4a1ce599",
-            "id": 6680,
+            "id": 6876,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -1344,17 +1344,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6678,
+              "id": 6874,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6677,
+                  "id": 6873,
                   "mutability": "mutable",
                   "name": "relayManager",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6680,
+                  "scope": 6876,
                   "src": "2401:20:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1363,7 +1363,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6676,
+                    "id": 6872,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "2401:7:31",
@@ -1380,12 +1380,12 @@
               "src": "2400:22:31"
             },
             "returnParameters": {
-              "id": 6679,
+              "id": 6875,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "2431:0:31"
             },
-            "scope": 6745,
+            "scope": 6941,
             "src": "2380:52:31",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -1395,7 +1395,7 @@
             "body": null,
             "documentation": null,
             "functionSelector": "c23a5cea",
-            "id": 6685,
+            "id": 6881,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -1403,17 +1403,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6683,
+              "id": 6879,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6682,
+                  "id": 6878,
                   "mutability": "mutable",
                   "name": "relayManager",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6685,
+                  "scope": 6881,
                   "src": "2461:20:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1422,7 +1422,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6681,
+                    "id": 6877,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "2461:7:31",
@@ -1439,12 +1439,12 @@
               "src": "2460:22:31"
             },
             "returnParameters": {
-              "id": 6684,
+              "id": 6880,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "2491:0:31"
             },
-            "scope": 6745,
+            "scope": 6941,
             "src": "2438:54:31",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -1454,7 +1454,7 @@
             "body": null,
             "documentation": null,
             "functionSelector": "7835d296",
-            "id": 6692,
+            "id": 6888,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -1462,17 +1462,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6690,
+              "id": 6886,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6687,
+                  "id": 6883,
                   "mutability": "mutable",
                   "name": "relayManager",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6692,
+                  "scope": 6888,
                   "src": "2527:20:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1481,7 +1481,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6686,
+                    "id": 6882,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "2527:7:31",
@@ -1496,12 +1496,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 6689,
+                  "id": 6885,
                   "mutability": "mutable",
                   "name": "relayHub",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6692,
+                  "scope": 6888,
                   "src": "2549:16:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1510,7 +1510,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6688,
+                    "id": 6884,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "2549:7:31",
@@ -1527,12 +1527,12 @@
               "src": "2526:40:31"
             },
             "returnParameters": {
-              "id": 6691,
+              "id": 6887,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "2575:0:31"
             },
-            "scope": 6745,
+            "scope": 6941,
             "src": "2498:78:31",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -1542,7 +1542,7 @@
             "body": null,
             "documentation": null,
             "functionSelector": "d48a9d43",
-            "id": 6697,
+            "id": 6893,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -1550,17 +1550,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6695,
+              "id": 6891,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6694,
+                  "id": 6890,
                   "mutability": "mutable",
                   "name": "relayHub",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6697,
+                  "scope": 6893,
                   "src": "2613:16:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1569,7 +1569,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6693,
+                    "id": 6889,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "2613:7:31",
@@ -1586,12 +1586,12 @@
               "src": "2612:18:31"
             },
             "returnParameters": {
-              "id": 6696,
+              "id": 6892,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "2639:0:31"
             },
-            "scope": 6745,
+            "scope": 6941,
             "src": "2582:58:31",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -1601,7 +1601,7 @@
             "body": null,
             "documentation": null,
             "functionSelector": "f48f8ac7",
-            "id": 6704,
+            "id": 6900,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -1609,17 +1609,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6702,
+              "id": 6898,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6699,
+                  "id": 6895,
                   "mutability": "mutable",
                   "name": "relayManager",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6704,
+                  "scope": 6900,
                   "src": "2677:20:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1628,7 +1628,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6698,
+                    "id": 6894,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "2677:7:31",
@@ -1643,12 +1643,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 6701,
+                  "id": 6897,
                   "mutability": "mutable",
                   "name": "relayHub",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6704,
+                  "scope": 6900,
                   "src": "2699:16:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1657,7 +1657,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6700,
+                    "id": 6896,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "2699:7:31",
@@ -1674,12 +1674,12 @@
               "src": "2676:40:31"
             },
             "returnParameters": {
-              "id": 6703,
+              "id": 6899,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "2725:0:31"
             },
-            "scope": 6745,
+            "scope": 6941,
             "src": "2646:80:31",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -1689,7 +1689,7 @@
             "body": null,
             "documentation": null,
             "functionSelector": "f9bce311",
-            "id": 6709,
+            "id": 6905,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -1697,17 +1697,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6707,
+              "id": 6903,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6706,
+                  "id": 6902,
                   "mutability": "mutable",
                   "name": "relayHub",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6709,
+                  "scope": 6905,
                   "src": "2765:16:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1716,7 +1716,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6705,
+                    "id": 6901,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "2765:7:31",
@@ -1733,12 +1733,12 @@
               "src": "2764:18:31"
             },
             "returnParameters": {
-              "id": 6708,
+              "id": 6904,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "2791:0:31"
             },
-            "scope": 6745,
+            "scope": 6941,
             "src": "2732:60:31",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -1748,7 +1748,7 @@
             "body": null,
             "documentation": null,
             "functionSelector": "6de8dd41",
-            "id": 6722,
+            "id": 6918,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -1756,17 +1756,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6718,
+              "id": 6914,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6711,
+                  "id": 6907,
                   "mutability": "mutable",
                   "name": "relayManager",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6722,
+                  "scope": 6918,
                   "src": "2828:20:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1775,7 +1775,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6710,
+                    "id": 6906,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "2828:7:31",
@@ -1790,12 +1790,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 6713,
+                  "id": 6909,
                   "mutability": "mutable",
                   "name": "relayHub",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6722,
+                  "scope": 6918,
                   "src": "2850:16:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1804,7 +1804,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6712,
+                    "id": 6908,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "2850:7:31",
@@ -1819,12 +1819,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 6715,
+                  "id": 6911,
                   "mutability": "mutable",
                   "name": "minAmount",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6722,
+                  "scope": 6918,
                   "src": "2868:17:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1833,7 +1833,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 6714,
+                    "id": 6910,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "2868:7:31",
@@ -1847,12 +1847,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 6717,
+                  "id": 6913,
                   "mutability": "mutable",
                   "name": "minUnstakeDelay",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6722,
+                  "scope": 6918,
                   "src": "2887:23:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1861,7 +1861,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 6716,
+                    "id": 6912,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "2887:7:31",
@@ -1877,17 +1877,17 @@
               "src": "2827:84:31"
             },
             "returnParameters": {
-              "id": 6721,
+              "id": 6917,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6720,
+                  "id": 6916,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6722,
+                  "scope": 6918,
                   "src": "2947:4:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1896,7 +1896,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 6719,
+                    "id": 6915,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "2947:4:31",
@@ -1911,7 +1911,7 @@
               ],
               "src": "2946:6:31"
             },
-            "scope": 6745,
+            "scope": 6941,
             "src": "2798:155:31",
             "stateMutability": "view",
             "virtual": false,
@@ -1920,13 +1920,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 6723,
+              "id": 6919,
               "nodeType": "StructuredDocumentation",
               "src": "2959:296:31",
               "text": "Slash the stake of the relay relayManager. In order to prevent stake kidnapping, burns half of stake on the way.\n @param relayManager - entry to penalize\n @param beneficiary - address that receives half of the penalty amount\n @param amount - amount to withdraw from stake"
             },
             "functionSelector": "09a08af4",
-            "id": 6732,
+            "id": 6928,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -1934,17 +1934,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6730,
+              "id": 6926,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6725,
+                  "id": 6921,
                   "mutability": "mutable",
                   "name": "relayManager",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6732,
+                  "scope": 6928,
                   "src": "3290:20:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1953,7 +1953,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6724,
+                    "id": 6920,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "3290:7:31",
@@ -1968,12 +1968,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 6727,
+                  "id": 6923,
                   "mutability": "mutable",
                   "name": "beneficiary",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6732,
+                  "scope": 6928,
                   "src": "3312:27:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1982,7 +1982,7 @@
                     "typeString": "address payable"
                   },
                   "typeName": {
-                    "id": 6726,
+                    "id": 6922,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "3312:15:31",
@@ -1997,12 +1997,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 6729,
+                  "id": 6925,
                   "mutability": "mutable",
                   "name": "amount",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6732,
+                  "scope": 6928,
                   "src": "3341:14:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2011,7 +2011,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 6728,
+                    "id": 6924,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "3341:7:31",
@@ -2027,12 +2027,12 @@
               "src": "3289:67:31"
             },
             "returnParameters": {
-              "id": 6731,
+              "id": 6927,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "3365:0:31"
             },
-            "scope": 6745,
+            "scope": 6941,
             "src": "3260:106:31",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -2042,7 +2042,7 @@
             "body": null,
             "documentation": null,
             "functionSelector": "c3453153",
-            "id": 6739,
+            "id": 6935,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -2050,17 +2050,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6735,
+              "id": 6931,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6734,
+                  "id": 6930,
                   "mutability": "mutable",
                   "name": "relayManager",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6739,
+                  "scope": 6935,
                   "src": "3394:20:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2069,7 +2069,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6733,
+                    "id": 6929,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "3394:7:31",
@@ -2086,33 +2086,33 @@
               "src": "3393:22:31"
             },
             "returnParameters": {
-              "id": 6738,
+              "id": 6934,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6737,
+                  "id": 6933,
                   "mutability": "mutable",
                   "name": "stakeInfo",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6739,
+                  "scope": 6935,
                   "src": "3439:26:31",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_StakeInfo_$6664_memory_ptr",
+                    "typeIdentifier": "t_struct$_StakeInfo_$6860_memory_ptr",
                     "typeString": "struct IStakeManager.StakeInfo"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 6736,
+                    "id": 6932,
                     "name": "StakeInfo",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 6664,
+                    "referencedDeclaration": 6860,
                     "src": "3439:9:31",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_StakeInfo_$6664_storage_ptr",
+                      "typeIdentifier": "t_struct$_StakeInfo_$6860_storage_ptr",
                       "typeString": "struct IStakeManager.StakeInfo"
                     }
                   },
@@ -2122,7 +2122,7 @@
               ],
               "src": "3438:28:31"
             },
-            "scope": 6745,
+            "scope": 6941,
             "src": "3372:95:31",
             "stateMutability": "view",
             "virtual": false,
@@ -2132,7 +2132,7 @@
             "body": null,
             "documentation": null,
             "functionSelector": "47116c6e",
-            "id": 6744,
+            "id": 6940,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -2140,23 +2140,23 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6740,
+              "id": 6936,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "3491:2:31"
             },
             "returnParameters": {
-              "id": 6743,
+              "id": 6939,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6742,
+                  "id": 6938,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6744,
+                  "scope": 6940,
                   "src": "3517:13:31",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -2165,7 +2165,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 6741,
+                    "id": 6937,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "3517:6:31",
@@ -2180,14 +2180,14 @@
               ],
               "src": "3516:15:31"
             },
-            "scope": 6745,
+            "scope": 6941,
             "src": "3473:59:31",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 6746,
+        "scope": 6942,
         "src": "143:3391:31"
       }
     ],
@@ -2197,15 +2197,15 @@
     "absolutePath": "@opengsn/gsn/contracts/interfaces/IStakeManager.sol",
     "exportedSymbols": {
       "IStakeManager": [
-        6745
+        6941
       ]
     },
-    "id": 6746,
+    "id": 6942,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 6601,
+        "id": 6797,
         "literals": [
           "solidity",
           "^",
@@ -2216,7 +2216,7 @@
         "src": "31:23:31"
       },
       {
-        "id": 6602,
+        "id": 6798,
         "literals": [
           "experimental",
           "ABIEncoderV2"
@@ -2227,10 +2227,10 @@
       {
         "absolutePath": "@openzeppelin/contracts/math/SafeMath.sol",
         "file": "@openzeppelin/contracts/math/SafeMath.sol",
-        "id": 6603,
+        "id": 6799,
         "nodeType": "ImportDirective",
-        "scope": 6746,
-        "sourceUnit": 7734,
+        "scope": 6942,
+        "sourceUnit": 7930,
         "src": "90:51:31",
         "symbolAliases": [],
         "unitAlias": ""
@@ -2242,9 +2242,9 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 6745,
+        "id": 6941,
         "linearizedBaseContracts": [
-          6745
+          6941
         ],
         "name": "IStakeManager",
         "nodeType": "ContractDefinition",
@@ -2252,27 +2252,27 @@
           {
             "anonymous": false,
             "documentation": {
-              "id": 6604,
+              "id": 6800,
               "nodeType": "StructuredDocumentation",
               "src": "174:69:31",
               "text": "Emitted when a stake or unstakeDelay are initialized or increased"
             },
-            "id": 6614,
+            "id": 6810,
             "name": "StakeAdded",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 6613,
+              "id": 6809,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6606,
+                  "id": 6802,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "relayManager",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6614,
+                  "scope": 6810,
                   "src": "274:28:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2281,7 +2281,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6605,
+                    "id": 6801,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "274:7:31",
@@ -2296,13 +2296,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 6608,
+                  "id": 6804,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "owner",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6614,
+                  "scope": 6810,
                   "src": "312:21:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2311,7 +2311,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6607,
+                    "id": 6803,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "312:7:31",
@@ -2326,13 +2326,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 6610,
+                  "id": 6806,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "stake",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6614,
+                  "scope": 6810,
                   "src": "343:13:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2341,7 +2341,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 6609,
+                    "id": 6805,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "343:7:31",
@@ -2355,13 +2355,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 6612,
+                  "id": 6808,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "unstakeDelay",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6614,
+                  "scope": 6810,
                   "src": "366:20:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2370,7 +2370,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 6611,
+                    "id": 6807,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "366:7:31",
@@ -2390,27 +2390,27 @@
           {
             "anonymous": false,
             "documentation": {
-              "id": 6615,
+              "id": 6811,
               "nodeType": "StructuredDocumentation",
               "src": "399:52:31",
               "text": "Emitted once a stake is scheduled for withdrawal"
             },
-            "id": 6623,
+            "id": 6819,
             "name": "StakeUnlocked",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 6622,
+              "id": 6818,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6617,
+                  "id": 6813,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "relayManager",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6623,
+                  "scope": 6819,
                   "src": "485:28:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2419,7 +2419,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6616,
+                    "id": 6812,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "485:7:31",
@@ -2434,13 +2434,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 6619,
+                  "id": 6815,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "owner",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6623,
+                  "scope": 6819,
                   "src": "523:21:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2449,7 +2449,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6618,
+                    "id": 6814,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "523:7:31",
@@ -2464,13 +2464,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 6621,
+                  "id": 6817,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "withdrawBlock",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6623,
+                  "scope": 6819,
                   "src": "554:21:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2479,7 +2479,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 6620,
+                    "id": 6816,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "554:7:31",
@@ -2499,27 +2499,27 @@
           {
             "anonymous": false,
             "documentation": {
-              "id": 6624,
+              "id": 6820,
               "nodeType": "StructuredDocumentation",
               "src": "588:51:31",
               "text": "Emitted when owner withdraws relayManager funds"
             },
-            "id": 6632,
+            "id": 6828,
             "name": "StakeWithdrawn",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 6631,
+              "id": 6827,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6626,
+                  "id": 6822,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "relayManager",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6632,
+                  "scope": 6828,
                   "src": "674:28:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2528,7 +2528,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6625,
+                    "id": 6821,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "674:7:31",
@@ -2543,13 +2543,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 6628,
+                  "id": 6824,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "owner",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6632,
+                  "scope": 6828,
                   "src": "712:21:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2558,7 +2558,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6627,
+                    "id": 6823,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "712:7:31",
@@ -2573,13 +2573,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 6630,
+                  "id": 6826,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "amount",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6632,
+                  "scope": 6828,
                   "src": "743:14:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2588,7 +2588,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 6629,
+                    "id": 6825,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "743:7:31",
@@ -2608,27 +2608,27 @@
           {
             "anonymous": false,
             "documentation": {
-              "id": 6633,
+              "id": 6829,
               "nodeType": "StructuredDocumentation",
               "src": "770:65:31",
               "text": "Emitted when an authorized Relay Hub penalizes a relayManager"
             },
-            "id": 6641,
+            "id": 6837,
             "name": "StakePenalized",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 6640,
+              "id": 6836,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6635,
+                  "id": 6831,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "relayManager",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6641,
+                  "scope": 6837,
                   "src": "870:28:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2637,7 +2637,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6634,
+                    "id": 6830,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "870:7:31",
@@ -2652,13 +2652,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 6637,
+                  "id": 6833,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "beneficiary",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6641,
+                  "scope": 6837,
                   "src": "908:27:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2667,7 +2667,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6636,
+                    "id": 6832,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "908:7:31",
@@ -2682,13 +2682,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 6639,
+                  "id": 6835,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "reward",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6641,
+                  "scope": 6837,
                   "src": "945:14:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2697,7 +2697,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 6638,
+                    "id": 6834,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "945:7:31",
@@ -2717,22 +2717,22 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 6647,
+            "id": 6843,
             "name": "HubAuthorized",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 6646,
+              "id": 6842,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6643,
+                  "id": 6839,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "relayManager",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6647,
+                  "scope": 6843,
                   "src": "1001:28:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2741,7 +2741,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6642,
+                    "id": 6838,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1001:7:31",
@@ -2756,13 +2756,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 6645,
+                  "id": 6841,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "relayHub",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6647,
+                  "scope": 6843,
                   "src": "1039:24:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2771,7 +2771,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6644,
+                    "id": 6840,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1039:7:31",
@@ -2792,22 +2792,22 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 6655,
+            "id": 6851,
             "name": "HubUnauthorized",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 6654,
+              "id": 6850,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6649,
+                  "id": 6845,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "relayManager",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6655,
+                  "scope": 6851,
                   "src": "1107:28:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2816,7 +2816,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6648,
+                    "id": 6844,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1107:7:31",
@@ -2831,13 +2831,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 6651,
+                  "id": 6847,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "relayHub",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6655,
+                  "scope": 6851,
                   "src": "1145:24:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2846,7 +2846,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6650,
+                    "id": 6846,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1145:7:31",
@@ -2861,13 +2861,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 6653,
+                  "id": 6849,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "removalBlock",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6655,
+                  "scope": 6851,
                   "src": "1179:20:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2876,7 +2876,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 6652,
+                    "id": 6848,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "1179:7:31",
@@ -2895,16 +2895,16 @@
           },
           {
             "canonicalName": "IStakeManager.StakeInfo",
-            "id": 6664,
+            "id": 6860,
             "members": [
               {
                 "constant": false,
-                "id": 6657,
+                "id": 6853,
                 "mutability": "mutable",
                 "name": "stake",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 6664,
+                "scope": 6860,
                 "src": "1627:13:31",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -2913,7 +2913,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 6656,
+                  "id": 6852,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "1627:7:31",
@@ -2927,12 +2927,12 @@
               },
               {
                 "constant": false,
-                "id": 6659,
+                "id": 6855,
                 "mutability": "mutable",
                 "name": "unstakeDelay",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 6664,
+                "scope": 6860,
                 "src": "1650:20:31",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -2941,7 +2941,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 6658,
+                  "id": 6854,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "1650:7:31",
@@ -2955,12 +2955,12 @@
               },
               {
                 "constant": false,
-                "id": 6661,
+                "id": 6857,
                 "mutability": "mutable",
                 "name": "withdrawBlock",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 6664,
+                "scope": 6860,
                 "src": "1680:21:31",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -2969,7 +2969,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 6660,
+                  "id": 6856,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "1680:7:31",
@@ -2983,12 +2983,12 @@
               },
               {
                 "constant": false,
-                "id": 6663,
+                "id": 6859,
                 "mutability": "mutable",
                 "name": "owner",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 6664,
+                "scope": 6860,
                 "src": "1711:21:31",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -2997,7 +2997,7 @@
                   "typeString": "address payable"
                 },
                 "typeName": {
-                  "id": 6662,
+                  "id": 6858,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
                   "src": "1711:15:31",
@@ -3013,22 +3013,22 @@
             ],
             "name": "StakeInfo",
             "nodeType": "StructDefinition",
-            "scope": 6745,
+            "scope": 6941,
             "src": "1600:139:31",
             "visibility": "public"
           },
           {
             "canonicalName": "IStakeManager.RelayHubInfo",
-            "id": 6667,
+            "id": 6863,
             "members": [
               {
                 "constant": false,
-                "id": 6666,
+                "id": 6862,
                 "mutability": "mutable",
                 "name": "removalBlock",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 6667,
+                "scope": 6863,
                 "src": "1775:20:31",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -3037,7 +3037,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 6665,
+                  "id": 6861,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "1775:7:31",
@@ -3052,20 +3052,20 @@
             ],
             "name": "RelayHubInfo",
             "nodeType": "StructDefinition",
-            "scope": 6745,
+            "scope": 6941,
             "src": "1745:57:31",
             "visibility": "public"
           },
           {
             "body": null,
             "documentation": {
-              "id": 6668,
+              "id": 6864,
               "nodeType": "StructuredDocumentation",
               "src": "1808:475:31",
               "text": "Put a stake for a relayManager and set its unstake delay.\n If the entry does not exist, it is created, and the caller of this function becomes its owner.\n If the entry already exists, only the owner can call this function.\n @param relayManager - address that represents a stake entry and controls relay registrations on relay hubs\n @param unstakeDelay - number of blocks to elapse before the owner can retrieve the stake after calling 'unlock'"
             },
             "functionSelector": "5d2fb768",
-            "id": 6675,
+            "id": 6871,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -3073,17 +3073,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6673,
+              "id": 6869,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6670,
+                  "id": 6866,
                   "mutability": "mutable",
                   "name": "relayManager",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6675,
+                  "scope": 6871,
                   "src": "2313:20:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3092,7 +3092,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6669,
+                    "id": 6865,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "2313:7:31",
@@ -3107,12 +3107,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 6672,
+                  "id": 6868,
                   "mutability": "mutable",
                   "name": "unstakeDelay",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6675,
+                  "scope": 6871,
                   "src": "2335:20:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3121,7 +3121,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 6671,
+                    "id": 6867,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "2335:7:31",
@@ -3137,12 +3137,12 @@
               "src": "2312:44:31"
             },
             "returnParameters": {
-              "id": 6674,
+              "id": 6870,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "2373:0:31"
             },
-            "scope": 6745,
+            "scope": 6941,
             "src": "2288:86:31",
             "stateMutability": "payable",
             "virtual": false,
@@ -3152,7 +3152,7 @@
             "body": null,
             "documentation": null,
             "functionSelector": "4a1ce599",
-            "id": 6680,
+            "id": 6876,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -3160,17 +3160,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6678,
+              "id": 6874,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6677,
+                  "id": 6873,
                   "mutability": "mutable",
                   "name": "relayManager",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6680,
+                  "scope": 6876,
                   "src": "2401:20:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3179,7 +3179,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6676,
+                    "id": 6872,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "2401:7:31",
@@ -3196,12 +3196,12 @@
               "src": "2400:22:31"
             },
             "returnParameters": {
-              "id": 6679,
+              "id": 6875,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "2431:0:31"
             },
-            "scope": 6745,
+            "scope": 6941,
             "src": "2380:52:31",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -3211,7 +3211,7 @@
             "body": null,
             "documentation": null,
             "functionSelector": "c23a5cea",
-            "id": 6685,
+            "id": 6881,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -3219,17 +3219,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6683,
+              "id": 6879,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6682,
+                  "id": 6878,
                   "mutability": "mutable",
                   "name": "relayManager",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6685,
+                  "scope": 6881,
                   "src": "2461:20:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3238,7 +3238,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6681,
+                    "id": 6877,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "2461:7:31",
@@ -3255,12 +3255,12 @@
               "src": "2460:22:31"
             },
             "returnParameters": {
-              "id": 6684,
+              "id": 6880,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "2491:0:31"
             },
-            "scope": 6745,
+            "scope": 6941,
             "src": "2438:54:31",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -3270,7 +3270,7 @@
             "body": null,
             "documentation": null,
             "functionSelector": "7835d296",
-            "id": 6692,
+            "id": 6888,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -3278,17 +3278,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6690,
+              "id": 6886,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6687,
+                  "id": 6883,
                   "mutability": "mutable",
                   "name": "relayManager",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6692,
+                  "scope": 6888,
                   "src": "2527:20:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3297,7 +3297,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6686,
+                    "id": 6882,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "2527:7:31",
@@ -3312,12 +3312,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 6689,
+                  "id": 6885,
                   "mutability": "mutable",
                   "name": "relayHub",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6692,
+                  "scope": 6888,
                   "src": "2549:16:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3326,7 +3326,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6688,
+                    "id": 6884,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "2549:7:31",
@@ -3343,12 +3343,12 @@
               "src": "2526:40:31"
             },
             "returnParameters": {
-              "id": 6691,
+              "id": 6887,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "2575:0:31"
             },
-            "scope": 6745,
+            "scope": 6941,
             "src": "2498:78:31",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -3358,7 +3358,7 @@
             "body": null,
             "documentation": null,
             "functionSelector": "d48a9d43",
-            "id": 6697,
+            "id": 6893,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -3366,17 +3366,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6695,
+              "id": 6891,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6694,
+                  "id": 6890,
                   "mutability": "mutable",
                   "name": "relayHub",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6697,
+                  "scope": 6893,
                   "src": "2613:16:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3385,7 +3385,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6693,
+                    "id": 6889,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "2613:7:31",
@@ -3402,12 +3402,12 @@
               "src": "2612:18:31"
             },
             "returnParameters": {
-              "id": 6696,
+              "id": 6892,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "2639:0:31"
             },
-            "scope": 6745,
+            "scope": 6941,
             "src": "2582:58:31",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -3417,7 +3417,7 @@
             "body": null,
             "documentation": null,
             "functionSelector": "f48f8ac7",
-            "id": 6704,
+            "id": 6900,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -3425,17 +3425,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6702,
+              "id": 6898,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6699,
+                  "id": 6895,
                   "mutability": "mutable",
                   "name": "relayManager",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6704,
+                  "scope": 6900,
                   "src": "2677:20:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3444,7 +3444,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6698,
+                    "id": 6894,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "2677:7:31",
@@ -3459,12 +3459,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 6701,
+                  "id": 6897,
                   "mutability": "mutable",
                   "name": "relayHub",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6704,
+                  "scope": 6900,
                   "src": "2699:16:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3473,7 +3473,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6700,
+                    "id": 6896,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "2699:7:31",
@@ -3490,12 +3490,12 @@
               "src": "2676:40:31"
             },
             "returnParameters": {
-              "id": 6703,
+              "id": 6899,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "2725:0:31"
             },
-            "scope": 6745,
+            "scope": 6941,
             "src": "2646:80:31",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -3505,7 +3505,7 @@
             "body": null,
             "documentation": null,
             "functionSelector": "f9bce311",
-            "id": 6709,
+            "id": 6905,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -3513,17 +3513,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6707,
+              "id": 6903,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6706,
+                  "id": 6902,
                   "mutability": "mutable",
                   "name": "relayHub",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6709,
+                  "scope": 6905,
                   "src": "2765:16:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3532,7 +3532,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6705,
+                    "id": 6901,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "2765:7:31",
@@ -3549,12 +3549,12 @@
               "src": "2764:18:31"
             },
             "returnParameters": {
-              "id": 6708,
+              "id": 6904,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "2791:0:31"
             },
-            "scope": 6745,
+            "scope": 6941,
             "src": "2732:60:31",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -3564,7 +3564,7 @@
             "body": null,
             "documentation": null,
             "functionSelector": "6de8dd41",
-            "id": 6722,
+            "id": 6918,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -3572,17 +3572,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6718,
+              "id": 6914,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6711,
+                  "id": 6907,
                   "mutability": "mutable",
                   "name": "relayManager",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6722,
+                  "scope": 6918,
                   "src": "2828:20:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3591,7 +3591,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6710,
+                    "id": 6906,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "2828:7:31",
@@ -3606,12 +3606,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 6713,
+                  "id": 6909,
                   "mutability": "mutable",
                   "name": "relayHub",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6722,
+                  "scope": 6918,
                   "src": "2850:16:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3620,7 +3620,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6712,
+                    "id": 6908,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "2850:7:31",
@@ -3635,12 +3635,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 6715,
+                  "id": 6911,
                   "mutability": "mutable",
                   "name": "minAmount",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6722,
+                  "scope": 6918,
                   "src": "2868:17:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3649,7 +3649,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 6714,
+                    "id": 6910,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "2868:7:31",
@@ -3663,12 +3663,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 6717,
+                  "id": 6913,
                   "mutability": "mutable",
                   "name": "minUnstakeDelay",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6722,
+                  "scope": 6918,
                   "src": "2887:23:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3677,7 +3677,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 6716,
+                    "id": 6912,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "2887:7:31",
@@ -3693,17 +3693,17 @@
               "src": "2827:84:31"
             },
             "returnParameters": {
-              "id": 6721,
+              "id": 6917,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6720,
+                  "id": 6916,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6722,
+                  "scope": 6918,
                   "src": "2947:4:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3712,7 +3712,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 6719,
+                    "id": 6915,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "2947:4:31",
@@ -3727,7 +3727,7 @@
               ],
               "src": "2946:6:31"
             },
-            "scope": 6745,
+            "scope": 6941,
             "src": "2798:155:31",
             "stateMutability": "view",
             "virtual": false,
@@ -3736,13 +3736,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 6723,
+              "id": 6919,
               "nodeType": "StructuredDocumentation",
               "src": "2959:296:31",
               "text": "Slash the stake of the relay relayManager. In order to prevent stake kidnapping, burns half of stake on the way.\n @param relayManager - entry to penalize\n @param beneficiary - address that receives half of the penalty amount\n @param amount - amount to withdraw from stake"
             },
             "functionSelector": "09a08af4",
-            "id": 6732,
+            "id": 6928,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -3750,17 +3750,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6730,
+              "id": 6926,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6725,
+                  "id": 6921,
                   "mutability": "mutable",
                   "name": "relayManager",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6732,
+                  "scope": 6928,
                   "src": "3290:20:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3769,7 +3769,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6724,
+                    "id": 6920,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "3290:7:31",
@@ -3784,12 +3784,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 6727,
+                  "id": 6923,
                   "mutability": "mutable",
                   "name": "beneficiary",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6732,
+                  "scope": 6928,
                   "src": "3312:27:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3798,7 +3798,7 @@
                     "typeString": "address payable"
                   },
                   "typeName": {
-                    "id": 6726,
+                    "id": 6922,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "3312:15:31",
@@ -3813,12 +3813,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 6729,
+                  "id": 6925,
                   "mutability": "mutable",
                   "name": "amount",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6732,
+                  "scope": 6928,
                   "src": "3341:14:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3827,7 +3827,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 6728,
+                    "id": 6924,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "3341:7:31",
@@ -3843,12 +3843,12 @@
               "src": "3289:67:31"
             },
             "returnParameters": {
-              "id": 6731,
+              "id": 6927,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "3365:0:31"
             },
-            "scope": 6745,
+            "scope": 6941,
             "src": "3260:106:31",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -3858,7 +3858,7 @@
             "body": null,
             "documentation": null,
             "functionSelector": "c3453153",
-            "id": 6739,
+            "id": 6935,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -3866,17 +3866,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6735,
+              "id": 6931,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6734,
+                  "id": 6930,
                   "mutability": "mutable",
                   "name": "relayManager",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6739,
+                  "scope": 6935,
                   "src": "3394:20:31",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3885,7 +3885,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6733,
+                    "id": 6929,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "3394:7:31",
@@ -3902,33 +3902,33 @@
               "src": "3393:22:31"
             },
             "returnParameters": {
-              "id": 6738,
+              "id": 6934,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6737,
+                  "id": 6933,
                   "mutability": "mutable",
                   "name": "stakeInfo",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6739,
+                  "scope": 6935,
                   "src": "3439:26:31",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_StakeInfo_$6664_memory_ptr",
+                    "typeIdentifier": "t_struct$_StakeInfo_$6860_memory_ptr",
                     "typeString": "struct IStakeManager.StakeInfo"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 6736,
+                    "id": 6932,
                     "name": "StakeInfo",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 6664,
+                    "referencedDeclaration": 6860,
                     "src": "3439:9:31",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_StakeInfo_$6664_storage_ptr",
+                      "typeIdentifier": "t_struct$_StakeInfo_$6860_storage_ptr",
                       "typeString": "struct IStakeManager.StakeInfo"
                     }
                   },
@@ -3938,7 +3938,7 @@
               ],
               "src": "3438:28:31"
             },
-            "scope": 6745,
+            "scope": 6941,
             "src": "3372:95:31",
             "stateMutability": "view",
             "virtual": false,
@@ -3948,7 +3948,7 @@
             "body": null,
             "documentation": null,
             "functionSelector": "47116c6e",
-            "id": 6744,
+            "id": 6940,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -3956,23 +3956,23 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6740,
+              "id": 6936,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "3491:2:31"
             },
             "returnParameters": {
-              "id": 6743,
+              "id": 6939,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6742,
+                  "id": 6938,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6744,
+                  "scope": 6940,
                   "src": "3517:13:31",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -3981,7 +3981,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 6741,
+                    "id": 6937,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "3517:6:31",
@@ -3996,14 +3996,14 @@
               ],
               "src": "3516:15:31"
             },
-            "scope": 6745,
+            "scope": 6941,
             "src": "3473:59:31",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 6746,
+        "scope": 6942,
         "src": "143:3391:31"
       }
     ],
@@ -4015,7 +4015,7 @@
   },
   "networks": {},
   "schemaVersion": "3.2.5",
-  "updatedAt": "2020-10-17T13:10:30.270Z",
+  "updatedAt": "2020-10-18T15:52:27.653Z",
   "devdoc": {
     "kind": "dev",
     "methods": {

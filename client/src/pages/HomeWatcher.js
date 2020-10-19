@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState, useCallback } from "react";
+import wtcher from "../assets/images/wtcher.png";
 
 import {
   Typography,
@@ -49,10 +50,18 @@ const StakeDialog = ({ open, onClose, onStake }) => {
       <DialogActions>
         {!loading && (
           <>
-            <Button onClick={onClose} color="primary">
+            <Button
+              onClick={onClose}
+              color="primary"
+              style={{ color: "white", backgroundColor: "red" }}
+            >
               Cancel
             </Button>
-            <Button onClick={confirm} color="primary">
+            <Button
+              onClick={confirm}
+              color="primary"
+              style={{ color: "white", backgroundColor: "green" }}
+            >
               Stake
             </Button>
           </>
@@ -108,10 +117,18 @@ const AssessDialog = ({ open, onClose, onAssess }) => {
       <DialogActions>
         {!loading && (
           <>
-            <Button onClick={onClose} color="primary">
+            <Button
+              onClick={onClose}
+              color="primary"
+              style={{ color: "white", backgroundColor: "red" }}
+            >
               Cancel
             </Button>
-            <Button onClick={confirm} color="primary">
+            <Button
+              onClick={confirm}
+              color="primary"
+              style={{ color: "white", backgroundColor: "green" }}
+            >
               Confirm
             </Button>
           </>
@@ -205,6 +222,7 @@ const HomeWatcher = () => {
     <Page>
       <RUPBalance />
       <Paper title="Watcher">
+        <img src={wtcher} style={{ width: "4rem", height: "4rem" }}></img>
         <Typography variant="subtitle1">
           Connected user: {userAddress}
         </Typography>
@@ -223,8 +241,16 @@ const HomeWatcher = () => {
             style={{ marginLeft: 10 }}
             variant="contained"
             color="primary"
-            onClick={() => setAssessDialogOpen(true)}
+            onClick={() => {
+              window.open("https://ibisa.users.earthengine.app/view/mcgyver3");
+              setAssessDialogOpen(true);
+            }}
             disabled={currentStake === "0"}
+            style={{
+              color: "white",
+              background: currentStake === "0" ? "grey" : "green",
+              marginLeft: "10px",
+            }}
           >
             Assess
           </Button>

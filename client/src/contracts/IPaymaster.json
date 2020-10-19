@@ -291,15 +291,15 @@
     "absolutePath": "@opengsn/gsn/contracts/interfaces/IPaymaster.sol",
     "exportedSymbols": {
       "IPaymaster": [
-        6324
+        6520
       ]
     },
-    "id": 6325,
+    "id": 6521,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 6258,
+        "id": 6454,
         "literals": [
           "solidity",
           "^",
@@ -310,7 +310,7 @@
         "src": "31:24:28"
       },
       {
-        "id": 6259,
+        "id": 6455,
         "literals": [
           "experimental",
           "ABIEncoderV2"
@@ -321,10 +321,10 @@
       {
         "absolutePath": "@opengsn/gsn/contracts/interfaces/GsnTypes.sol",
         "file": "./GsnTypes.sol",
-        "id": 6260,
+        "id": 6456,
         "nodeType": "ImportDirective",
-        "scope": 6325,
-        "sourceUnit": 6248,
+        "scope": 6521,
+        "sourceUnit": 6444,
         "src": "91:24:28",
         "symbolAliases": [],
         "unitAlias": ""
@@ -336,25 +336,25 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 6324,
+        "id": 6520,
         "linearizedBaseContracts": [
-          6324
+          6520
         ],
         "name": "IPaymaster",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "canonicalName": "IPaymaster.GasLimits",
-            "id": 6267,
+            "id": 6463,
             "members": [
               {
                 "constant": false,
-                "id": 6262,
+                "id": 6458,
                 "mutability": "mutable",
                 "name": "acceptanceBudget",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 6267,
+                "scope": 6463,
                 "src": "1783:24:28",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -363,7 +363,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 6261,
+                  "id": 6457,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "1783:7:28",
@@ -377,12 +377,12 @@
               },
               {
                 "constant": false,
-                "id": 6264,
+                "id": 6460,
                 "mutability": "mutable",
                 "name": "preRelayedCallGasLimit",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 6267,
+                "scope": 6463,
                 "src": "1817:30:28",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -391,7 +391,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 6263,
+                  "id": 6459,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "1817:7:28",
@@ -405,12 +405,12 @@
               },
               {
                 "constant": false,
-                "id": 6266,
+                "id": 6462,
                 "mutability": "mutable",
                 "name": "postRelayedCallGasLimit",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 6267,
+                "scope": 6463,
                 "src": "1857:31:28",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -419,7 +419,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 6265,
+                  "id": 6461,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "1857:7:28",
@@ -434,20 +434,20 @@
             ],
             "name": "GasLimits",
             "nodeType": "StructDefinition",
-            "scope": 6324,
+            "scope": 6520,
             "src": "1756:139:28",
             "visibility": "public"
           },
           {
             "body": null,
             "documentation": {
-              "id": 6268,
+              "id": 6464,
               "nodeType": "StructuredDocumentation",
               "src": "1901:72:28",
               "text": " Return the GasLimits constants used by the Paymaster."
             },
             "functionSelector": "5ea54eee",
-            "id": 6273,
+            "id": 6469,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -455,39 +455,39 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6269,
+              "id": 6465,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1999:2:28"
             },
             "returnParameters": {
-              "id": 6272,
+              "id": 6468,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6271,
+                  "id": 6467,
                   "mutability": "mutable",
                   "name": "limits",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6273,
+                  "scope": 6469,
                   "src": "2046:23:28",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_GasLimits_$6267_memory_ptr",
+                    "typeIdentifier": "t_struct$_GasLimits_$6463_memory_ptr",
                     "typeString": "struct IPaymaster.GasLimits"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 6270,
+                    "id": 6466,
                     "name": "GasLimits",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 6267,
+                    "referencedDeclaration": 6463,
                     "src": "2046:9:28",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_GasLimits_$6267_storage_ptr",
+                      "typeIdentifier": "t_struct$_GasLimits_$6463_storage_ptr",
                       "typeString": "struct IPaymaster.GasLimits"
                     }
                   },
@@ -497,7 +497,7 @@
               ],
               "src": "2036:39:28"
             },
-            "scope": 6324,
+            "scope": 6520,
             "src": "1978:98:28",
             "stateMutability": "view",
             "virtual": false,
@@ -507,7 +507,7 @@
             "body": null,
             "documentation": null,
             "functionSelector": "7da0a877",
-            "id": 6278,
+            "id": 6474,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -515,39 +515,39 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6274,
+              "id": 6470,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "2107:2:28"
             },
             "returnParameters": {
-              "id": 6277,
+              "id": 6473,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6276,
+                  "id": 6472,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6278,
+                  "scope": 6474,
                   "src": "2133:10:28",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_IForwarder_$6221",
+                    "typeIdentifier": "t_contract$_IForwarder_$6417",
                     "typeString": "contract IForwarder"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 6275,
+                    "id": 6471,
                     "name": "IForwarder",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 6221,
+                    "referencedDeclaration": 6417,
                     "src": "2133:10:28",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_IForwarder_$6221",
+                      "typeIdentifier": "t_contract$_IForwarder_$6417",
                       "typeString": "contract IForwarder"
                     }
                   },
@@ -557,7 +557,7 @@
               ],
               "src": "2132:12:28"
             },
-            "scope": 6324,
+            "scope": 6520,
             "src": "2082:63:28",
             "stateMutability": "view",
             "virtual": false,
@@ -566,13 +566,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 6279,
+              "id": 6475,
               "nodeType": "StructuredDocumentation",
               "src": "2147:48:28",
               "text": " return the relayHub of this contract."
             },
             "functionSelector": "74e861d6",
-            "id": 6284,
+            "id": 6480,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -580,23 +580,23 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6280,
+              "id": 6476,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "2219:2:28"
             },
             "returnParameters": {
-              "id": 6283,
+              "id": 6479,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6282,
+                  "id": 6478,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6284,
+                  "scope": 6480,
                   "src": "2245:7:28",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -605,7 +605,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6281,
+                    "id": 6477,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "2245:7:28",
@@ -621,7 +621,7 @@
               ],
               "src": "2244:9:28"
             },
-            "scope": 6324,
+            "scope": 6520,
             "src": "2200:54:28",
             "stateMutability": "view",
             "virtual": false,
@@ -630,13 +630,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 6285,
+              "id": 6481,
               "nodeType": "StructuredDocumentation",
               "src": "2260:161:28",
               "text": " Can be used to determine if the contract can pay for incoming calls before making any.\n @return the paymaster's deposit in the RelayHub."
             },
             "functionSelector": "2afe31c1",
-            "id": 6290,
+            "id": 6486,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -644,23 +644,23 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6286,
+              "id": 6482,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "2453:2:28"
             },
             "returnParameters": {
-              "id": 6289,
+              "id": 6485,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6288,
+                  "id": 6484,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6290,
+                  "scope": 6486,
                   "src": "2479:7:28",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -669,7 +669,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 6287,
+                    "id": 6483,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "2479:7:28",
@@ -684,7 +684,7 @@
               ],
               "src": "2478:9:28"
             },
-            "scope": 6324,
+            "scope": 6520,
             "src": "2426:62:28",
             "stateMutability": "view",
             "virtual": false,
@@ -693,13 +693,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 6291,
+              "id": 6487,
               "nodeType": "StructuredDocumentation",
               "src": "2494:2191:28",
               "text": " Called by Relay (and RelayHub), to validate if the paymaster agrees to pay for this call.\n MUST be protected with relayHubOnly() in case it modifies state.\n The Paymaster rejects by the following \"revert\" operations\n  - preRelayedCall() method reverts\n  - the forwarder reverts because of nonce or signature error\n  - the paymaster returned \"rejectOnRecipientRevert\", and the recipient contract reverted.\n In any of the above cases, all paymaster calls (and recipient call) are reverted.\n In any other case, the paymaster agrees to pay for the gas cost of the transaction (note\n  that this includes also postRelayedCall revert)\n The rejectOnRecipientRevert flag means the Paymaster \"delegate\" the rejection to the recipient\n  code.  It also means the Paymaster trust the recipient to reject fast: both preRelayedCall,\n  forwarder check and receipient checks must fit into the GasLimits.acceptanceBudget,\n  otherwise the TX is paid by the Paymaster.\n  @param relayRequest - the full relay request structure\n  @param signature - user's EIP712-compatible signature of the {@link relayRequest}.\n              Note that in most cases the paymaster shouldn't try use it at all. It is always checked\n              by the forwarder immediately after preRelayedCall returns.\n  @param approvalData - extra dapp-specific data (e.g. signature from trusted party)\n  @param maxPossibleGas - based on values returned from {@link getGasLimits},\n         the RelayHub will calculate the maximum possible amount of gas the user may be charged for.\n         In order to convert this value to wei, the Paymaster has to call \"relayHub.calculateCharge()\"\n  return:\n      a context to be passed to postRelayedCall\n      rejectOnRecipientRevert - TRUE if paymaster want to reject the TX if the recipient reverts.\n          FALSE means that rejects by the recipient will be completed on chain, and paid by the paymaster.\n          (note that in the latter case, the preRelayedCall and postRelayedCall are not reverted)."
             },
             "functionSelector": "e5c12446",
-            "id": 6306,
+            "id": 6502,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -707,33 +707,33 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6300,
+              "id": 6496,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6293,
+                  "id": 6489,
                   "mutability": "mutable",
                   "name": "relayRequest",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6306,
+                  "scope": 6502,
                   "src": "4723:43:28",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_RelayRequest_$6246_calldata_ptr",
+                    "typeIdentifier": "t_struct$_RelayRequest_$6442_calldata_ptr",
                     "typeString": "struct GsnTypes.RelayRequest"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 6292,
+                    "id": 6488,
                     "name": "GsnTypes.RelayRequest",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 6246,
+                    "referencedDeclaration": 6442,
                     "src": "4723:21:28",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_RelayRequest_$6246_storage_ptr",
+                      "typeIdentifier": "t_struct$_RelayRequest_$6442_storage_ptr",
                       "typeString": "struct GsnTypes.RelayRequest"
                     }
                   },
@@ -742,12 +742,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 6295,
+                  "id": 6491,
                   "mutability": "mutable",
                   "name": "signature",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6306,
+                  "scope": 6502,
                   "src": "4776:24:28",
                   "stateVariable": false,
                   "storageLocation": "calldata",
@@ -756,7 +756,7 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 6294,
+                    "id": 6490,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
                     "src": "4776:5:28",
@@ -770,12 +770,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 6297,
+                  "id": 6493,
                   "mutability": "mutable",
                   "name": "approvalData",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6306,
+                  "scope": 6502,
                   "src": "4810:27:28",
                   "stateVariable": false,
                   "storageLocation": "calldata",
@@ -784,7 +784,7 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 6296,
+                    "id": 6492,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
                     "src": "4810:5:28",
@@ -798,12 +798,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 6299,
+                  "id": 6495,
                   "mutability": "mutable",
                   "name": "maxPossibleGas",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6306,
+                  "scope": 6502,
                   "src": "4847:22:28",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -812,7 +812,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 6298,
+                    "id": 6494,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "4847:7:28",
@@ -828,17 +828,17 @@
               "src": "4713:162:28"
             },
             "returnParameters": {
-              "id": 6305,
+              "id": 6501,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6302,
+                  "id": 6498,
                   "mutability": "mutable",
                   "name": "context",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6306,
+                  "scope": 6502,
                   "src": "4902:20:28",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -847,7 +847,7 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 6301,
+                    "id": 6497,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
                     "src": "4902:5:28",
@@ -861,12 +861,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 6304,
+                  "id": 6500,
                   "mutability": "mutable",
                   "name": "rejectOnRecipientRevert",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6306,
+                  "scope": 6502,
                   "src": "4924:28:28",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -875,7 +875,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 6303,
+                    "id": 6499,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "4924:4:28",
@@ -890,7 +890,7 @@
               ],
               "src": "4901:52:28"
             },
-            "scope": 6324,
+            "scope": 6520,
             "src": "4690:264:28",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -899,13 +899,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 6307,
+              "id": 6503,
               "nodeType": "StructuredDocumentation",
               "src": "4960:887:28",
               "text": " This method is called after the actual relayed function call.\n It may be used to record the transaction (e.g. charge the caller by some contract logic) for this call.\n MUST be protected with relayHubOnly() in case it modifies state.\n @param context - the call context, as returned by the preRelayedCall\n @param success - true if the relayed call succeeded, false if it reverted\n @param gasUseWithoutPost - the actual amount of gas used by the entire transaction, EXCEPT\n        the gas used by the postRelayedCall itself.\n @param relayData - the relay params of the request. can be used by relayHub.calculateCharge()\n Revert in this functions causes a revert of the client's relayed call (and preRelayedCall(), but the Paymaster\n is still committed to pay the relay for the entire transaction."
             },
             "functionSelector": "8e9483b0",
-            "id": 6318,
+            "id": 6514,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -913,17 +913,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6316,
+              "id": 6512,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6309,
+                  "id": 6505,
                   "mutability": "mutable",
                   "name": "context",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6318,
+                  "scope": 6514,
                   "src": "5886:22:28",
                   "stateVariable": false,
                   "storageLocation": "calldata",
@@ -932,7 +932,7 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 6308,
+                    "id": 6504,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
                     "src": "5886:5:28",
@@ -946,12 +946,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 6311,
+                  "id": 6507,
                   "mutability": "mutable",
                   "name": "success",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6318,
+                  "scope": 6514,
                   "src": "5918:12:28",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -960,7 +960,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 6310,
+                    "id": 6506,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "5918:4:28",
@@ -974,12 +974,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 6313,
+                  "id": 6509,
                   "mutability": "mutable",
                   "name": "gasUseWithoutPost",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6318,
+                  "scope": 6514,
                   "src": "5940:25:28",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -988,7 +988,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 6312,
+                    "id": 6508,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "5940:7:28",
@@ -1002,28 +1002,28 @@
                 },
                 {
                   "constant": false,
-                  "id": 6315,
+                  "id": 6511,
                   "mutability": "mutable",
                   "name": "relayData",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6318,
+                  "scope": 6514,
                   "src": "5975:37:28",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_RelayData_$6241_calldata_ptr",
+                    "typeIdentifier": "t_struct$_RelayData_$6437_calldata_ptr",
                     "typeString": "struct GsnTypes.RelayData"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 6314,
+                    "id": 6510,
                     "name": "GsnTypes.RelayData",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 6241,
+                    "referencedDeclaration": 6437,
                     "src": "5975:18:28",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_RelayData_$6241_storage_ptr",
+                      "typeIdentifier": "t_struct$_RelayData_$6437_storage_ptr",
                       "typeString": "struct GsnTypes.RelayData"
                     }
                   },
@@ -1034,12 +1034,12 @@
               "src": "5876:142:28"
             },
             "returnParameters": {
-              "id": 6317,
+              "id": 6513,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "6027:0:28"
             },
-            "scope": 6324,
+            "scope": 6520,
             "src": "5852:176:28",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -1049,7 +1049,7 @@
             "body": null,
             "documentation": null,
             "functionSelector": "921276ea",
-            "id": 6323,
+            "id": 6519,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -1057,23 +1057,23 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6319,
+              "id": 6515,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "6059:2:28"
             },
             "returnParameters": {
-              "id": 6322,
+              "id": 6518,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6321,
+                  "id": 6517,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6323,
+                  "scope": 6519,
                   "src": "6085:13:28",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -1082,7 +1082,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 6320,
+                    "id": 6516,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "6085:6:28",
@@ -1097,14 +1097,14 @@
               ],
               "src": "6084:15:28"
             },
-            "scope": 6324,
+            "scope": 6520,
             "src": "6034:66:28",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 6325,
+        "scope": 6521,
         "src": "117:5985:28"
       }
     ],
@@ -1114,15 +1114,15 @@
     "absolutePath": "@opengsn/gsn/contracts/interfaces/IPaymaster.sol",
     "exportedSymbols": {
       "IPaymaster": [
-        6324
+        6520
       ]
     },
-    "id": 6325,
+    "id": 6521,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 6258,
+        "id": 6454,
         "literals": [
           "solidity",
           "^",
@@ -1133,7 +1133,7 @@
         "src": "31:24:28"
       },
       {
-        "id": 6259,
+        "id": 6455,
         "literals": [
           "experimental",
           "ABIEncoderV2"
@@ -1144,10 +1144,10 @@
       {
         "absolutePath": "@opengsn/gsn/contracts/interfaces/GsnTypes.sol",
         "file": "./GsnTypes.sol",
-        "id": 6260,
+        "id": 6456,
         "nodeType": "ImportDirective",
-        "scope": 6325,
-        "sourceUnit": 6248,
+        "scope": 6521,
+        "sourceUnit": 6444,
         "src": "91:24:28",
         "symbolAliases": [],
         "unitAlias": ""
@@ -1159,25 +1159,25 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 6324,
+        "id": 6520,
         "linearizedBaseContracts": [
-          6324
+          6520
         ],
         "name": "IPaymaster",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "canonicalName": "IPaymaster.GasLimits",
-            "id": 6267,
+            "id": 6463,
             "members": [
               {
                 "constant": false,
-                "id": 6262,
+                "id": 6458,
                 "mutability": "mutable",
                 "name": "acceptanceBudget",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 6267,
+                "scope": 6463,
                 "src": "1783:24:28",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -1186,7 +1186,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 6261,
+                  "id": 6457,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "1783:7:28",
@@ -1200,12 +1200,12 @@
               },
               {
                 "constant": false,
-                "id": 6264,
+                "id": 6460,
                 "mutability": "mutable",
                 "name": "preRelayedCallGasLimit",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 6267,
+                "scope": 6463,
                 "src": "1817:30:28",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -1214,7 +1214,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 6263,
+                  "id": 6459,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "1817:7:28",
@@ -1228,12 +1228,12 @@
               },
               {
                 "constant": false,
-                "id": 6266,
+                "id": 6462,
                 "mutability": "mutable",
                 "name": "postRelayedCallGasLimit",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 6267,
+                "scope": 6463,
                 "src": "1857:31:28",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -1242,7 +1242,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 6265,
+                  "id": 6461,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "1857:7:28",
@@ -1257,20 +1257,20 @@
             ],
             "name": "GasLimits",
             "nodeType": "StructDefinition",
-            "scope": 6324,
+            "scope": 6520,
             "src": "1756:139:28",
             "visibility": "public"
           },
           {
             "body": null,
             "documentation": {
-              "id": 6268,
+              "id": 6464,
               "nodeType": "StructuredDocumentation",
               "src": "1901:72:28",
               "text": " Return the GasLimits constants used by the Paymaster."
             },
             "functionSelector": "5ea54eee",
-            "id": 6273,
+            "id": 6469,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -1278,39 +1278,39 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6269,
+              "id": 6465,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1999:2:28"
             },
             "returnParameters": {
-              "id": 6272,
+              "id": 6468,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6271,
+                  "id": 6467,
                   "mutability": "mutable",
                   "name": "limits",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6273,
+                  "scope": 6469,
                   "src": "2046:23:28",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_GasLimits_$6267_memory_ptr",
+                    "typeIdentifier": "t_struct$_GasLimits_$6463_memory_ptr",
                     "typeString": "struct IPaymaster.GasLimits"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 6270,
+                    "id": 6466,
                     "name": "GasLimits",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 6267,
+                    "referencedDeclaration": 6463,
                     "src": "2046:9:28",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_GasLimits_$6267_storage_ptr",
+                      "typeIdentifier": "t_struct$_GasLimits_$6463_storage_ptr",
                       "typeString": "struct IPaymaster.GasLimits"
                     }
                   },
@@ -1320,7 +1320,7 @@
               ],
               "src": "2036:39:28"
             },
-            "scope": 6324,
+            "scope": 6520,
             "src": "1978:98:28",
             "stateMutability": "view",
             "virtual": false,
@@ -1330,7 +1330,7 @@
             "body": null,
             "documentation": null,
             "functionSelector": "7da0a877",
-            "id": 6278,
+            "id": 6474,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -1338,39 +1338,39 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6274,
+              "id": 6470,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "2107:2:28"
             },
             "returnParameters": {
-              "id": 6277,
+              "id": 6473,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6276,
+                  "id": 6472,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6278,
+                  "scope": 6474,
                   "src": "2133:10:28",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_IForwarder_$6221",
+                    "typeIdentifier": "t_contract$_IForwarder_$6417",
                     "typeString": "contract IForwarder"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 6275,
+                    "id": 6471,
                     "name": "IForwarder",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 6221,
+                    "referencedDeclaration": 6417,
                     "src": "2133:10:28",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_IForwarder_$6221",
+                      "typeIdentifier": "t_contract$_IForwarder_$6417",
                       "typeString": "contract IForwarder"
                     }
                   },
@@ -1380,7 +1380,7 @@
               ],
               "src": "2132:12:28"
             },
-            "scope": 6324,
+            "scope": 6520,
             "src": "2082:63:28",
             "stateMutability": "view",
             "virtual": false,
@@ -1389,13 +1389,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 6279,
+              "id": 6475,
               "nodeType": "StructuredDocumentation",
               "src": "2147:48:28",
               "text": " return the relayHub of this contract."
             },
             "functionSelector": "74e861d6",
-            "id": 6284,
+            "id": 6480,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -1403,23 +1403,23 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6280,
+              "id": 6476,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "2219:2:28"
             },
             "returnParameters": {
-              "id": 6283,
+              "id": 6479,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6282,
+                  "id": 6478,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6284,
+                  "scope": 6480,
                   "src": "2245:7:28",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1428,7 +1428,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6281,
+                    "id": 6477,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "2245:7:28",
@@ -1444,7 +1444,7 @@
               ],
               "src": "2244:9:28"
             },
-            "scope": 6324,
+            "scope": 6520,
             "src": "2200:54:28",
             "stateMutability": "view",
             "virtual": false,
@@ -1453,13 +1453,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 6285,
+              "id": 6481,
               "nodeType": "StructuredDocumentation",
               "src": "2260:161:28",
               "text": " Can be used to determine if the contract can pay for incoming calls before making any.\n @return the paymaster's deposit in the RelayHub."
             },
             "functionSelector": "2afe31c1",
-            "id": 6290,
+            "id": 6486,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -1467,23 +1467,23 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6286,
+              "id": 6482,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "2453:2:28"
             },
             "returnParameters": {
-              "id": 6289,
+              "id": 6485,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6288,
+                  "id": 6484,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6290,
+                  "scope": 6486,
                   "src": "2479:7:28",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1492,7 +1492,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 6287,
+                    "id": 6483,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "2479:7:28",
@@ -1507,7 +1507,7 @@
               ],
               "src": "2478:9:28"
             },
-            "scope": 6324,
+            "scope": 6520,
             "src": "2426:62:28",
             "stateMutability": "view",
             "virtual": false,
@@ -1516,13 +1516,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 6291,
+              "id": 6487,
               "nodeType": "StructuredDocumentation",
               "src": "2494:2191:28",
               "text": " Called by Relay (and RelayHub), to validate if the paymaster agrees to pay for this call.\n MUST be protected with relayHubOnly() in case it modifies state.\n The Paymaster rejects by the following \"revert\" operations\n  - preRelayedCall() method reverts\n  - the forwarder reverts because of nonce or signature error\n  - the paymaster returned \"rejectOnRecipientRevert\", and the recipient contract reverted.\n In any of the above cases, all paymaster calls (and recipient call) are reverted.\n In any other case, the paymaster agrees to pay for the gas cost of the transaction (note\n  that this includes also postRelayedCall revert)\n The rejectOnRecipientRevert flag means the Paymaster \"delegate\" the rejection to the recipient\n  code.  It also means the Paymaster trust the recipient to reject fast: both preRelayedCall,\n  forwarder check and receipient checks must fit into the GasLimits.acceptanceBudget,\n  otherwise the TX is paid by the Paymaster.\n  @param relayRequest - the full relay request structure\n  @param signature - user's EIP712-compatible signature of the {@link relayRequest}.\n              Note that in most cases the paymaster shouldn't try use it at all. It is always checked\n              by the forwarder immediately after preRelayedCall returns.\n  @param approvalData - extra dapp-specific data (e.g. signature from trusted party)\n  @param maxPossibleGas - based on values returned from {@link getGasLimits},\n         the RelayHub will calculate the maximum possible amount of gas the user may be charged for.\n         In order to convert this value to wei, the Paymaster has to call \"relayHub.calculateCharge()\"\n  return:\n      a context to be passed to postRelayedCall\n      rejectOnRecipientRevert - TRUE if paymaster want to reject the TX if the recipient reverts.\n          FALSE means that rejects by the recipient will be completed on chain, and paid by the paymaster.\n          (note that in the latter case, the preRelayedCall and postRelayedCall are not reverted)."
             },
             "functionSelector": "e5c12446",
-            "id": 6306,
+            "id": 6502,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -1530,33 +1530,33 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6300,
+              "id": 6496,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6293,
+                  "id": 6489,
                   "mutability": "mutable",
                   "name": "relayRequest",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6306,
+                  "scope": 6502,
                   "src": "4723:43:28",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_RelayRequest_$6246_calldata_ptr",
+                    "typeIdentifier": "t_struct$_RelayRequest_$6442_calldata_ptr",
                     "typeString": "struct GsnTypes.RelayRequest"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 6292,
+                    "id": 6488,
                     "name": "GsnTypes.RelayRequest",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 6246,
+                    "referencedDeclaration": 6442,
                     "src": "4723:21:28",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_RelayRequest_$6246_storage_ptr",
+                      "typeIdentifier": "t_struct$_RelayRequest_$6442_storage_ptr",
                       "typeString": "struct GsnTypes.RelayRequest"
                     }
                   },
@@ -1565,12 +1565,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 6295,
+                  "id": 6491,
                   "mutability": "mutable",
                   "name": "signature",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6306,
+                  "scope": 6502,
                   "src": "4776:24:28",
                   "stateVariable": false,
                   "storageLocation": "calldata",
@@ -1579,7 +1579,7 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 6294,
+                    "id": 6490,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
                     "src": "4776:5:28",
@@ -1593,12 +1593,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 6297,
+                  "id": 6493,
                   "mutability": "mutable",
                   "name": "approvalData",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6306,
+                  "scope": 6502,
                   "src": "4810:27:28",
                   "stateVariable": false,
                   "storageLocation": "calldata",
@@ -1607,7 +1607,7 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 6296,
+                    "id": 6492,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
                     "src": "4810:5:28",
@@ -1621,12 +1621,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 6299,
+                  "id": 6495,
                   "mutability": "mutable",
                   "name": "maxPossibleGas",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6306,
+                  "scope": 6502,
                   "src": "4847:22:28",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1635,7 +1635,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 6298,
+                    "id": 6494,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "4847:7:28",
@@ -1651,17 +1651,17 @@
               "src": "4713:162:28"
             },
             "returnParameters": {
-              "id": 6305,
+              "id": 6501,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6302,
+                  "id": 6498,
                   "mutability": "mutable",
                   "name": "context",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6306,
+                  "scope": 6502,
                   "src": "4902:20:28",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -1670,7 +1670,7 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 6301,
+                    "id": 6497,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
                     "src": "4902:5:28",
@@ -1684,12 +1684,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 6304,
+                  "id": 6500,
                   "mutability": "mutable",
                   "name": "rejectOnRecipientRevert",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6306,
+                  "scope": 6502,
                   "src": "4924:28:28",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1698,7 +1698,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 6303,
+                    "id": 6499,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "4924:4:28",
@@ -1713,7 +1713,7 @@
               ],
               "src": "4901:52:28"
             },
-            "scope": 6324,
+            "scope": 6520,
             "src": "4690:264:28",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -1722,13 +1722,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 6307,
+              "id": 6503,
               "nodeType": "StructuredDocumentation",
               "src": "4960:887:28",
               "text": " This method is called after the actual relayed function call.\n It may be used to record the transaction (e.g. charge the caller by some contract logic) for this call.\n MUST be protected with relayHubOnly() in case it modifies state.\n @param context - the call context, as returned by the preRelayedCall\n @param success - true if the relayed call succeeded, false if it reverted\n @param gasUseWithoutPost - the actual amount of gas used by the entire transaction, EXCEPT\n        the gas used by the postRelayedCall itself.\n @param relayData - the relay params of the request. can be used by relayHub.calculateCharge()\n Revert in this functions causes a revert of the client's relayed call (and preRelayedCall(), but the Paymaster\n is still committed to pay the relay for the entire transaction."
             },
             "functionSelector": "8e9483b0",
-            "id": 6318,
+            "id": 6514,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -1736,17 +1736,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6316,
+              "id": 6512,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6309,
+                  "id": 6505,
                   "mutability": "mutable",
                   "name": "context",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6318,
+                  "scope": 6514,
                   "src": "5886:22:28",
                   "stateVariable": false,
                   "storageLocation": "calldata",
@@ -1755,7 +1755,7 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 6308,
+                    "id": 6504,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
                     "src": "5886:5:28",
@@ -1769,12 +1769,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 6311,
+                  "id": 6507,
                   "mutability": "mutable",
                   "name": "success",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6318,
+                  "scope": 6514,
                   "src": "5918:12:28",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1783,7 +1783,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 6310,
+                    "id": 6506,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "5918:4:28",
@@ -1797,12 +1797,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 6313,
+                  "id": 6509,
                   "mutability": "mutable",
                   "name": "gasUseWithoutPost",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6318,
+                  "scope": 6514,
                   "src": "5940:25:28",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1811,7 +1811,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 6312,
+                    "id": 6508,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "5940:7:28",
@@ -1825,28 +1825,28 @@
                 },
                 {
                   "constant": false,
-                  "id": 6315,
+                  "id": 6511,
                   "mutability": "mutable",
                   "name": "relayData",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6318,
+                  "scope": 6514,
                   "src": "5975:37:28",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_RelayData_$6241_calldata_ptr",
+                    "typeIdentifier": "t_struct$_RelayData_$6437_calldata_ptr",
                     "typeString": "struct GsnTypes.RelayData"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 6314,
+                    "id": 6510,
                     "name": "GsnTypes.RelayData",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 6241,
+                    "referencedDeclaration": 6437,
                     "src": "5975:18:28",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_RelayData_$6241_storage_ptr",
+                      "typeIdentifier": "t_struct$_RelayData_$6437_storage_ptr",
                       "typeString": "struct GsnTypes.RelayData"
                     }
                   },
@@ -1857,12 +1857,12 @@
               "src": "5876:142:28"
             },
             "returnParameters": {
-              "id": 6317,
+              "id": 6513,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "6027:0:28"
             },
-            "scope": 6324,
+            "scope": 6520,
             "src": "5852:176:28",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -1872,7 +1872,7 @@
             "body": null,
             "documentation": null,
             "functionSelector": "921276ea",
-            "id": 6323,
+            "id": 6519,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -1880,23 +1880,23 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6319,
+              "id": 6515,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "6059:2:28"
             },
             "returnParameters": {
-              "id": 6322,
+              "id": 6518,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6321,
+                  "id": 6517,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6323,
+                  "scope": 6519,
                   "src": "6085:13:28",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -1905,7 +1905,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 6320,
+                    "id": 6516,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "6085:6:28",
@@ -1920,14 +1920,14 @@
               ],
               "src": "6084:15:28"
             },
-            "scope": 6324,
+            "scope": 6520,
             "src": "6034:66:28",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 6325,
+        "scope": 6521,
         "src": "117:5985:28"
       }
     ],
@@ -1939,7 +1939,7 @@
   },
   "networks": {},
   "schemaVersion": "3.2.5",
-  "updatedAt": "2020-10-17T13:10:30.244Z",
+  "updatedAt": "2020-10-18T15:52:27.523Z",
   "devdoc": {
     "kind": "dev",
     "methods": {

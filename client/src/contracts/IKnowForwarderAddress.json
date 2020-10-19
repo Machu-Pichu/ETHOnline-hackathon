@@ -27,15 +27,15 @@
     "absolutePath": "@opengsn/gsn/contracts/interfaces/IKnowForwarderAddress.sol",
     "exportedSymbols": {
       "IKnowForwarderAddress": [
-        6256
+        6452
       ]
     },
-    "id": 6257,
+    "id": 6453,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 6249,
+        "id": 6445,
         "literals": [
           "solidity",
           "^",
@@ -52,9 +52,9 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 6256,
+        "id": 6452,
         "linearizedBaseContracts": [
-          6256
+          6452
         ],
         "name": "IKnowForwarderAddress",
         "nodeType": "ContractDefinition",
@@ -62,13 +62,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 6250,
+              "id": 6446,
               "nodeType": "StructuredDocumentation",
               "src": "95:198:27",
               "text": " return the forwarder we trust to forward relayed transactions to us.\n the forwarder is required to verify the sender's signature, and verify\n the call is not a replay."
             },
             "functionSelector": "ce1b815f",
-            "id": 6255,
+            "id": 6451,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -76,23 +76,23 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6251,
+              "id": 6447,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "326:2:27"
             },
             "returnParameters": {
-              "id": 6254,
+              "id": 6450,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6253,
+                  "id": 6449,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6255,
+                  "scope": 6451,
                   "src": "351:7:27",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -101,7 +101,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6252,
+                    "id": 6448,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "351:7:27",
@@ -117,14 +117,14 @@
               ],
               "src": "350:9:27"
             },
-            "scope": 6256,
+            "scope": 6452,
             "src": "298:62:27",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 6257,
+        "scope": 6453,
         "src": "56:306:27"
       }
     ],
@@ -134,15 +134,15 @@
     "absolutePath": "@opengsn/gsn/contracts/interfaces/IKnowForwarderAddress.sol",
     "exportedSymbols": {
       "IKnowForwarderAddress": [
-        6256
+        6452
       ]
     },
-    "id": 6257,
+    "id": 6453,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 6249,
+        "id": 6445,
         "literals": [
           "solidity",
           "^",
@@ -159,9 +159,9 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 6256,
+        "id": 6452,
         "linearizedBaseContracts": [
-          6256
+          6452
         ],
         "name": "IKnowForwarderAddress",
         "nodeType": "ContractDefinition",
@@ -169,13 +169,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 6250,
+              "id": 6446,
               "nodeType": "StructuredDocumentation",
               "src": "95:198:27",
               "text": " return the forwarder we trust to forward relayed transactions to us.\n the forwarder is required to verify the sender's signature, and verify\n the call is not a replay."
             },
             "functionSelector": "ce1b815f",
-            "id": 6255,
+            "id": 6451,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -183,23 +183,23 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6251,
+              "id": 6447,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "326:2:27"
             },
             "returnParameters": {
-              "id": 6254,
+              "id": 6450,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6253,
+                  "id": 6449,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6255,
+                  "scope": 6451,
                   "src": "351:7:27",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -208,7 +208,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6252,
+                    "id": 6448,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "351:7:27",
@@ -224,14 +224,14 @@
               ],
               "src": "350:9:27"
             },
-            "scope": 6256,
+            "scope": 6452,
             "src": "298:62:27",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 6257,
+        "scope": 6453,
         "src": "56:306:27"
       }
     ],
@@ -243,7 +243,7 @@
   },
   "networks": {},
   "schemaVersion": "3.2.5",
-  "updatedAt": "2020-10-17T13:10:30.244Z",
+  "updatedAt": "2020-10-18T15:52:27.508Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

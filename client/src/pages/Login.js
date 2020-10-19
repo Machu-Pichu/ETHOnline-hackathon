@@ -8,6 +8,7 @@ import CircularProgress from "@material-ui/core/CircularProgress";
 import { AppContext } from "../AppContext";
 import metamask from "../assets/images/metamask.jpg";
 import portis from "../assets/images/portis.png";
+import rupeetoken from "../assets/images/rupeetoken.jpg";
 
 const useStyles = makeStyles((theme) => ({
   header: {
@@ -68,7 +69,7 @@ const Login = () => {
       .then((accounts) => {
         if (accounts && accounts.length > 0) {
           // Select the first account
-          onUserConnected(accounts[0], web3Provider);
+          onUserConnected(accounts[0], web3Provider, false);
         }
       })
       .catch((error) => {
@@ -89,7 +90,7 @@ const Login = () => {
         console.log(accounts);
         if (accounts && accounts.length > 0) {
           // Select the first account
-          onUserConnected(accounts[0], portis.provider);
+          onUserConnected(accounts[0], portis.provider, portis);
         }
       })
       .catch((error) => {

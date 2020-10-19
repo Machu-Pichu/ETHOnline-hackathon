@@ -46,15 +46,15 @@
     "absolutePath": "@opengsn/gsn/contracts/interfaces/IRelayRecipient.sol",
     "exportedSymbols": {
       "IRelayRecipient": [
-        6599
+        6795
       ]
     },
-    "id": 6600,
+    "id": 6796,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 6572,
+        "id": 6768,
         "literals": [
           "solidity",
           "^",
@@ -70,15 +70,15 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "documentation": {
-          "id": 6573,
+          "id": 6769,
           "nodeType": "StructuredDocumentation",
           "src": "56:165:30",
           "text": " a contract must implement this interface in order to support relayed transaction.\n It is better to inherit the BaseRelayRecipient as its implementation."
         },
         "fullyImplemented": false,
-        "id": 6599,
+        "id": 6795,
         "linearizedBaseContracts": [
-          6599
+          6795
         ],
         "name": "IRelayRecipient",
         "nodeType": "ContractDefinition",
@@ -86,13 +86,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 6574,
+              "id": 6770,
               "nodeType": "StructuredDocumentation",
               "src": "263:203:30",
               "text": " return if the forwarder is trusted to forward relayed transactions to us.\n the forwarder is required to verify the sender's signature, and verify\n the call is not a replay."
             },
             "functionSelector": "572b6c05",
-            "id": 6581,
+            "id": 6777,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -100,17 +100,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6577,
+              "id": 6773,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6576,
+                  "id": 6772,
                   "mutability": "mutable",
                   "name": "forwarder",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6581,
+                  "scope": 6777,
                   "src": "499:17:30",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -119,7 +119,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6575,
+                    "id": 6771,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "499:7:30",
@@ -136,17 +136,17 @@
               "src": "498:19:30"
             },
             "returnParameters": {
-              "id": 6580,
+              "id": 6776,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6579,
+                  "id": 6775,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6581,
+                  "scope": 6777,
                   "src": "546:4:30",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -155,7 +155,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 6578,
+                    "id": 6774,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "546:4:30",
@@ -170,7 +170,7 @@
               ],
               "src": "545:6:30"
             },
-            "scope": 6599,
+            "scope": 6795,
             "src": "471:81:30",
             "stateMutability": "view",
             "virtual": true,
@@ -179,12 +179,12 @@
           {
             "body": null,
             "documentation": {
-              "id": 6582,
+              "id": 6778,
               "nodeType": "StructuredDocumentation",
               "src": "558:290:30",
               "text": " return the sender of this call.\n if the call came through our trusted forwarder, then the real sender is appended as the last 20 bytes\n of the msg.data.\n otherwise, return `msg.sender`\n should be used in the contract anywhere instead of msg.sender"
             },
-            "id": 6587,
+            "id": 6783,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -192,23 +192,23 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6583,
+              "id": 6779,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "872:2:30"
             },
             "returnParameters": {
-              "id": 6586,
+              "id": 6782,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6585,
+                  "id": 6781,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6587,
+                  "scope": 6783,
                   "src": "906:15:30",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -217,7 +217,7 @@
                     "typeString": "address payable"
                   },
                   "typeName": {
-                    "id": 6584,
+                    "id": 6780,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "906:15:30",
@@ -233,7 +233,7 @@
               ],
               "src": "905:17:30"
             },
-            "scope": 6599,
+            "scope": 6795,
             "src": "853:70:30",
             "stateMutability": "view",
             "virtual": true,
@@ -242,12 +242,12 @@
           {
             "body": null,
             "documentation": {
-              "id": 6588,
+              "id": 6784,
               "nodeType": "StructuredDocumentation",
               "src": "929:409:30",
               "text": " return the msg.data of this call.\n if the call came through our trusted forwarder, then the real sender was appended as the last 20 bytes\n of the msg.data - so this method will strip those 20 bytes off.\n otherwise, return `msg.data`\n should be used in the contract instead of msg.data, where the difference matters (e.g. when explicitly\n signing or hashing the"
             },
-            "id": 6593,
+            "id": 6789,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -255,23 +255,23 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6589,
+              "id": 6785,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1360:2:30"
             },
             "returnParameters": {
-              "id": 6592,
+              "id": 6788,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6591,
+                  "id": 6787,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6593,
+                  "scope": 6789,
                   "src": "1394:12:30",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -280,7 +280,7 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 6590,
+                    "id": 6786,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
                     "src": "1394:5:30",
@@ -295,7 +295,7 @@
               ],
               "src": "1393:14:30"
             },
-            "scope": 6599,
+            "scope": 6795,
             "src": "1343:65:30",
             "stateMutability": "view",
             "virtual": true,
@@ -305,7 +305,7 @@
             "body": null,
             "documentation": null,
             "functionSelector": "486ff0cd",
-            "id": 6598,
+            "id": 6794,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -313,23 +313,23 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6594,
+              "id": 6790,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1439:2:30"
             },
             "returnParameters": {
-              "id": 6597,
+              "id": 6793,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6596,
+                  "id": 6792,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6598,
+                  "scope": 6794,
                   "src": "1473:13:30",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -338,7 +338,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 6595,
+                    "id": 6791,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1473:6:30",
@@ -353,14 +353,14 @@
               ],
               "src": "1472:15:30"
             },
-            "scope": 6599,
+            "scope": 6795,
             "src": "1414:74:30",
             "stateMutability": "view",
             "virtual": true,
             "visibility": "external"
           }
         ],
-        "scope": 6600,
+        "scope": 6796,
         "src": "222:1268:30"
       }
     ],
@@ -370,15 +370,15 @@
     "absolutePath": "@opengsn/gsn/contracts/interfaces/IRelayRecipient.sol",
     "exportedSymbols": {
       "IRelayRecipient": [
-        6599
+        6795
       ]
     },
-    "id": 6600,
+    "id": 6796,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 6572,
+        "id": 6768,
         "literals": [
           "solidity",
           "^",
@@ -394,15 +394,15 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "documentation": {
-          "id": 6573,
+          "id": 6769,
           "nodeType": "StructuredDocumentation",
           "src": "56:165:30",
           "text": " a contract must implement this interface in order to support relayed transaction.\n It is better to inherit the BaseRelayRecipient as its implementation."
         },
         "fullyImplemented": false,
-        "id": 6599,
+        "id": 6795,
         "linearizedBaseContracts": [
-          6599
+          6795
         ],
         "name": "IRelayRecipient",
         "nodeType": "ContractDefinition",
@@ -410,13 +410,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 6574,
+              "id": 6770,
               "nodeType": "StructuredDocumentation",
               "src": "263:203:30",
               "text": " return if the forwarder is trusted to forward relayed transactions to us.\n the forwarder is required to verify the sender's signature, and verify\n the call is not a replay."
             },
             "functionSelector": "572b6c05",
-            "id": 6581,
+            "id": 6777,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -424,17 +424,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6577,
+              "id": 6773,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6576,
+                  "id": 6772,
                   "mutability": "mutable",
                   "name": "forwarder",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6581,
+                  "scope": 6777,
                   "src": "499:17:30",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -443,7 +443,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6575,
+                    "id": 6771,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "499:7:30",
@@ -460,17 +460,17 @@
               "src": "498:19:30"
             },
             "returnParameters": {
-              "id": 6580,
+              "id": 6776,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6579,
+                  "id": 6775,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6581,
+                  "scope": 6777,
                   "src": "546:4:30",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -479,7 +479,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 6578,
+                    "id": 6774,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "546:4:30",
@@ -494,7 +494,7 @@
               ],
               "src": "545:6:30"
             },
-            "scope": 6599,
+            "scope": 6795,
             "src": "471:81:30",
             "stateMutability": "view",
             "virtual": true,
@@ -503,12 +503,12 @@
           {
             "body": null,
             "documentation": {
-              "id": 6582,
+              "id": 6778,
               "nodeType": "StructuredDocumentation",
               "src": "558:290:30",
               "text": " return the sender of this call.\n if the call came through our trusted forwarder, then the real sender is appended as the last 20 bytes\n of the msg.data.\n otherwise, return `msg.sender`\n should be used in the contract anywhere instead of msg.sender"
             },
-            "id": 6587,
+            "id": 6783,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -516,23 +516,23 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6583,
+              "id": 6779,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "872:2:30"
             },
             "returnParameters": {
-              "id": 6586,
+              "id": 6782,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6585,
+                  "id": 6781,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6587,
+                  "scope": 6783,
                   "src": "906:15:30",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -541,7 +541,7 @@
                     "typeString": "address payable"
                   },
                   "typeName": {
-                    "id": 6584,
+                    "id": 6780,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "906:15:30",
@@ -557,7 +557,7 @@
               ],
               "src": "905:17:30"
             },
-            "scope": 6599,
+            "scope": 6795,
             "src": "853:70:30",
             "stateMutability": "view",
             "virtual": true,
@@ -566,12 +566,12 @@
           {
             "body": null,
             "documentation": {
-              "id": 6588,
+              "id": 6784,
               "nodeType": "StructuredDocumentation",
               "src": "929:409:30",
               "text": " return the msg.data of this call.\n if the call came through our trusted forwarder, then the real sender was appended as the last 20 bytes\n of the msg.data - so this method will strip those 20 bytes off.\n otherwise, return `msg.data`\n should be used in the contract instead of msg.data, where the difference matters (e.g. when explicitly\n signing or hashing the"
             },
-            "id": 6593,
+            "id": 6789,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -579,23 +579,23 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6589,
+              "id": 6785,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1360:2:30"
             },
             "returnParameters": {
-              "id": 6592,
+              "id": 6788,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6591,
+                  "id": 6787,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6593,
+                  "scope": 6789,
                   "src": "1394:12:30",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -604,7 +604,7 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 6590,
+                    "id": 6786,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
                     "src": "1394:5:30",
@@ -619,7 +619,7 @@
               ],
               "src": "1393:14:30"
             },
-            "scope": 6599,
+            "scope": 6795,
             "src": "1343:65:30",
             "stateMutability": "view",
             "virtual": true,
@@ -629,7 +629,7 @@
             "body": null,
             "documentation": null,
             "functionSelector": "486ff0cd",
-            "id": 6598,
+            "id": 6794,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -637,23 +637,23 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6594,
+              "id": 6790,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1439:2:30"
             },
             "returnParameters": {
-              "id": 6597,
+              "id": 6793,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6596,
+                  "id": 6792,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6598,
+                  "scope": 6794,
                   "src": "1473:13:30",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -662,7 +662,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 6595,
+                    "id": 6791,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1473:6:30",
@@ -677,14 +677,14 @@
               ],
               "src": "1472:15:30"
             },
-            "scope": 6599,
+            "scope": 6795,
             "src": "1414:74:30",
             "stateMutability": "view",
             "virtual": true,
             "visibility": "external"
           }
         ],
-        "scope": 6600,
+        "scope": 6796,
         "src": "222:1268:30"
       }
     ],
@@ -696,7 +696,7 @@
   },
   "networks": {},
   "schemaVersion": "3.2.5",
-  "updatedAt": "2020-10-17T13:10:30.248Z",
+  "updatedAt": "2020-10-18T15:52:27.619Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},
