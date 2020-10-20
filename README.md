@@ -8,6 +8,11 @@ Machu-Picchu dApp for ETHGlobal Hackathon
 3. Do `npm install` first (make sure with `node --version`that your `node.js`version does not exceed v12, else `keccak` installation will have errors)
 4. Then `npm start` and open 'http://localhost:3000' in your browser
 
+## Dapp pre-requisites (KOVAN TESTNET)
+
+1. The OpenGSN Paymaster Contract ( 0xC1e8E5B8b9091BA103018d5Bf837E30930FB8fDe ) should have sufficient tokens to pay for the gas fees for farmers and enablers.
+2. The OTP contracts ( OTPGeneratorAndVerifier: 0x5AA2BF10E91e15B5f8917075ABaCE412045A8d7c [0.1 LINK per request] and SendOTP: 0x987B5Ab4Ec7BE19D151D5cE02A99Baa6400693C0 [0.05 LINK per request] ) should have enough LINK tokens to pay for the Chainlink service.
+
 ## Overall context of _Machu Picchu_ hackathon showcase
 ![Overall context](https://github.com/Machu-Pichu/hackathon/blob/logos/common/images/20201002%20Machu%20Picchu%20Overall%20Vision.png)
 
