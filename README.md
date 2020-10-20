@@ -7,6 +7,7 @@ Machu-Picchu dApp for ETHGlobal Hackathon
 2. Run `npm install @truffle/hdwallet-provider`
 3. Run `truffle compile --all`
 4. Run `truffle migrate --network {network-name} --reset`
+5. Now run the client
 
 ## To run the app on local
 
