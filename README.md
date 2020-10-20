@@ -27,3 +27,8 @@ Machu-Picchu dApp for ETHGlobal Hackathon
 To be updated when the demo is finished.
 
 ![Actual showcase](https://github.com/Machu-Pichu/hackathon/blob/logos/common/images/20201006%20Hackathon%20showcase%20v1.0.png)
+
+## Flow diagram
+
+![mp](https://user-images.githubusercontent.com/24249646/96636170-86786480-133a-11eb-8b88-c3b583264810.jpg)
+
