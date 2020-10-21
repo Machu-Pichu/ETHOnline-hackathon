@@ -1,7 +1,7 @@
 # ETHOnline Hackathon 2020
 Machu-Picchu dApp for ETHGlobal Hackathon
 
-## To deploy updated contracts/To initilise the contracts
+## To deploy updated contracts/To initailise the contracts
 
 1. Navigate to `hackathon folder`
 2. Run `npm install @truffle/hdwallet-provider`
