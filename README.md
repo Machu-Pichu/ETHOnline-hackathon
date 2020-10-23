@@ -21,6 +21,12 @@ Machu-Picchu dApp for ETHGlobal Hackathon
 1. The OpenGSN Paymaster Contract ( 0xC1e8E5B8b9091BA103018d5Bf837E30930FB8fDe ) should have sufficient ETH to pay for the gas fees for farmers and enablers.
 2. The OTP contracts ( OTPGeneratorAndVerifier: 0x5AA2BF10E91e15B5f8917075ABaCE412045A8d7c [0.1 LINK per request] and SendOTP: 0x987B5Ab4Ec7BE19D151D5cE02A99Baa6400693C0 [0.05 LINK per request] ) should have enough LINK tokens to pay for the Chainlink service.
 
+## Checklist while Testing
+
+1. Please contribute more than 2 RUP Tokens from Members 
+2. Please stake more than 20 RUP Tokens from watchers
+3. We will need to validate your mobile number before the OTP service as we are on trial.
+ 
 ## Overall context of _Machu Picchu_ hackathon showcase
 ![Overall context](https://github.com/Machu-Pichu/hackathon/blob/logos/common/images/20201002%20Machu%20Picchu%20Overall%20Vision.png)
 
