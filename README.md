@@ -28,7 +28,7 @@ Machu-Picchu dApp for ETHGlobal Hackathon
 3. We will need to validate your mobile number before the OTP service as we are on trial.
  
 ## Overall context of _Machu Picchu_ hackathon showcase
-![Overall context](https://github.com/Machu-Pichu/hackathon/blob/master/client/src/assets/images/20201002%20Machu%20Picchu%20Overall%20Vision.png)
+![Overall context](https://github.com/Machu-Pichu/hackathon/blob/master/client/src/assets/images/20201031%20Machu%20Picchu%20Overall%20Vision%20v1.png)
 
 ## Content of _Machu Picchu_ hackathon showcase
 Updated with the actual technologies used in the finished demo.
